@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        /* background-color:bisque; */
+    }
+
+    .top-bar {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        background-color: #0b3d2e;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Search box */
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .search-box select {
+        border: none;
+        padding: 10px;
+        background: orange;
+        color: white;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 10px;
+        width: 250px;
+        outline: none;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+
+    #space {
+        text-align: center;
+    }
+
+    #form {
+        background-color: #d6cbb7;
+        padding: 50px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #0b4d2b;
+        margin-bottom: 30px;
+    }
+
+    form {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        border: 2px solid #0b4d2b;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 120px;
+        border-radius: 20px;
+    }
+
+    button {
+        background-color: #0b4d2b;
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .hero {
+        height: 200px;
+        background-image: url("backimage.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+    }
+
+    .overlay p {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .overlay h1 {
+        color: #b6e36b;
+        /* light green like your image */
+        font-size: 40px;
+    }
+
+    /* background-style */
+
+
+    .footer {
+        background: #0b4d2b;
+        color: white;
+        padding: 40px;
+    }
+
+    /* Top */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+    }
+
+    .logo h2 {
+        margin: 0;
+    }
+
+    .newsletter p {
+        margin-bottom: 10px;
+    }
+
+    .subscribe-box {
+        display: flex;
+        gap: 10px;
+    }
+
+    .subscribe-box input {
+        padding: 12px;
+        border-radius: 30px;
+        border: none;
+        width: 250px;
+    }
+
+    .subscribe-box button {
+        background: #d35400;
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    /* Middle */
+    .footer-middle {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .box {
+        background: #e5e5e5;
+        color: black;
+        padding: 20px;
+        border-radius: 20px;
+        width: 25%;
+    }
+
+    .about {
+        background: #cfd6de;
+        padding: 20px;
+        border-radius: 20px;
+        width: 25%;
+    }
+
+    /* Bottom */
+    .footer-bottom {
+        background: #d35400;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .footer-bottom .links span {
+        margin-left: 15px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo">KEDIA ORGANIC</div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+
+    <!-- background-image -->
+    <div class="hero">
+        <div class="overlay">
+            <p>Home / Contact Us</p>
+            <h1>Contact Us</h1>
+        </div>
+    </div>
+    <!-- background-image -->
+
+    <div id="space">
+        <h1><big>Contact Us</big></h1>
+        <h1>📞 Phone & WhatsApp Support</h1>
+        <h2>+91 9640546718</h2>
+        <h3>chundrusai2004@gmail.com</h3>
+        <h3>Monday to Saturday 10:00AM - 6:00PM</h3>
+    </div>
+    <div id="form">
+        <h1>Contact form</h1>
+
+        <form>
+            <div class="row">
+                <input type="text" placeholder="Full name *">
+                <input type="email" placeholder="Email *">
+            </div>
+
+            <input type="tel" placeholder="Phone number">
+
+            <textarea placeholder="Add a message *"></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <div class="subscribe-box">
+                    <input type="email" placeholder="Email *">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="box">
+                <h3>Info</h3>
+                <p>OUR STORY</p>
+                <p>ACTIVITIES</p>
+                <p>FARM TOUR</p>
+            </div>
+
+            <div class="box">
+                <h3>Quick links</h3>
+                <p>GROCERIES - ALL INDIA</p>
+                <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                <p>OUR STORY</p>
+                <p>K FARMS</p>
+                <p>OFFERS</p>
+                <p>GIVING BACK</p>
+                <p>CONTACT US</p>
+            </div>
+
+            <div class="box">
+                <h3>Head Office</h3>
+                <p>
+                    3-10 Mandapaka,<br>
+                    Tanuku Mandal, West Godavari,<br>
+                    Tanuku, Andhra Pardesh, India - 534218
+                </p>
+            </div>
+
+            <div class="about">
+                <p>
+                    <b>Kedia Organic Agro Farms</b> Discover a trusted source for organic groceries,
+                    fresh produce, and wellness essentials...
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+
+            <div class="links">
+                <span>Refund Policy</span>
+                <span>Privacy Policy</span>
+                <span>Terms Of Service</span>
+                <span>Shipping Policy</span>
+                <span>Contact Information</span>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

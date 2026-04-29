@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        .top-bar {
+            background-color: #d35400;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #0b3d2e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Search box */
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .search-box select {
+            border: none;
+            padding: 10px;
+            background: orange;
+            color: white;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 10px;
+            width: 250px;
+            outline: none;
+        }
+
+        .help {
+            font-size: 14px;
+        }
+
+        .banner {
+            background-color: #b7d3b1;
+            padding: 40px 40px;
+            margin-bottom: 20px;
+        }
+
+        .banner h1 {
+            color: #063d2b;
+            font-size: 40px;
+        }
+
+        /* 🔥 GRID LAYOUT */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 per row */
+            gap: 20px;
+            padding: 20px;
+            /* background:#e6c9a8; */
+        }
+
+        .product-card {
+            text-align: center;
+        }
+
+        /* 🔹 Product container */
+        .product {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: white;
+        }
+
+        /* 🔹 Images */
+        .product img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* 🔹 Second image hidden */
+        .product .img2 {
+            transform: translateY(250px);
+        }
+
+        /* 🔥 Hover effect */
+        .product:hover .img2 {
+            transform: translateY(0);
+        }
+
+        .product:hover .img1 {
+            transform: translateY(250px);
+        }
+
+        .price {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .price span {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+        }
+
+        h3 {
+            margin: 5px 0;
+        }
+
+        /* 🔥 BUTTON FIX */
+        button {
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* 🔥 QTY FIX */
+        .qty {
+            margin-top: 10px;
+        }
+
+        .qty button {
+            padding: 5px 10px;
+            background: lightgray;
+            color: black;
+        }
+
+        /* 🔹 Items */
+        .dropdown p {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        */ .contact-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .overstory-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .farmers {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #064e2c;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        /* Top */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            margin: 0;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            width: 200px;
+        }
+
+        .newsletter button {
+            background: orange;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Middle */
+        .footer-middle {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f1f1f1;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            flex: 2;
+        }
+
+        .col h4 {
+            margin-bottom: 10px;
+        }
+
+        .col p {
+            margin: 5px 0;
+        }
+
+        .about-box {
+            background: #cfd8dc;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            background: #d84315;
+            padding: 10px;
+        }
+
+
+        
+        .menu-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+       
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #eee;
+            width: 400px;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+      
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 0;
+        }
+
+        .dropdown a:hover {
+            color: green;
+        }
+
+        .overstory-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .farmers {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+        }
+        .offers{
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 25px;
+            background: #063d24;
+            padding: 12px 20px;
+            color: white;
+            font-size: 14px;
+        }
+         .navbar {
+            position: relative;
+            z-index: 1000;
+        }
+        .navbar div {
+            cursor: pointer;
+        }
+
+        .navbar div:hover {
+            color: #a5d6a7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
+            <div class="dropdown" id="dropdownMenu">
+                <a href="ghee_oil.html">GHEE & OILS</a>
+                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="pulses_dal.html">DALS & PULSES</a>
+                <a href="grains_cereals.html">GRAINS & CEREALS</a>
+                <a href="rice_millets.html">RICE & MILLETS</a>
+                <a href="fruits.html">FRUITS</a>
+                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
+                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+            </div>
+        </div>
+        <a href="over_story.html" class="overstory-link">OUR STORY</a>
+        <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
+         <a href="offers.html" class="offers">OFFERS</a>
+        <a href="contact.html" class="contact-link">CONTACT US</a>
+    </div>
+
+
+
+    <div class="banner">
+        <h1>FRESH FRUITS</h1>
+    </div>
+
+    <div class="main-container">
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit1.webp" class="img1">
+                <img src="./fruits/fruit1.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:240.00
+                <span>Rs:250.00</span>
+            </p>
+            <h3 class="price">Apple</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit2.webp" class="img1">
+                <img src="./fruits/fruit2.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:310.00
+                <span>Rs:330.00</span>
+            </p>
+            <h3 class="price">Pomegranate</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit3.webp" class="img1">
+                <img src="./fruits/fruit3.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:70.00
+                <span>Rs:90.00</span>
+            </p>
+            <h3 class="price">Banana</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit4.webp" class="img1">
+                <img src="./fruits/fruit4.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:140.00
+                <span>Rs:180.00</span>
+            </p>
+            <h3 class="price">Papaya</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <!-- Next row automatically -->
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit5.webp" class="img1">
+                <img src="./fruits/fruit5.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:150.00
+                <span>Rs:130.00</span>
+            </p>
+            <h3 class="price">Watermelon</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit6.jpg" alt="" class="img1">
+                <img src="./fruits/fruit6.jpg" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:1200.00
+                <span>Rs:1100.00</span>
+            </p>
+            <h3 class="price">Alphanso Mango</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit7.webp" alt="" class="img1">
+                <img src="./fruits/fruit7.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:125.00
+                <span>Rs:150.00</span>
+            </p>
+            <h3 class="price">Chickoo (sapota)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit8.webp" alt="" class="img1">
+                <img src="./fruits/fruit8.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:410.00
+                <span>Rs:200.00</span>
+            </p>
+            <h3 class="price">Orange Indian (Nagpur)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit9.webp" alt="" class="img1">
+                <img src="./fruits/fruit9.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:200.00
+                <span>Rs:250.00</span>
+            </p>
+            <h3 class="price">Muskmelon Kharbuja()</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit10.webp" alt="" class="img1">
+                <img src="./fruits/fruit10.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:225.00
+                <span>Rs:265.00</span>
+            </p>
+            <h3 class="price">Pear Indian</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit11.webp" alt="" class="img1">
+                <img src="./fruits/fruit11.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:110.00
+                <span>Rs:140.00</span>
+            </p>
+            <h3 class="price">Guava</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit12.webp" alt="" class="img1">
+                <img src="./fruits/fruit12.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:450.00
+                <span>Rs:500.00</span>
+            </p>
+            <h3 class="price">Blueberry (Imported)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit13.jpg" alt="" class="img1">
+                <img src="./fruits/fruit13.jpg" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:250.00
+                <span>Rs:350.00</span>
+            </p>
+            <h3 class="price">Strawberry Indian</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit14.webp" alt="" class="img1">
+                <img src="./fruits/fruit14.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:125.00
+                <span>Rs:150.00</span>
+            </p>
+            <h3 class="price">Sweet Lime (mosambi) </h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit15.webp" alt="" class="img1">
+                <img src="./fruits/fruit15.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:225.00
+                <span>Rs:265.00</span>
+            </p>
+            <h3 class="price">Pineapple Whole</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit16.webp" alt="" class="img1">
+                <img src="./fruits/fruit16.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:225.00
+                <span>Rs:275.00</span>
+            </p>
+            <h3 class="price">Kiwi Green Imported</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit17.jpg" alt="" class="img1">
+                <img src="./fruits/fruit17.jpg" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:700.00
+                <span>Rs:750.00</span>
+            </p>
+            <h3 class="price">Kesar Mango</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit18.webp" alt="" class="img1">
+                <img src="./fruits/fruit18.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:400.00
+                <span>Rs:450.00</span>
+            </p>
+            <h3 class="price">Avacoda Has Imported</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit19.webp" alt="" class="img1">
+                <img src="./fruits/fruit19.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:225.00
+                <span>Rs:275.00</span>
+            </p>
+            <h3 class="price">Dragon Fruit White Flesh</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./fruits/fruit20.webp" alt="" class="img1">
+                <img src="./fruits/fruit20.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:175.00
+                <span>Rs:200.00</span>
+            </p>
+            <h3 class="price">Valencia Orange Imported</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Jay Sudhanshu Chambers,<br>
+                        3rd Floor B wing Office No - 307,<br>
+                        Thane, Maharashtra, India 421301</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p>Kedia Organic Agro Farms brings pure, naturally grown groceries
+                    and farm-fresh produce to homes across Mumbai, Thane, and Navi Mumbai
+                    .Our range includes A2 Gir Cow Bilona Ghee, traditional flours, unpolished
+                    pulses, cold-pressed oils, raw honey, and seasonal fruits and vegetables—sourced
+                    responsibly from trusted farms.We work closely with small farmers and ethical growers,
+                    ensuring food that is clean, authentic, and full of natural goodness.Pure food. Trusted
+                    sourcing. Delivered fresh in Mumbai.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+
+    </footer>
+    <script>
+
+        function increase(btn) {
+            let value = btn.parentElement.querySelector("span");
+            let count = parseInt(value.innerText);
+            value.innerText = count + 1;
+        }
+
+        function decrease(btn) {
+            let value = btn.parentElement.querySelector("span");
+            let count = parseInt(value.innerText);
+
+            if (count > 0) {
+                value.innerText = count - 1;
+            }
+        }
+
+        function toggleDropdown() {
+            let menu = document.getElementById("dropdownMenu");
+
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+         function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+
+</html>

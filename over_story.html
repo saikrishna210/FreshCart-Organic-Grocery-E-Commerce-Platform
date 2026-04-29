@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .top-bar {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        background-color: #0b3d2e;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Search box */
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .search-box select {
+        border: none;
+        padding: 10px;
+        background: orange;
+        color: white;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 10px;
+        width: 250px;
+        outline: none;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 200px;
+        background-image: url("backimage.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+    }
+
+    .overlay p {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .overlay h1 {
+        color: #b6e36b;
+        /* light green like your image */
+        font-size: 40px;
+    }
+
+    .far {
+        text-align: center;
+        color: darkgreen;
+    }
+
+    .image-1,
+    .image-2,
+    .image-3,
+    .image-4 {
+        text-align: center;
+    }
+
+    .para-1,
+    .para-2,
+    .para-3,
+    .para-4,
+    .para-5,
+    .para-6 {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .details {
+        text-align: center;
+    }
+
+    form {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        border: 2px solid #0b4d2b;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 120px;
+        border-radius: 20px;
+    }
+
+    button {
+        background-color: #0b4d2b;
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    h1 {
+        text-align: center;
+        color: #0b4d2b;
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        background: #064e2c;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+    /* Top */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h2 {
+        margin: 0;
+    }
+
+    .newsletter input {
+        padding: 12px;
+        border-radius: 20px;
+        border: none;
+        width: 200px;
+    }
+
+    .newsletter button {
+        background: orange;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 20px;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Middle */
+    .footer-middle {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #f1f1f1;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        gap: 40px;
+        flex: 2;
+    }
+
+    .col h4 {
+        margin-bottom: 10px;
+    }
+
+    .col p {
+        margin: 5px 0;
+    }
+
+    .about-box {
+        background: #cfd8dc;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        flex: 1;
+    }
+
+    /* Bottom */
+    .footer-bottom {
+        margin-top: 20px;
+        text-align: center;
+        background: #d84315;
+        padding: 10px;
+    }
+
+    #form {
+        background-color: #d6cbb7;
+        padding: 50px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo">KEDIA ORGANIC</div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+    <div class="hero">
+        <div class="overlay">
+            <p>Home / Humans of KOAF</p>
+            <h1>HUMANS OF KOAF</h1>
+        </div>
+    </div>
+
+    <center>
+        <video width="600" height="500" controls>
+            <source src="./Nitara_Compressed_cef4bacb-3de2-4b30-8db2-b42c767e76c4.mp4">
+        </video>
+    </center>
+
+    <h1 class="far">Farming is OUR way of life</h1>
+    <div class="image-1">
+        <img src="./farm1.webp" alt="" height="500" width="600">
+    </div>
+    <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Mr. Dinesh Kedia ~ Crop Scientist, Plant Whisperer.
+    </p>
+
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Founder @Kedia Organics,
+        Chief Stock Broker @BSE, President @Lions Club of Kalyan.
+    </p>
+
+    <p class="para-1">
+        Say hi...<br>
+        “Namaste. I am Dinesh Kedia, 3rd generation Farmer from the Kedia Family Tree, & the
+        Founder of Kedia Organics. It’s very nice to meet you. When I was little, Pure & Desi food
+        was all I knew. Through my humble venture, I wish to bring back the same good old days
+        for our children and grandchildren. The love for farming runs in our Blood. My father and
+        his father before him were Farmers on small family land. But I always wished to go one
+        step further to share the goodness of Organic with you all. I have always preferred to
+        personally oversee the ongoings of our farms. I visit our Kalyan farm at 5:30 every
+        morning to check on our greens, instruct our farmers, delegate tasks to my family and
+        perform quality checks. Visit our Farm someday.<br>
+        I’ll be happy to take you on a tour myself.”<br>
+        Get to know him better..<br>
+        Our Lead Farmer is a Philanthropist Soul. He has a way with plants. Whatever he sows,
+        grows. Always! His idea for KOAF is simple- “We must share the bounties nature bestows
+        upon us. People should benefit from our produce, irrespective of profits.” KOAF is his life’s
+        work and he’s on a mission to share his love for Organic Food & truly help people lead a
+        healthier lifestyle.
+    </p>
+    <h1 style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Mr. Nitin Kedia ~ Master of Organic Arts, Chief Inspiration Officer.
+    </h1>
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Co-founder @Kedia Organics, Stock Broker @BSE, Farmer Educator
+    </p>
+
+    <p class="para-2">
+        Say hi...<br>
+        “Hi! I’m Nitin. It’s me you’ve been listening to all this while. (if you read Our Story) It’s great
+        to finally introduce myself. I’m the 4th generation farmer from the Kedia Family Tree and
+        the Co-founder of Kedia Organics. My journey can be described in 3 words: Finance to
+        Farming. My time in the U.K inspired me to look for a realistic solution to our problem of
+        Chemical Farming. I wanted to find ways to battle this toxic “conventional” method and
+        bring back the good old natural processes that helped our ancestors live a long and
+        disease-free life.<br>
+        My role at KOAF involves partnering with organic farms across India to make the best
+        organic produce available for our customers. It takes me across India to meet farmers and
+        educate them on the benefits of Organic & Primitive Growing Practices. 60% of the
+        conventional farmers we educated have switched to Organic farming. I consider that our
+        biggest achievement. This keeps me on the lookout for technologically advanced solutions
+        to make our farm, our produce, our service, and our partnerships a class-apart. I hope you
+        can now enjoy every meal knowing that your Family Farmers will grow only the best for
+        you.”<br>
+        Get to know him better..<br>
+        Our Lead Farmer is a Philanthropist Soul. He has a way with plants. Whatever he sows,
+        grows. Always! His idea for KOAF is simple- “We must share the bounties nature bestows
+        upon us. People should benefit from our produce, irrespective of profits.” KOAF is his life’s
+        work and he’s on a mission to share his love for Organic Food & truly help people lead a
+        healthier lifestyle.
+    </p>
+    <div class="image-2">
+        <img src="./farm2.webp" alt="" height="500" width="600"><br>
+        <img src="./farm3.webp" alt="" height="500" width="600">
+    </div>
+    <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Mrs. Prerana Kedia ~ Packaging Queen, Supply Chain Wizard.
+    </p>
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Co-founder @Kedia Organics ,Multi-tasking Super-mom.
+        Makes hard work look easy as a breeze.
+    </p>
+    <p class="para-3">
+        Say hi...<br>
+        “Hello. I’m Prerana. It’s lovely seeing you here. You guessed it right, like Nitin, I also have a
+        background in Finance with no formal training in Farming. But my husband & father-in-
+        law’s passion inspired me to learn more about it each day. After years of studying,
+        planning, and trial, I’ve created a system to ensure that your family receives only freshly
+        picked produce, packed safely and sustainably. My day to day duties involve coordinating
+        with partner farmers and obtaining the finest organic produce from farms across India. We
+        hate the idea of precious food going to waste, thus, I instruct our on-farm team & partners
+        to only harvest fresh quantities to fulfil everyday orders.<br>
+        These fresh batches go to our pack-house where we sanitize, pack, and dispatch your
+        order. We opt for eco-friendly & biodegradable packaging to reduce our Carbon Footprint.
+        Certifications, photography, and social media management also fall under my purview. It
+        brings me great joy to know that we are creating change, no matter the pace. Our family
+        proudly contributes to the Organic Slow-Food Revolution and we invite you to be a part of
+        our journey.”<br>
+        Get to know her better..<br>
+        Prerana exemplifies multi-tasking. She manages the Kedia House, her toddler, and the
+        Kedia Business like it were Sunday brunch! She plays a critical role in packaging, procuring
+        all our organic certifications, keeping up compliances, and creating systems that make
+        sure everything is done by the book. She is the brains behind our operation.
+    </p>
+    <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Mrs. Pooja Gupta ~ Master Influencer, President of Pep-talks.
+    </p>
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Successful Mom Boss. Makes BIG things happen.
+    </p>
+    <p class="para-4">
+        Say hi...<br>
+        “Hey! It’s Pooja Gupta. I’m so glad you’re here. You must think, Woah! What a family!.
+        I know. But farming isn’t simply tradition to us. It’s our Passion. It completes us in ways we
+        cannot fully describe. Naturally, Kedia Organics holds a special place in my heart. I was an
+        active member before my marriage, and I’ll always be.<br>
+        I manage Customer Relationships, and Influencer Marketing here & I feel proud to say that
+        some of the most loved celebrities are now regular clients. But it wouldn’t have been
+        possible without your support and love. Please feel free to reach out if you’d ever like to
+        partner with us, or simply get to know us.”<br>
+        Get to know her better.<br>
+        Pooja exudes confidence in everything she does. She pushes us to dream bigger. The way
+        she approaches people, forms genuine connections, and makes it happen; is simply
+        beyond us. Never afraid to experiment and go the extra mile. She’s effortlessly raising two
+        beautiful daughters, managing her affairs at home, and actively helping KOAF grow. If
+        that’s not the definition of a BAWSE, we don’t know what is.
+    </p>
+    <div class="image-3">
+        <img src="./farm4.webp" alt="" height="350" width="600"><br>
+        <img src="./farm5.webp" alt="" height="500" width="600">
+    </div>
+    <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Nitaraa Kedia ~ Chief Tasting Officer, Mulberry Specialist.
+    </p>
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Can run really fast around the farm and not get tired.<br>
+        Eats all her Greens. Picks the sweetest Mulberries.
+    </p>
+    <p class="para-4">
+        Say hi...<br>
+        “Hi! I’m Nitaraa. And you? I see that you’re here to say hello. Do you like Mulberries? I love
+        them very much. They are the best thing about our farm. So yummy! I think you should try
+        them. And mom says you should always eat your greens. So try those too. I pluck them on
+        my own when I’m at the farm, and we cook them together. Oh! You haven’t met Ruby! She
+        is the best dog in the world and we love her the most. Will you come to visit our farm? I’ll
+        show you our mulberry bushes and introduce you to Ruby. I promise she won’t bark. See,
+        how cute."
+    </p>
+    <h1 style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        ~ Chief Barking Officer.
+    </h1>
+    <p class="para-5">
+        Wuuf! I’m Ruby. I have 12 yrs old of experience barking at strange outsiders and keeping
+        our farm safe. Nitaraa is my best friend and I love her to bones! If she says you can visit
+        our farm.<br>
+        Get to know the dynamic duo..<br>
+        Nitaraa is our 4.5-year-old Chief Taster. She checks the quality of all our fruits by taking
+        bites out of freshly plucked produce. Nothing gets dispatched without her approval. She
+        has a fascination for our Cows and loves to talk to them. She also lectures us about how to
+        farm better! ~ Making of a CEO right here.<br>
+        Nitaraa and Ruby are the biggest entertainment on the farm. Ruby loves to bask in the sun
+        and scare pests away. Follows Nitaraa everywhere and is extremely protective of her. She
+        guards the farm 24x7 and has proven to be the best security system. Ever.
+    </p>
+    <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
+        Mrs. Madhu Dinesh Kedia ~ Director of Dairy, Chief of Ghee.
+    </p>
+
+    <p style="color:green; font-size:20px; font-weight: bold; text-align:center;">
+        Accomplishments: Successful Mom Boss. Makes BIG things happen.
+    </p>
+    <p class="para-6">
+        Say hi...<br>
+        “Namastey. I’m Madhu Kedia. So happy to welcome you here. I’m glad you’re eating right.<br>
+        But, I believe Organic Food is incomplete without Rich Dairy. As a child, I learned age-old
+        Dairy secrets passed on to my mother by hers, and hers before that. I’ve used that
+        knowledge to further perfect our Dairy formulations. I’m sure you’ll fall in love at first bite-
+        because our Ghee, Makkhan, Paneer, and White Butter are made with the Purity of Gir
+        Cow Milk & the Richness of History. Write to us and tell us what you think."
+
+        Get to know her better..<br>
+        The boss of our boss quietly gets her work done. Despite being a homely soul she is
+        extremely dedicated to our cause. Thin-Ghee problems? We don’t have them, thanks to
+        her.She’s perfected the formula for the Richest Danedar Ghee ever! You have to taste it to
+        know what we mean.
+    </p>
+    <div class="image-4">
+        <img src="./Vanajangi.jpg" alt="" height="400" width="500">
+    </div>
+    <div class="details">
+        <h1 style="color:green">Contact US</h1>
+        <h2 style="color:green">📞Phone & WhatsApp Support</h2>
+        <h4>+91 9640546718</h4>
+        <h4>chundrusai2004@gmail.com</h4>
+        <h4>Monday to Saturday · 10:00 AM – 6:00 PM</h4>
+    </div>
+
+    <div id="form">
+        <h1>Contact form</h1>
+        <form>
+            <div class="row">
+                <input type="text" placeholder="Full name *">
+                <input type="email" placeholder="Email *">
+            </div>
+            <input type="tel" placeholder="Phone number">
+            <textarea placeholder="Add a message *"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Jay Sudhanshu Chambers,<br>
+                        3rd Floor B wing Office No - 307,<br>
+                        Thane, Maharashtra, India 421301</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p><b>Kedia Organic Agro Farms</b> Discover a trusted source for organic groceries, fresh produce, and
+                    wellness essentials. From A2 Gir Cow Ghee to farm-fresh fruits and raw honey—everything is
+                    sustainably sourced and chemical-free.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+
+    </footer>
+
+
+    </div>
+</body>
+
+</html>

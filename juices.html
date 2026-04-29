@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: whitesmoke;
+    }
+
+    .top-bar {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        background-color: #0b3d2e;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Search box */
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .search-box select {
+        border: none;
+        padding: 10px;
+        background: orange;
+        color: white;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 10px;
+        width: 250px;
+        outline: none;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+
+    .banner {
+        background-color: #b7d3b1;
+        padding: 40px 40px;
+        margin-bottom: 20px;
+    }
+
+    .banner h1 {
+        color: #063d2b;
+        font-size: 40px;
+    }
+
+    .main-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 per row */
+        gap: 20px;
+        padding: 20px;
+        /* background:#e6c9a8; */
+    }
+
+    .product-card {
+        text-align: center;
+    }
+
+    /* 🔹 Product container */
+    .product {
+        width: 100%;
+        height: 220px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        background: white;
+    }
+
+    /* 🔹 Images */
+    .product img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    /* 🔹 Second image hidden */
+    .product .img2 {
+        transform: translateY(250px);
+    }
+
+    /* 🔥 Hover effect */
+    .product:hover .img2 {
+        transform: translateY(0);
+    }
+
+    .product:hover .img1 {
+        transform: translateY(250px);
+    }
+
+    .price {
+        font-weight: bold;
+        margin: 10px 0;
+    }
+
+    .price span {
+        text-decoration: line-through;
+        color: gray;
+        margin-left: 10px;
+    }
+
+    h3 {
+        margin: 5px 0;
+    }
+
+    /* 🔥 BUTTON FIX */
+    button {
+        background: green;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    /* 🔥 QTY FIX */
+    .qty {
+        margin-top: 10px;
+    }
+
+    .qty button {
+        padding: 5px 10px;
+        background: lightgray;
+        color: black;
+    }
+    
+</style>
+
+<body>
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo">KEDIA ORGANIC</div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>COLD PRESSED JUICES</h1>
+    </div>
+
+    
+    <div class="main-container">
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice1.webp" alt="">
+                <img src="./juices/juiceone.webp" alt="">
+            </div>
+            <p class="price">
+                From Rs:500.00
+                <span>Rs:600.00</span>
+            </p>
+            <h3 class="price">Adulsa Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice2.webp" class="img1">
+                <img src="./juices/juicetwo.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:600.00
+                <span>Rs:700.00</span>
+            </p>
+            <h3 class="price">Alovera Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice3.webp" class="img1">
+                <img src="./juices/juicethree.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:600.00
+                <span>Rs:500.00</span>
+            </p>
+            <h3 class="price">Amla Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice4.webp" class="img1">
+                <img src="./juices/juicefour.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:600.00
+                <span>Rs:500.00</span>
+            </p>
+            <h3 class="price">Ashwagandha Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice5.webp" class="img1">
+                <img src="./juices/juicefive.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:500.00
+                <span>Rs:600.00</span>
+            </p>
+            <h3 class="price">Costus Igneus Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice6.webp" class="img1">
+                <img src="./juices/juicesix.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:600.00
+                <span>Rs:700.00</span>
+            </p>
+            <h3 class="price">Papaya Leaf Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice7.webp" class="img1">
+                <img src="./juices/juiceseven.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:500.00
+                <span>Rs:600.00</span>
+            </p>
+            <h3 class="price">Tulsi Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product">
+                <img src="./juices/juice8.webp" class="img1">
+                <img src="./juices/juice8.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:600.00
+                <span>Rs:700.00</span>
+            </p>
+            <h3 class="price">Wheatgrass Cold Pressed Juice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>0</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+
+        
+        <script>
+
+            function increase(btn) {
+                let value = btn.parentElement.querySelector("span");
+                let count = parseInt(value.innerText);
+                value.innerText = count + 1;
+            }
+
+            function decrease(btn) {
+                let value = btn.parentElement.querySelector("span");
+                let count = parseInt(value.innerText);
+
+                if (count > 0) {
+                    value.innerText = count - 1;
+                }
+            }
+        </script>
+</body>
+
+</html>

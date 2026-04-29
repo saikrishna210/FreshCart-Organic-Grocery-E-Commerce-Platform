@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kedia Header</title>
+
+    <style>
+        /* Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 🔶 Top Bar */
+        .top-bar {
+            background: #d35400;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* 🟩 Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0b4d2b;
+            padding: 12px 20px;
+        }
+
+        /* Logo */
+        .logo {
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* Search Section */
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            width: 40%;
+        }
+
+        /* Category Button */
+        .category-btn {
+            background: #e65100;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        /* Input */
+        .search-container input {
+            border: none;
+            outline: none;
+            padding: 10px;
+            width: 100%;
+        }
+
+        /* Clear Text */
+        .clear {
+            padding: 0 10px;
+            color: gray;
+            cursor: pointer;
+        }
+
+        /* Right Section */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* 🟢 Navbar */
+        .navbar {
+            display: flex;
+            gap: 25px;
+            background: #063d24;
+            padding: 12px 20px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .navbar div {
+            cursor: pointer;
+        }
+
+        .navbar div:hover {
+            color: #a5d6a7;
+        }
+
+        /* Bottom Info Bar */
+        .info-bar {
+            display: flex;
+            justify-content: space-around;
+            background: #e8f5e9;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .navbar {
+            background: #063d24;
+            padding: 15px 20px;
+            color: white;
+        }
+
+        /* Menu item */
+        .menu-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #eee;
+            width: 400px;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        /* Links */
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 0;
+        }
+
+        .dropdown a:hover {
+            color: green;
+        }
+
+        .overstory-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .farmers {
+            color: white;
+            text-decoration: none;
+        }
+        .offers{
+            color: white;
+            text-decoration: none;
+        }
+        .contact-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Card */
+        .card {
+            display: flex;
+            width: 1200px;
+            height: 450px;
+            border-radius: 25px;
+            overflow: hidden;
+            background: #f2f2f2;
+        }
+
+        /* Left Image */
+        .card-left {
+            position: relative;
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .card-left video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Overlay text */
+        .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Right Content */
+        .card-right {
+            width: 50%;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-right h2 {
+            font-size: 16px;
+            color: #0b4d2b;
+        }
+
+        .small {
+            font-size: 20px;
+            color: #e65100;
+        }
+
+        /* Button */
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #0b4d2b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            justify-content: center;
+        }
+
+        .hero {
+            position: relative;
+            width: 70%;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            color: white;
+        }
+
+        .badge {
+            background: #e65100;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #a5d6a7;
+        }
+
+        .hero button {
+            background: #e65100;
+            border: none;
+            padding: 12px 20px;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .offer-card {
+            width: 30%;
+            background: #0b4d2b;
+            border-radius: 20px;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+
+        .offer-header {
+            position: relative;
+        }
+
+        .offer-header h2 {
+            font-size: 18px;
+        }
+
+        .tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #a5d6a7;
+            color: #063d24;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .offer-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .outline-btn {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .mega-menu {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 90vw;
+            background: #eee;
+            z-index: 9999;
+            /* 🔥 this is key */
+        }
+
+        #shop {
+            text-align: center;
+            position: relative;
+        }
+
+        #images {
+            display: flex;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+            padding-left: 100px;
+        }
+
+        .details {
+            color: white;
+        }
+
+        .mainone {
+            text-align: center;
+            background-color: #c3cec3;
+        }
+
+        .mainone {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mainone a {
+            text-decoration: none;
+        }
+
+        .mainone .buttons {
+            margin: 10px;
+        }
+
+        .h1text {
+            padding-top: 80px;
+            text-align: center;
+            align-items: center;
+            color: #0b3d2e;
+        }
+
+        .buttons {
+            border-radius: 40px;
+            display: flex;
+        }
+
+        .maintwo {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card-one {
+            position: relative;
+            width: 50%;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .card-one img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-one::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: white;
+            z-index: 2;
+            width: 70%;
+        }
+
+        .overlay h2 {
+            font-size: 30px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .overlay h3 {
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        .overlay span {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .overlay p {
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #a6e16a;
+            color: #0b3d2e;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            z-index: 2;
+        }
+
+        .bottom-link {
+            position: absolute;
+            bottom: 15px;
+            left: 30px;
+            color: #000;
+            font-size: 16px;
+            text-decoration: underline;
+            z-index: 2;
+        }
+
+        .card-one:hover img {
+            transform: scale(1.05);
+            transition: 0.4s;
+        }
+
+
+        .slider {
+            position: relative;
+            width: 90%;
+            margin: auto;
+        }
+
+        /* visible area */
+        .slider-window {
+            overflow: hidden;
+            /* 🔥 MUST */
+        }
+
+        /* moving track */
+        .slider-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        /* cards */
+        .card-1 {
+            min-width: 300px;
+            /* width of each image */
+            height: 300px;
+            margin: 0 10px;
+        }
+
+        .card-1 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        /* arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #0b4d2b;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 18px;
+            z-index: 10;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 50px;
+            padding: 40px;
+        }
+
+        /* Image */
+        .product-image img {
+            width: 600px;
+            border-radius: 10px;
+        }
+
+        /* Details */
+        .product-details {
+            max-width: 500px;
+        }
+
+        .brand {
+            font-size: 12px;
+            color: gray;
+        }
+
+        .product-details h1 {
+            font-size: 32px;
+            color: #0b4d2b;
+        }
+
+        /* Price */
+        .price-section {
+            margin: 15px 0;
+        }
+
+        .price {
+            color: #e65100;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .offer {
+            /* background: #c5e1a5; */
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+
+        /* Size */
+        .size-section {
+            margin-top: 20px;
+        }
+
+        .size {
+            border: 1px solid #0b4d2b;
+            background: transparent;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .size.active {
+            background: #0b4d2b;
+            /* color: white; */
+        }
+
+        /* Quantity */
+        .quantity-section {
+            margin-top: 20px;
+        }
+
+        .quantity-box {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            padding: 5px 15px;
+        }
+
+        .quantity-box button {
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .quantity-box span {
+            margin: 0 15px;
+        }
+
+        /* Button */
+        .cart-btn {
+            margin-left: 20px;
+            padding: 12px 25px;
+            background: #e65100;
+            border: none;
+            /* color: white; */
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+
+        /* Section */
+        .combos {
+            display: flex;
+            gap: 30px;
+            padding: 30px;
+            justify-content: center;
+        }
+
+        /* Card */
+        .combo-1 {
+            width: 350px;
+        }
+
+        /* Image */
+        .combo-1 img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        /* Button */
+        .off2 {
+            width: 100%;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 25px;
+            border: 2px solid #0b4d2b;
+            background: transparent;
+            color: #0b4d2b;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hover */
+        .off2:hover {
+            background: #0b4d2b;
+            color: white;
+        }
+
+
+
+        
+        .scrool-1 {
+            padding: 40px 0;
+            background: #e6efe8;
+        }
+        .scrool-2 {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            width: calc(200px *10);
+        }
+        .scrool-2 img {
+            width: 200px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 20px;
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        
+        .footer {
+            background: #064e2c;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        /* Top */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            margin: 0;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            width: 200px;
+        }
+
+        .newsletter button {
+            background: orange;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Middle */
+        .footer-middle {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f1f1f1;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            flex: 2;
+        }
+
+        .col h4 {
+            margin-bottom: 10px;
+        }
+
+        .col p {
+            margin: 5px 0;
+        }
+
+        .about-box {
+            background: #cfd8dc;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            background: #d84315;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+
+        <!-- Logo -->
+        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+
+        <!-- Search -->
+        <div class="search-container">
+            <button class="category-btn">All Categories</button>
+            <input type="text" placeholder="Search">
+            <div class="clear">Clear</div>
+        </div>
+
+        <!-- Right -->
+        <div class="header-right">
+            <div> <a href="contact.html" class="details">📞 HOW CAN WE HELP?</a></div>
+            <div>🛒</div>
+            <div>👤</div>
+        </div>
+
+    </div>
+
+    <!-- 🟢 Navbar -->
+    <div class="navbar">
+        <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
+            <div class="dropdown" id="dropdownMenu">
+                <a href="ghee_oil.html">GHEE & OILS</a>
+                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="pulses_dal.html">DALS & PULSES</a>
+                <a href="grains_cereals.html">GRAINS & CEREALS</a>
+                <a href="rice_millets.html">RICE & MILLETS</a>
+                <a href="fruits.html">FRUITS</a>
+                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
+                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <!-- </div> -->
+            </div>
+        </div>
+        <a href="over_story.html" class="overstory-link">OUR STORY</a>
+        <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
+        <a href="offers.html" class="offers">OFFERS</a>
+        <a href="contact.html" class="contact-link">CONTACT US</a>
+    </div>
+
+    <!-- Info Bar -->
+    <div class="info-bar">
+        <div>🌿 100% Farm Fresh Produce</div>
+        <div>⚡ COD & Secure UPI Payments Available</div>
+        <div>✅ Guaranteed Purity, No Adulteration</div>
+        <div>🚫 No Chemicals. No Preservatives</div>
+    </div>
+
+    </div>
+    <center>
+        <div class="card">
+            <!-- Left Image -->
+            <div class="card-left">
+                <video autoplay muted loop>
+                    <source src="./mangovideo.mp4">
+                    your browser does not support video.
+                </video>
+                <div class="overlay-text">Carbide & chemical free</div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="card-right">
+                <h1>Farm Fresh Alphonso Mangoes Delivered to You</h1>
+                <p class="small">Handpicked from Devgad & Ratnagiri</p>
+                <p class="small">Naturally Sweet. 100% Chemical Free.</p>
+                <a href="mangoes.html"><button>Order Fresh Mangoes</button></a>
+            </div>
+        </div>
+        </div>
+    </center>
+
+    <div class="container">
+
+        <!-- LEFT HERO -->
+        <div class="hero">
+
+            <img src="./organic_farming.png" alt="farm">
+
+            <div class="hero-content">
+                <span class="badge">Super Deals</span>
+
+                <h1>
+                    Fresh From the Farm <br>
+                    <span>Eat Clean. Live Pure.</span>
+                </h1>
+
+                <button>Shop Fresh Staples</button>
+            </div>
+
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="offer-card">
+
+            <div class="offer-header">
+                <h2>Up to 30% OFF on Fruits & Vegetables</h2>
+
+                <div class="tag">DEALS<br>EVERY<br>WEEK!</div>
+            </div>
+
+            <img src="./group_of_images/vegetables.jpg" alt="fruits">
+
+            <!-- <a href="./fruits.html"></a><button class="outline-btn"  >View Offers</button> -->
+            <button><a href="vegetables.html" class="outline-btn">View Offers</a></button>
+        </div>
+    </div>
+
+    <h3 id="shop">Shop By Category</h3>
+    <div id="images">
+        <a href="vegetables.html"><img src="./group_of_images/vegetables.jpg" alt="" width="200" height="200"></a>
+        <a href="fruits.html"><img src="./group_of_images/fruits.webp" alt="" width="200" height="200"></a>
+        <a href="ghee_oil.html"><img src="./group_of_images/oils.webp" alt="" width="200" height="200"></a>
+        <a href="pulses_dal.html"><img src="./group_of_images/pulses.webp" alt="" width="200" height="200"></a>
+        <a href="juices.html"><img src="./group_of_images/cold_pressed_juices.webp" alt="" width="200" height="200"></a>
+    </div>
+    <div class="mainone">
+        <h1 class="h1text">Top Picks For You - Chemical- Free, Fresh & Farm-<br>Trusted</h1>
+        <a href="ghee_oil.html"><button class="buttons">☀️Super Deals</button></a>
+        <a href="juices.html"><button class="buttons">Kedia Essentials</button></a>
+        <a href=""><button class="buttons">Farm FreshPicks</button></a>
+        <a href=""><button class="buttons">Immunity & Wellness</button></a>
+    </div>
+
+    <div class="maintwo">
+        <!-- LEFT CARD -->
+        <div class="card-one">
+            <img src="./fruits_vege.avif" alt="">
+
+            <div class="overlay">
+                <h2>Fresh Picks, Local & Seasonal</h2>
+                <h3>Upto <span>30%</span> Off</h3>
+            </div>
+
+            <div class="badge">DEALS<br>EVERY<br>WEEK!</div>
+
+            <a href="vegetables.html">
+                <div class="bottom-link">Shop Fresh Produce</div>
+            </a>
+        </div>
+        <!-- RIGHT CARD -->
+        <div class="card-one">
+            <img src="./dalimage.jpg" alt="">
+
+            <div class="overlay">
+                <h2>Chemical-Free grains, spices & pantry staples</h2>
+                <h3>Upto <span>40%</span> Off</h3>
+                <p>Grocery Essentials</p>
+            </div>
+
+            <a href="kitchen_essentails.html">
+                <div class="bottom-link">Buy Now →</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="slider-section">
+        <h2 style="text-align: center;color:green;">Most Ordered This Month</h2>
+        <div class="slider">
+            <!-- Left Arrow -->
+            <button class="arrow left" onclick="moveLeft()">❮</button>
+            <!-- 👇 VIEW WINDOW -->
+            <div class="slider-window">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Add all 10 images here -->
+                    <div class="card-1"><img src="./order1.webp"></div>
+                    <div class="card-1"><img src="./order2.webp"></div>
+                    <div class="card-1"><img src="./order3.webp"></div>
+                    <div class="card-1"><img src="./order4.webp"></div>
+                    <div class="card-1"><img src="./order5.webp"></div>
+                    <div class="card-1"><img src="./order6.webp"></div>
+                    <div class="card-1"><img src="./order7.webp"></div>
+                    <div class="card-1"><img src="./order8.webp"></div>
+                </div>
+                <!-- Right Arrow -->
+                <button class="arrow right" onclick="moveRight()">❯</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2 style="text-align: center; color: #0b3d2e;">MOST LOVED</h2>
+    <div class="product-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="product-image">
+            <img src="./high.webp" alt="Ghee">
+        </div>
+
+        <!-- RIGHT DETAILS -->
+        <div class="product-details">
+
+            <p class="brand">KEDIA ORGANIC AGRO FARMS</p>
+
+            <h1>
+                A2 Gir Cow Vedic Bilona Danedar Ghee -
+                100 % Natural & Farm Fresh
+            </h1>
+
+            <!-- PRICE -->
+            <div class="price-section">
+                <span class="price">Rs. 800.00</span>
+                <span class="old-price">Rs. 1,000.00</span>
+                <span class="offer">20% Off</span>
+            </div>
+
+            <p class="tax">Taxes included. <u>Shipping</u> calculated at checkout.</p>
+
+            <!-- SIZE -->
+            <div class="size-section">
+                <p>Size</p>
+                <button class="size active">250 ML</button>
+                <button class="size">500 ML</button>
+                <button class="size">500 ML X 2 [1000 ML]</button>
+            </div>
+
+            <!-- QUANTITY -->
+            <div class="quantity-section">
+                <p>Quantity</p>
+
+                <div class="quantity-box">
+                    <button onclick="decrement()">-</button>
+                    <span id="qty">1</span>
+                    <button onclick="increment()">+</button>
+                </div>
+
+                <button class="cart-btn">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 style="text-align: center; color: green;">Better Together: Farm-Fresh Combos</h2>
+    <div class="combos">
+        <div class="combo-1">
+            <img src="./offer1.png" alt="">
+            <a href="rice_millets.html"><button class="off2">View More Options</button></a>
+        </div>
+
+        <div class="combo-1">
+            <img src="./offer2.png" alt="">
+            <a href="vegetables.html"><button class="off2">Make First Purchases</button></a>
+        </div>
+
+        <div class="combo-1">
+            <img src="./offer3.png" alt="">
+            <a href="ghee_oil.html"><button class="off2">Checkout Deals For You</button></a>
+        </div>
+    </div>
+
+    <h2 style="color: green; text-align: center;">As Featured In & Certified By</h2>
+    <div class="scrool-1">
+        <div class="scrool-2">
+            <img src="./scrool1.webp" alt="">
+            <img src="./scrool2.webp" alt="">
+            <img src="./scrool3.avif" alt="">
+            <img src="./scrool4.webp" alt="">
+            <img src="./scrool5.avif" alt="">
+
+            <img src="./scrool1.webp" alt="">
+            <img src="./scrool2.webp" alt="">
+            <img src="./scrool3.avif" alt="">
+            <img src="./scrool4.webp" alt="">
+            <img src="./scrool5.avif" alt="">
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <!-- Top Section -->
+        <div class="footer-top">
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <a href=""><button>Subscribe</button></a>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Near Veterinary Hospital<br>
+                        3-10, Mandapaka, Tanuku<br>
+                        West Godavari, Andhra Pradesh, India 534218</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p>Kedia Organic Agro Farms brings pure, naturally grown groceries
+                    and farm-fresh produce to homes across Mumbai, Thane, and Navi Mumbai
+                    .Our range includes A2 Gir Cow Bilona Ghee, traditional flours, unpolished
+                    pulses, cold-pressed oils, raw honey, and seasonal fruits and vegetables—sourced
+                    responsibly from trusted farms.We work closely with small farmers and ethical growers,
+                    ensuring food that is clean, authentic, and full of natural goodness.Pure food. Trusted
+                    sourcing. Delivered fresh in Mumbai.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        let index = 0;
+        function moveRight() {
+            const track = document.getElementById("sliderTrack");
+            const cards = document.querySelectorAll(".card-1");
+
+            let visibleCards = Math.floor(document.querySelector(".slider-window").offsetWidth / 270);
+
+            if (index < cards.length - visibleCards) {
+                index++;
+                track.style.transform = `translateX(-${index * 320}px)`;
+            }
+        }
+        function moveLeft() {
+            const track = document.getElementById("sliderTrack");
+
+            if (index > 0) {
+                index--;
+                track.style.transform = `translateX(-${index * 320}px)`;
+            }
+        }
+
+
+
+        let count = 1;
+
+        function increment() {
+            count++;
+            document.getElementById("qty").innerText = count;
+        }
+
+        function decrement() {
+            if (count > 1) {
+                count--;
+                document.getElementById("qty").innerText = count;
+            }
+        }
+
+
+
+        /* Size selection */
+        const sizes = document.querySelectorAll(".size");
+
+        sizes.forEach(btn => {
+            btn.addEventListener("click", () => {
+                sizes.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

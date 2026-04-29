@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .top-bar {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        background-color: #0b3d2e;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Search box */
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .search-box select {
+        border: none;
+        padding: 10px;
+        background: orange;
+        color: white;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 10px;
+        width: 250px;
+        outline: none;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+
+    .hero {
+        height: 200px;
+        background-image: url("backimage.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+    }
+
+    .overlay p {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .overlay h1 {
+        color: #b6e36b;
+        /* light green like your image */
+        font-size: 40px;
+    }
+
+    .image-1{
+        text-align: center;
+    }
+    .image-1>.farm-1 {
+        border-radius: 15px;
+    }
+    .image-2{
+        text-align: center;
+    }
+    .image-2>.farm-2{
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    .image-3{
+        text-align: center;
+    }
+    .image-3>.farm-3{
+        border-radius: 15px;
+        margin-left: 100px;
+    }
+    .image-4{
+        text-align: center;
+    }
+    .image-4>.farm-4{
+        border-radius: 15px;
+        margin-bottom: 20px;
+    }
+    .image-5{
+        text-align: center;
+    }
+    .image-5>.farm-5{
+        border-radius: 15px;
+    }
+    .image-6{
+        text-align: center;
+    }
+    .text{
+        color: green;
+        text-align: center;
+    }
+    .text-2{
+        color:#d35400;
+        padding-left: 320px;
+    }
+    .para-1, .para-2, .para-3, .para-4, .para-5, .para-6, .para-7, .para-8, .para-9, .para-10, .para-11, .para-12, .para-13, .para-14, .para-15, .para-16{
+        text-align: center;
+        line-height: 1;
+    }
+    .details {
+        text-align: center;
+    }
+     form {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        border: 2px solid #0b4d2b;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 120px;
+        border-radius: 20px;
+    }
+
+    button {
+        background-color: #0b4d2b;
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    h1 {
+        text-align: center;
+        color: #0b4d2b;
+        margin-bottom: 30px;
+    }
+     #form {
+        background-color: #d6cbb7;
+        padding: 50px;
+        text-align: center;
+    }
+    .footer {
+        background: #064e2c;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+    /* Top */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h2 {
+        margin: 0;
+    }
+
+    .newsletter input {
+        padding: 12px;
+        border-radius: 20px;
+        border: none;
+        width: 200px;
+    }
+
+    .newsletter button {
+        background: orange;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 20px;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Middle */
+    .footer-middle {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #f1f1f1;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        gap: 40px;
+        flex: 2;
+    }
+
+    .col h4 {
+        margin-bottom: 10px;
+    }
+
+    .col p {
+        margin: 5px 0;
+    }
+
+    .about-box {
+        background: #cfd8dc;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        flex: 1;
+    }
+    /* Bottom */
+    .footer-bottom {
+        margin-top: 20px;
+        text-align: center;
+        background: #d84315;
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+    <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo">KEDIA ORGANIC</div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="overlay">
+            <p>Home / Happy Farmers</p>
+            <h1>HAPPY FARMERS</h1>
+        </div>
+    </div>
+
+    <div class="image-1">
+        <img src="./hap_far/image1.webp" alt="" height="220px" width="600px" class="farm-1">
+    </div>
+
+    <h1 class="text">
+        <big>Meet The Happy Farmers <br>Who Grow Your Food:</big>
+    </h1>
+    <h2 class="text-2">Gauri Aaji, from Murbad.</h2>
+    <div class="para-1">
+        <p>Meet Aaji, the 86 year old expert Organic Farmer at KOAF</p>
+        <p>Aaji has spent close to six decades on the field and is practically an organic farming</p>
+        <p>celebrity for us. Like any elder of the family, she creates a homely environment on the</p>
+        <p>farm. She guides, commands, and keeps everyone together. Ever since she</p>
+        <p>joined us, she took the farm under her wing and made it what it is today. She’s a highly confident</p>
+        <p>and experienced asset on the field and in the training area. Her forte is helping novice farmers</p>
+        <p>learn the art and science of Organic Farming.</p>
+    </div>
+
+    <div class="para-2">
+        <p>“I belonged to a very strict family. Women were not supposed to work out of the house.</p>
+        <p>Kedia Organics gave me total freedom to follow my heart and take important decisions on </p>
+        <p>the farm. They take care of all the little things for me. Gardening is my hobby so they’ve</p>
+        <p>even given me a patch of land where I can have my own little garden.”</p>
+    </div>
+
+    <div class="para-3">
+        <p>Aaji believes that a healthy lifestyle begins with healthy & organic food. If you ask her the</p> 
+        <p>secret to her long & healthy life, she’ll tell you, “It’s what I ate growing up. I cooked millets </p>
+        <p>like ragi, jowar, and bajra in a mud pot with water, mixed it with curd, and had it with</p>
+        <p>crunchy onions & green chillies”. Aaji also travels alone to meet other farmers and teach</p>
+        <p>them the nuances of organic farming. She wishes to spread the organic slow food</p>
+        <p>revolution till the day she can stand on her own two feet. “Even today, I wake up before the</p> 
+        <p>sun, wash my face, and go around the village once. I cannot sit still. I don’t believe that age</p>
+        <p>can be the barrier to anything and always remember that there can never be a substitute</p>
+        <p>for hard work.”</p>
+    </div>
+
+    <div class="para-4">
+       <p>“माझी मलु ेखपू नाव कमावत” ~ She works at this age to set an example for her grandchildren.</p>
+        <p>She wants them to study really hard and be successful in life.</p>
+    </div>
+
+    <div class="image-2">
+        <img src="./hap_far/image2.webp" alt="" height="350" width="550" class="farm-2">
+    </div>
+
+    <div class="image-3">
+        <img src="./hap_far/image3.webp" alt="" height="250" width="350" class="farm-3">
+    </div>
+
+    <h2 class="text-2">Gauri Aaji, from Murbad.</h2>
+
+    <div class="para-5">
+        <p style="padding-left:0px;">Meet the legend, who has served KOAF for 20+ years.</p>
+        <p>He’s been dedicated & true to organic farming this entire time. Kaka is a master</p>
+        <p>multitasker.</p>
+    </div>
+
+    <div class="para-6">
+        <p>His expertise is ‘Hand Weeding’ but he also handles Plantation, Irrigation, and helps us</p>
+        <p>perfectly train younger farmers. He’s our in-house forecaster & very own ‘Google Chacha’.</p>
+    </div>
+
+    <div class="para-7">
+        <p>Always has the perfect solution to all our farming problems. Who needs technology when</p> 
+        <p>we’ve got him? Kaka’s truly a God-sent. His deep understanding of soil and climatic</p> 
+        <p>conditions surprises us every time! Apart from his usual duties, he also takes care of the</p>
+        <p>cows and makes sure they are well-fed, clean, and comfortable.</p>
+    </div>
+
+    <center>
+        <video height="500" width="600" controls>
+            <source src="./hap_far/Happy_Farmers_Compressed.mp4">
+        </video>
+    </center>
+
+    <h2 class="text-2">Usha Tai, from Kolam Gaon.</h2>
+
+    <div class="para-8">
+       <p>Meet Usha Tai, a highly accomplished farmer and a great mother to 3 daughters. Yet</p>
+       <p>another female farmer at KOAF who is an inspiration to all womenfolk. She’s an expert at</p> 
+       <p>organic cultivation of Turmeric, Sweet potato, Ginger, and Spring Onions. Tai has set the</p>
+       <p>standard pretty high for all our farmers by not missing a single day of work in ____ years!</p>
+    </div>
+
+    <div class="para-9">
+        <p>“KOAF helps me sell my produce at the best prices. They’ve made a small cabin for my</p>
+        <p>family to live at the farm and also help my daughters with school supplies. We are quite</p>
+        <p>happy and secure now, but it’s my dream to have a house of my own someday. I will</p>
+        <p>continue to work hard every day to provide the best future for my family." With her tireless</p>
+        <p>dedication and devotion to farming, Usha Tai ensures that pure organic food reaches as</p> 
+        <p>many Indian households as possible.</p>
+    </div>
+
+    <div class="image-4">
+        <img src="./hap_far/image4.webp" alt="" height="250" width="350" class="farm-4">
+    </div>
+
+    <div class="image-5">
+        <img src="./hap_far/image5.webp" alt="" height="250" width="350" class="farm-5">
+    </div>
+
+     <h2 class="text-2">Jay, from Assam.</h2>
+
+     <div class="para-10"> 
+        <p>Meet Jay, the youngest farmer at KOAF who migrated to Mumbai looking for a fulfilling</p>
+        <p>opportunity. With his exceptional skills and an appetite to learn, he has successfully</p>
+        <p>become an integral part of our family. Growing up in Assam gave him an upper hand in the</p>
+        <p>best organic farming practices.</p>
+     </div>
+
+     <div class="para-11">
+       <p>He specializes in cultivating Immunity boosters- Wheatgrass, Microgreens, and all kinds of</p> 
+       <p>Leafy Vegetables. Jay’s forte is cultivating top-notch produce in the toughest of</p> 
+       <p>conditions. With his modern skills and unique techniques, he solves even the most</p> 
+       <p>arduous challenges.</p>
+     </div>
+
+     <div class="para-12">
+        <p>“KOAF has embraced me as one of their own. I stay here with my mom and brother. We</p>
+        <p>have access to organic food, shelter, and medical aid. I feel secure, my hard work is</p>
+        <p>always appreciated, and we have a big family at the farm. What else can one ask for?” Jay</p>
+        <p>is highly motivated and works very hard to support his brother’s higher studies.</p>
+     </div>
+
+     <h2 class="text-2">Rupesh, from Rayata Gaon.</h2>
+
+     <div class="para-13">
+        <p>Meet Rupesh, a loyal member of the KOAF family. He’s been with us for more than 5 years.</p>
+        <p>His brother Pravin is the head Gau Sevak here. Rupesh manages the farm and runs a very</p> 
+        <p>tight ship. Nothing slips past him. “I love my job. I am a bit particular, but a farm this size</p> 
+        <p>has to be managed well, and that requires me to be very careful." He keeps everyone in</p>
+        <p>check and likes the farm to be perfect. But he is also equally supporting and helpful to all</p>
+        <p>the staff members.</p>
+     </div>
+
+     <div class="para-14">
+        <p>"All KOAF members are my family. We live together, farm together, harvest together. This</p>
+        <p>has created a very special bond between us. I like to help them all as much as I can,</p> 
+        <p>especially the younger farmers."</p>
+     </div>
+
+     <div class="para-15">
+        <p>Rupesh has made sure that he masters every concept involving the farm. Apart from</p> 
+        <p>farming, he is also an expert at managing cows. No wonder he is our go-to guy for</p>
+        <p>everything. He personally oversees all visits and gets really excited to show visitors around</p>
+        <p>on the farm.</p>
+     </div>
+
+     <div class="image-6">
+        <img src="./hap_far/image6.webp" alt="" class="farm-6">
+     </div>
+     
+     <div class="details">
+        <h1 style="color:green">Contact US</h1>
+        <h2 style="color:green">📞Phone & WhatsApp Support</h2>
+        <h4>+91 9640546718</h4>
+        <h4>chundrusai2004@gmail.com</h4>
+        <h4>Monday to Saturday · 10:00 AM – 6:00 PM</h4>
+    </div>
+
+
+    <div id="form">
+        <h1>Contact form</h1>
+        <form>
+            <div class="row">
+                <input type="text" placeholder="Full name *">
+                <input type="email" placeholder="Email *">
+            </div>
+            <input type="tel" placeholder="Phone number">
+            <textarea placeholder="Add a message *"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Jay Sudhanshu Chambers,<br>
+                        3rd Floor B wing Office No - 307,<br>
+                        Thane, Maharashtra, India 421301</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p><b>Kedia Organic Agro Farms</b> Discover a trusted source for organic groceries, fresh produce, and
+                    wellness essentials. From A2 Gir Cow Ghee to farm-fresh fruits and raw honey—everything is
+                    sustainably sourced and chemical-free.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
