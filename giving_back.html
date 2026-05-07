@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     .top-bar {
+        background-color: #d35400;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Header */
+    .header {
+        background-color: #0b3d2e;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Search box */
+    .search-box {
+        display: flex;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    .search-box select {
+        border: none;
+        padding: 10px;
+        background: orange;
+        color: white;
+    }
+
+    .search-box input {
+        border: none;
+        padding: 10px;
+        width: 250px;
+        outline: none;
+    }
+
+    .help {
+        font-size: 14px;
+    }
+    
+    .hero {
+        height: 200px;
+        background-image: url("backimage.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+    }
+
+    .overlay p {
+        color: white;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .overlay h1 {
+        color: #b6e36b;
+        /* light green like your image */
+        font-size: 40px;
+    }
+    .container-1{
+        text-align: center;
+        align-items: center;
+    }
+    .container-1>.img-1{
+        border-radius: 20px;
+    }
+    .container-2{
+        padding-left: 330px;
+        margin-bottom: 30px;
+    }
+    .container-2>.img-2{
+        border-radius: 10px;
+    }
+    .para-1{
+        /* text-align: center;
+        align-items: center; */
+        padding-left: 330px;
+        margin-bottom: 30px;
+    }
+    .para-2{
+        padding-left: 330px;
+    }
+    .para-3{
+        padding-left: 330px;
+    }
+    .gallery{
+        text-align: center;
+        align-items: center;
+    }
+    .gallery> .img{
+          border-radius: 20px;
+    }
+    .details{
+        text-align: center;
+        align-items: center;
+    }
+     form {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border-radius: 30px;
+        border: 2px solid #0b4d2b;
+        outline: none;
+        margin-bottom: 20px;
+    }
+
+    textarea {
+        height: 120px;
+        border-radius: 20px;
+    }
+
+    button {
+        background-color: #0b4d2b;
+        color: white;
+        padding: 15px 40px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    h1 {
+        text-align: center;
+        color: #0b4d2b;
+        margin-bottom: 30px;
+    }
+     #form {
+        background-color: #d6cbb7;
+        padding: 50px;
+        text-align: center;
+    }
+      .footer {
+        background: #064e2c;
+        color: white;
+        font-family: Arial, sans-serif;
+        padding: 30px;
+    }
+
+    /* Top */
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h2 {
+        margin: 0;
+    }
+
+    .newsletter input {
+        padding: 12px;
+        border-radius: 20px;
+        border: none;
+        width: 200px;
+    }
+
+    .newsletter button {
+        background: orange;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 20px;
+        margin-left: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Middle */
+    .footer-middle {
+        display: flex;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #f1f1f1;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        gap: 40px;
+        flex: 2;
+    }
+
+    .col h4 {
+        margin-bottom: 10px;
+    }
+
+    .col p {
+        margin: 5px 0;
+    }
+
+    .about-box {
+        background: #cfd8dc;
+        color: black;
+        border-radius: 20px;
+        padding: 20px;
+        flex: 1;
+    }
+    /* Bottom */
+    .footer-bottom {
+        margin-top: 20px;
+        text-align: center;
+        background: #d84315;
+        padding: 10px;
+    }
+</style>
+<body>
+     <div class="top-bar">
+        Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
+    </div>
+
+    <div class="header">
+        <div class="logo">KEDIA ORGANIC</div>
+
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+                <option>A2 BUTTER GHEE</option>
+                <option>Best Seller-V</option>
+                <option>Best Seller-G</option>
+                <option>Cold Pressed Guices</option>
+                <option>Fresh Fruits</option>
+                <option>Fresh Leafy Greens</option>
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="overlay">
+            <p>Home / Gau Seva</p>
+            <h1>Gau Seva</h1>
+        </div>
+    </div>
+
+    <div class="container-1">
+        <img src="./Gau_seva/image1.webp" alt="" height="300px" width="800px" class="img-1">
+    </div>
+
+    <big><h1 style="text-align: center; color: #d35400; font-style:italic;">GAU SEVA</h1></big>
+    <div class="para-1">
+        <p>The farmers and Gau Sevaks share a special bond with our Cows. They also provide</p> 
+        <p>shelter to cows that are abandoned and look after them like their own family. The </p>
+        <p>auspicious Festival of Gopashtami is celebrated with all pomp and joy by our nearby</p>
+        <p>villagers and farmers. They worship the Gau-Mata, play bhajans, and feed them apples,</p>
+        <p>watermelons, and jaggery granules. We pay obeisance to Gau sevaks who work tirelessly</p>
+        <p>making sure that our gau mata are clean, well-fed, and allowed to move at will.</p>
+    </div>
+
+    <div class="para-2">
+        <p>Here’s one such dedicated human we’d like to give credit to:</p>
+        <b> Pravin, from Rayata Gaon.</b>
+    </div>
+
+    <div class="para-3">
+       <p> Meet Pravin, our most dedicated Gau Sevak.</p>
+    </div>
+
+    <div class="para-1">
+        <p>“Gau Seva is in my blood. My father and grandfather were Gau Sevaks in their time. It is</p>
+        <p>not a job for me. It’s my childhood passion. I can’t imagine doing anything else.” Rearing</p>
+        <p>cows is especially tedious during the monsoons. But Pravin has been meticulous even on</p> 
+        <p>rainy days. Every day, he gets up before the sun does and cuts caff for the cows. Talks to</p>
+        <p>them.</p>
+    </div>
+
+    <div class="para-1">
+        <p>From milking to bathing, massaging the cows, letting them move around the farm and</p> 
+        <p>graze without a worry- Pravin looks after everything. He’s constantly on his feet, playing</p> 
+        <p>bhajans to relax the cows every day, helping with births, and taking care of abandoned</p> 
+        <p>and sick cows. He treats them just like his kids. Pravin believes that milking the cows by</p>
+        <p>hand, without the help of machinery, affects the energy and ultimately the purity of the</p> 
+        <p>milk. Thus, he prefers to milk the cows naturally as our forefathers did. During the</p> 
+        <p>infamous floods, Pravin risked his life and played a major role in helping us rescue</p> 
+        stranded cows.
+    </div>
+
+    <div class="para-1">
+       <p>“गाय असेल तर आम्ही आहोत, गाय नसेल तर आम्ही नाही” - says Pravin, while pledging to spend his</p> 
+       entire life in the service of Gau Mata.
+    </div>
+
+    <div class="container-2">
+        <img src="./Gau_seva/cow_image.jpeg" alt="" height="600px" width="400px" class="img-2">
+    </div>
+
+    <div class="container-2">
+        <img src="./Gau_seva/cow_image2.jpeg" alt="" height="300px" width="400px" class="img-2">
+    </div>
+    <big><h1 style="text-align: center; color: #d35400; font-style:italic;">GALLERY</h1></big>
+
+    <div class="gallery">
+        <img src="./Gau_seva/image4.webp" alt="" height="900px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image5.webp" alt="" height="900px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image6.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image7.avif" alt="" height="250px" width="300px" class="img"><br><br>
+        <img src="./Gau_seva/image8.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image9.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image10.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image11.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image12.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image13.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image2.webp" alt="" height="400px" width="700px" class="img"><br><br>
+        <img src="./Gau_seva/image3.webp" alt="" height="400px" width="700px" class="img"><br><br>
+    </div>
+
+    <div class="details">
+        <h1 style="color: green;">Contact US</h1>
+        <h2 style="color: green;">📞 Phone & WhatsApp Support</h2>
+        <h4>+91 9640546718</h4>
+        <p>chundrusai2004@gmail.com</p>
+        <p>Monday to Saturday · 10:00 AM – 6:00 PM</p>
+    </div>
+
+    
+    <div id="form">
+        <h1>Contact form</h1>
+        <form>
+            <div class="row">
+                <input type="text" placeholder="Full name *">
+                <input type="email" placeholder="Email *">
+            </div>
+            <input type="tel" placeholder="Phone number">
+            <textarea placeholder="Add a message *"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+   <footer class="footer">
+
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Mandapaka<br>
+                        3-10 Near Veterinary Hospital<br>
+                        Tanuku, Andhra Pradesh, India 534218</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p><b>Kedia Organic Agro Farms</b> Discover a trusted source for organic groceries, fresh produce, and
+                    wellness essentials. From A2 Gir Cow Ghee to farm-fresh fruits and raw honey—everything is
+                    sustainably sourced and chemical-free.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+
+    </footer>
+</body>
+</html>

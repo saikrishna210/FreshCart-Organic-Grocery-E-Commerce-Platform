@@ -81,6 +81,11 @@
             /* background:#e6c9a8; */
         }
 
+
+
+
+
+
         .product-card {
             text-align: center;
         }
@@ -281,6 +286,11 @@
             text-decoration: none;
         }
 
+        .back {
+            color: white;
+            text-decoration: none;
+        }
+
         .navbar {
             display: flex;
             gap: 25px;
@@ -304,13 +314,90 @@
         }
 
 
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 25px;
+            transition: .4s;
+            z-index: 9999;
+            overflow: auto;
+        }
 
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9998;
+        }
 
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    
+        .cart-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
 
+        .remove-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
 
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
 
+        .popup-box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+        }
     </style>
 </head>
 
@@ -325,6 +412,12 @@
         <div class="search-box">
             <select>
                 <option>All Categories</option>
+                <option>A2 BUTTER GHEE</option>
+                <option>Best Seller-V</option>
+                <option>Best Seller-G</option>
+                <option>Cold Pressed Guices</option>
+                <option>Fresh Fruits</option>
+                <option>Fresh Leafy Greens</option>
             </select>
             <input type="text" placeholder="Search">
         </div>
@@ -350,6 +443,7 @@
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
         <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
         <a href="offers.html" class="offers">OFFERS</a>
+        <a href="giving_back.html" class="back">GIVING BACK</a>
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
@@ -416,6 +510,7 @@
             </div>
         </div>
 
+
         <div class="product-card" data-price="450">
             <div class="product">
                 <img src="./ghee_oils/ghee4.webp" class="img1">
@@ -426,6 +521,7 @@
                 <span class="final-price">450.00</span>
                 <span class="old-price">Rs:500.00</span>
             </p>
+
             <h3 class="price">Sun Flower Cold Pressed Oil</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
@@ -434,6 +530,8 @@
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
+
+
 
         <!-- Next row automatically -->
         <div class="product-card" data-price="800">
@@ -552,6 +650,52 @@
 
     </div>
 
+
+
+
+
+    <div id="overlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div style="display:flex;justify-content:space-between;">
+            <h1>Your Cart</h1>
+            <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
+        </div>
+        <div id="cartItems"></div>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+    </div>
+
+    <!-- ADDRESS -->
+    <div id="addressPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closeAddress()">✖</span>
+            <h2>Delivery Address</h2>
+            <input type="text" placeholder="Full Name"><br><br>
+            <input type="text" placeholder="Phone Number"><br><br>
+            <input type="text" placeholder="House / Flat No"><br><br>
+            <input type="text" placeholder="Street / Area"><br><br>
+            <input type="text" placeholder="City"><br><br>
+            <input type="text" placeholder="Pincode"><br><br>
+            <button onclick="checkoutNow()">Continue</button>
+        </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div id="paymentPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">✖</span>
+            <h2>Complete Payment</h2>
+            <h2>Total ₹<span id="totalAmount">0</span></h2>
+            <img src="./scanner.jpeg" class="qr-image">
+            <p>Scan QR and complete payment</p>
+            <button onclick="paymentDone()">Payment Done</button>
+        </div>
+    </div>
+
+
+
+
+
     <footer class="footer">
         <!-- Top Section -->
         <div class="footer-top">
@@ -621,6 +765,7 @@
     <script>
 
 
+
         function increase(btn) {
 
             let card = btn.closest(".product-card");
@@ -653,7 +798,123 @@
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
 
-           
+        let cart = [];
+
+        // Add to cart
+        document.querySelectorAll(".cart-btn").forEach(btn => {
+
+            btn.onclick = function () {
+
+                let card = btn.closest(".product-card");
+
+                let name = card.querySelector("h3").innerText;
+                let price = parseFloat(card.querySelector(".final-price").innerText);
+                let image = card.querySelector(".img1").src;
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image
+                });
+
+                showCart();
+                openCart();
+
+            }
+        });
+
+        // Show cart
+        function showCart() {
+
+            let items = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+
+                items += `
+<div class="cart-item">
+
+<img src="${item.image}" class="cart-img">
+
+<div>
+<h3>${item.name}</h3>
+<p>Rs ${item.price}</p>
+</div>
+
+<button class="remove-btn" onclick="removeItem(${index})">X</button>
+
+</div>
+`;
+
+                total += item.price;
+
+            });
+
+            document.getElementById("cartItems").innerHTML = items;
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            showCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartSidebar").style.right = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+
+
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.right = "-400px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function openAddress() {
+            document.getElementById("addressPopup").style.display = "flex";
+        }
+
+        function closeAddress() {
+            document.getElementById("addressPopup").style.display = "none";
+        }
+
+        function checkoutNow() {
+
+            let total = document.getElementById("total").innerText;
+
+            document.getElementById("totalAmount").innerText = total;
+
+            document.getElementById("addressPopup").style.display = "none";
+
+            let phone = "919640546718";
+
+            let msg = `Dear Customer,
+Thank you for taking time to purchase our products.
+
+Please complete payment using QR code shown on website.`;
+
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+
+            document.getElementById("paymentPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("paymentPopup").style.display = "none";
+        }
+
+        function paymentDone() {
+
+            alert("Payment successful! Your order will be delivered within 1 week.");
+
+            cart = [];
+            showCart();
+
+            closePopup();
+            closeCart();
+        }
+
 
 
     </script>

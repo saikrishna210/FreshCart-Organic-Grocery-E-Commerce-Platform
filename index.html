@@ -43,38 +43,26 @@
             font-weight: bold;
         }
 
-        /* Search Section */
-        .search-container {
+
+        .search-box {
             display: flex;
-            align-items: center;
             background: white;
             border-radius: 30px;
             overflow: hidden;
-            width: 40%;
         }
 
-        /* Category Button */
-        .category-btn {
-            background: #e65100;
-            color: white;
+        .search-box select {
             border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-        }
-
-        /* Input */
-        .search-container input {
-            border: none;
-            outline: none;
             padding: 10px;
-            width: 100%;
+            background: orange;
+            color: white;
         }
 
-        /* Clear Text */
-        .clear {
-            padding: 0 10px;
-            color: gray;
-            cursor: pointer;
+        .search-box input {
+            border: none;
+            padding: 10px;
+            width: 250px;
+            outline: none;
         }
 
         /* Right Section */
@@ -158,10 +146,17 @@
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .back {
             color: white;
             text-decoration: none;
         }
+
+        .offers {
+            color: white;
+            text-decoration: none;
+        }
+
         .contact-link {
             color: white;
             text-decoration: none;
@@ -677,32 +672,36 @@
 
 
 
-        
+
         .scrool-1 {
             padding: 40px 0;
             background: #e6efe8;
         }
+
         .scrool-2 {
             display: flex;
             animation: scroll 20s linear infinite;
             width: calc(200px *10);
         }
+
         .scrool-2 img {
             width: 200px;
             height: 80px;
             object-fit: contain;
             margin: 0 20px;
         }
+
         @keyframes scroll {
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
         }
 
-        
+
         .footer {
             background: #064e2c;
             color: white;
@@ -793,10 +792,17 @@
         <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
 
         <!-- Search -->
-        <div class="search-container">
-            <button class="category-btn">All Categories</button>
+        <div class="search-box">
+            <select onchange="goPage(this.value)">
+                <option>All Categories</option>
+                <option value="ghee_oil.html">A2 BUTTER GHEE</option>
+                <option>Best Seller-V</option>
+                <option>Best Seller-G</option>
+                <option value="juices.html">Cold Pressed Guices</option>
+                <option value="fruits.html">Fresh Fruits</option>
+                <option value="vegetables.html">Fresh Leafy Greens</option>
+            </select>
             <input type="text" placeholder="Search">
-            <div class="clear">Clear</div>
         </div>
 
         <!-- Right -->
@@ -817,7 +823,7 @@
                 <a href="pulses_dal.html">DALS & PULSES</a>
                 <a href="grains_cereals.html">GRAINS & CEREALS</a>
                 <a href="rice_millets.html">RICE & MILLETS</a>
-                <a href="fruits.html">FRUITS</a>
+                <a href="#" onclick="goPage('fruits.html')">FRUITS</a>
                 <a href="sweet_salts.html">SWEETENERS & SALTS</a>
                 <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
                 <!-- </div> -->
@@ -826,6 +832,7 @@
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
         <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
         <a href="offers.html" class="offers">OFFERS</a>
+        <a href="giving_back.html" class="back">GIVING BACK</a>
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
@@ -890,9 +897,8 @@
             </div>
 
             <img src="./group_of_images/vegetables.jpg" alt="fruits">
-
-            <!-- <a href="./fruits.html"></a><button class="outline-btn"  >View Offers</button> -->
             <button><a href="vegetables.html" class="outline-btn">View Offers</a></button>
+            <!-- <a href="#" onclick="goPage('vegetables.html')" class="outline-btn"><button>View Offers</button></a> -->
         </div>
     </div>
 
@@ -1055,7 +1061,7 @@
         </div>
     </div>
 
-    
+
     <footer class="footer">
         <!-- Top Section -->
         <div class="footer-top">
@@ -1122,9 +1128,14 @@
         </div>
     </footer>
 
-
-
     <script>
+
+        function goPage(page) {
+            if (page!== "") {
+                window.location.href = page;
+            }
+        }
+
         function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
@@ -1178,6 +1189,7 @@
                 btn.classList.add("active");
             });
         });
+
 
 
     </script>

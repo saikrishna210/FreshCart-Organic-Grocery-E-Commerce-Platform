@@ -120,12 +120,12 @@
             transform: translateY(250px);
         }
 
-        .price {
+        .final-price {
             font-weight: bold;
             margin: 10px 0;
         }
 
-        .price span {
+        .old-price {
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -272,12 +272,20 @@
             color: white;
             text-decoration: none;
         }
+        .back{
+            color:white;
+            text-decoration: none;
+        }
 
         .contact-link {
             color: white;
             text-decoration: none;
         }
         .offers{
+            color: white;
+            text-decoration: none;
+        }
+        .back{
             color: white;
             text-decoration: none;
         }
@@ -301,6 +309,94 @@
         .navbar div:hover {
             color: #a5d6a7;
         }
+
+ #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 25px;
+            transition: .4s;
+            z-index: 9999;
+            overflow: auto;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9998;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .remove-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .popup-box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+        }
+
+
+    
     </style>
 </head>
 
@@ -315,6 +411,12 @@
         <div class="search-box">
             <select>
                 <option>All Categories</option>
+                <option>A2 BUTTER GHEE</option>
+                <option>Best Seller-V</option>
+                <option>Best Seller-G</option>
+                <option>Cold Pressed Guices</option>
+                <option>Fresh Fruits</option>
+                <option>Fresh Leafy Greens</option>
             </select>
             <input type="text" placeholder="Search">
         </div>
@@ -339,7 +441,8 @@
         </div>
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
         <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
-         <a href="offers.html" class="offers">OFFERS</a>
+        <a href="offers.html" class="offers">OFFERS</a>
+        <a href="giving_back.html" class="back">GIVING BACK</a>
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
@@ -349,350 +452,415 @@
     </div>
 
     <div class="main-container">
-        <div class="product-card">
+        <div class="product-card" data-price="160">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit1.webp" class="img1">
                 <img src="./dryfruits_seeds/dryfruitone.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:160.00
-                <span>Rs:200.00</span>
+                From Rs:
+                <span class="final-price">160.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
             <h3 class="price">Almond (Badam)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
 
-        <div class="product-card">
+        <div class="product-card" data-price="350">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit2.webp" class="img1">
                 <img src="./dryfruits_seeds/dryfruittwo.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:350.00
-                <span>Rs:375.00</span>
+                From Rs:
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:375.00</span>
             </p>
             <h3 class="price">Foxnut (Makhana)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="250">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit3.jpg" class="img1">
                 <img src="./dryfruits_seeds/dryfruitthree.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:250.00
-                <span>Rs:290.00</span>
+                From Rs:
+                <span class="final-price">250.00</span>
+                <span class="old-price">Rs:290.00</span>
             </p>
             <h3 class="price">Raisins Black (Kali Kismis)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="375">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit4.webp" class="img1">
                 <img src="./dryfruits_seeds/dryfruitfour.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:375.00
-                <span>Rs:500.00</span>
+                From Rs:
+                <span class="final-price">375.00</span>
+                <span class="old-price">Rs:500.00</span>
             </p>
             <h3 class="price">Walnut Kernels</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
         <!-- Next row automatically -->
-        <div class="product-card">
+        <div class="product-card" data-price="200">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit5.webp" class="img1">
                 <img src="./dryfruits_seeds/dryfruitfive.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:200.00
-                <span>Rs:250.00</span>
+                From Rs:
+                <span class="final-price">200.00</span>
+                <span class="old-price">Rs:250.00</span>
             </p>
             <h3 class="price">Cashew (Kaju)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="50">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit6.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruitsix.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:50.00
-                <span>Rs:75.00</span>
+                From Rs:
+                <span class="final-price">50.00</span>
+                <span class="old-price">Rs:75.00</span>
             </p>
             <h3 class="price">Flax Seeds</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="440">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit7.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruit7.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:440.00
-                <span>Rs:600.00</span>
+                From Rs:
+                <span class="final-price">440.00</span>
+                <span class="old-price">Rs:600.00</span>
             </p>
             <h3 class="price">Kashmiri Saffron (Kesar)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="400">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit8.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruiteight.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:400.00
-                <span>Rs:450.00</span>
+                From Rs:
+                <span class="final-price">400.00</span>
+                <span class="old-price">Rs:450.00</span>
             </p>
             <h3 class="price">Pista Kernels Unsalted</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="325">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit9.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruit9.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:325.00
-                <span>Rs:350.00</span>
+                From Rs:
+                <span class="final-price">325.00</span>
+                <span class="old-price">Rs:350.00</span>
             </p>
             <h3 class="price">Pumpkin Seeds</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="175">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit11.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruiteleven.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:175.00
-                <span>Rs:200.00</span>
+                From Rs:
+                <span class="final-price">175.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
             <h3 class="price">Khus Khus (Poppy Seeds)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="350">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruits12.jpg" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruits12.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:350.00
-                <span>Rs:400.00</span>
+                From Rs:
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:400.00</span>
             </p>
             <h3 class="price">Watermelon Seeds</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="300">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit13.jpg" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruit13.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:300.00
-                <span>Rs:340.00</span>
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:340.00</span>
             </p>
             <h3 class="price">Kismis Indian Yellow</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="80">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit14.jpg" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruitfourteen.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:80.00
-                <span>Rs:100.00</span>
+                From Rs:
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:100.00</span>
             </p>
             <h3 class="price">Basil Seeds (Sabja)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="300">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit15.jpg" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruit15.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:300.00
-                <span>Rs:350.00</span>
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:350.00</span>
             </p>
             <h3 class="price">Seeds Mix</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="250">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit16.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruitsixteen.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:250.00
-                <span>Rs:350.00</span>
+                From Rs:
+                <span class="final-price">250.00</span>
+                <span class="old-price">Rs:350.00</span>
             </p>
             <h3 class="price">Sunflower Seeds</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="300">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit17.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruitseventeen.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:300.00
-                <span>Rs:400.00</span>
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:400.00</span>
             </p>
             <h3 class="price">Chia Seeds</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="350">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit18.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruiteighteen.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:350.00
-                <span>Rs:375.00</span>
+                From Rs:
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:375.00</span>
             </p>
             <h3 class="price">Walnut In Shell</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit19.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruit19.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:600.00
-                <span>Rs:650.00</span>
+                From Rs:
+                <span class="final-price">600.00</span>
+                <span class="old-price">Rs:650.00</span>
             </p>
             <h3 class="price">Brazil Nut Imported</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="500">
             <div class="product">
                 <img src="./dryfruits_seeds/dryfruit20.webp" alt="" class="img1">
                 <img src="./dryfruits_seeds/dryfruittweenty.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:500.00
-                <span>Rs:550.00</span>
+                From Rs:
+                <span class="final-price">500.00</span>
+                <span class="old-price">Rs:550.00</span>
             </p>
             <h3 class="price">DryFruit Mix</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
     </div>
+
+
+
+    
+    <div id="overlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div style="display:flex;justify-content:space-between;">
+            <h1>Your Cart</h1>
+            <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
+        </div>
+        <div id="cartItems"></div>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+    </div>
+
+
+    <!-- ADDRESS -->
+    <div id="addressPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closeAddress()">✖</span>
+            <h2>Delivery Address</h2>
+            <input type="text" placeholder="Full Name"><br><br>
+            <input type="text" placeholder="Phone Number"><br><br>
+            <input type="text" placeholder="House / Flat No"><br><br>
+            <input type="text" placeholder="Street / Area"><br><br>
+            <input type="text" placeholder="City"><br><br>
+            <input type="text" placeholder="Pincode"><br><br>
+            <button onclick="checkoutNow()">Continue</button>
+        </div>
+    </div>
+
+
+
+    <!-- PAYMENT -->
+    <div id="paymentPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">✖</span>
+            <h2>Complete Payment</h2>
+            <h2>Total ₹<span id="totalAmount">0</span></h2>
+            <img src="./scanner.jpeg" class="qr-image">
+            <p>Scan QR and complete payment</p>
+            <button onclick="paymentDone()">Payment Done</button>
+        </div>
+    </div>
+
+
     <footer class="footer">
 
         <!-- Top Section -->
@@ -762,26 +930,160 @@
 
     </footer>
     <script>
+        
+        
+  function increase(btn) {
 
-        function increase(btn) {
-            let value = btn.parentElement.querySelector("span");
-            let count = parseInt(value.innerText);
-            value.innerText = count + 1;
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            count++;
+            qtySpan.innerText = count;
+            updatePrice(card, count);
         }
-
         function decrease(btn) {
-            let value = btn.parentElement.querySelector("span");
-            let count = parseInt(value.innerText);
 
-            if (count > 0) {
-                value.innerText = count - 1;
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            if (count > 1) {
+                count--;
+                qtySpan.innerText = count;
+                updatePrice(card, count);
             }
+        }
+         function updatePrice(card, qty) {
+
+            let originalPrice = parseFloat(card.dataset.price);
+            let total = originalPrice * qty;
+            card.querySelector(".final-price").innerText = total.toFixed(2);
         }
 
          function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
+
+ let cart = [];
+
+        // Add to cart
+        document.querySelectorAll(".cart-btn").forEach(btn => {
+
+            btn.onclick = function () {
+
+                let card = btn.closest(".product-card");
+
+                let name = card.querySelector("h3").innerText;
+                let price = parseFloat(card.querySelector(".final-price").innerText);
+                let image = card.querySelector(".img1").src;
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image
+                });
+
+                showCart();
+                openCart();
+
+            }
+        });
+
+        // Show cart
+        function showCart() {
+
+            let items = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+
+                items += `
+<div class="cart-item">
+
+<img src="${item.image}" class="cart-img">
+
+<div>
+<h3>${item.name}</h3>
+<p>Rs ${item.price}</p>
+</div>
+
+<button class="remove-btn" onclick="removeItem(${index})">X</button>
+
+</div>
+`;
+
+                total += item.price;
+
+            });
+
+            document.getElementById("cartItems").innerHTML = items;
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            showCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartSidebar").style.right = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+
+
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.right = "-400px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function openAddress() {
+            document.getElementById("addressPopup").style.display = "flex";
+        }
+
+        function closeAddress() {
+            document.getElementById("addressPopup").style.display = "none";
+        }
+
+        function checkoutNow() {
+
+            let total = document.getElementById("total").innerText;
+
+            document.getElementById("totalAmount").innerText = total;
+
+            document.getElementById("addressPopup").style.display = "none";
+
+            let phone = "919640546718";
+
+            let msg = `Dear Customer,
+Thank you for taking time to purchase our products.
+
+Please complete payment using QR code shown on website.`;
+
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+
+            document.getElementById("paymentPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("paymentPopup").style.display = "none";
+        }
+
+        function paymentDone() {
+
+            alert("Payment successful! Your order will be delivered within 1 week.");
+
+            cart = [];
+            showCart();
+
+            closePopup();
+            closeCart();
+        }
+
+
+
+
     </script>
 
 </body>
