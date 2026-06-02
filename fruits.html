@@ -120,12 +120,12 @@
             transform: translateY(250px);
         }
 
-        .price {
+        .final-price {
             font-weight: bold;
             margin: 10px 0;
         }
 
-        .price span {
+        .old-price {
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -263,13 +263,13 @@
         }
 
 
-        
+
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-       
+
         .dropdown {
             display: none;
             position: absolute;
@@ -281,7 +281,7 @@
             padding: 20px;
         }
 
-      
+
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -307,14 +307,17 @@
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .offers {
             color: white;
             text-decoration: none;
         }
-        .back{
+
+        .back {
             color: white;
             text-decoration: none;
         }
+
         .navbar {
             display: flex;
             gap: 25px;
@@ -323,16 +326,103 @@
             color: white;
             font-size: 14px;
         }
-         .navbar {
+
+        .navbar {
             position: relative;
             z-index: 1000;
         }
+
         .navbar div {
             cursor: pointer;
         }
 
         .navbar div:hover {
             color: #a5d6a7;
+        }
+
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 25px;
+            transition: .4s;
+            z-index: 9999;
+            overflow: auto;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9998;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .remove-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .popup-box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
         }
     </style>
 </head>
@@ -383,258 +473,270 @@
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
-
-
     <div class="banner">
         <h1>FRESH FRUITS</h1>
     </div>
 
     <div class="main-container">
-        <div class="product-card">
+        <div class="product-card" data-price="240">
             <div class="product">
                 <img src="./fruits/fruit1.webp" class="img1">
                 <img src="./fruits/fruit1.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:240.00
-                <span>Rs:250.00</span>
+                From Rs:
+                <span class="final-price">240.00</span>
+                <span class="old-price">Rs:250.00</span>
             </p>
             <h3 class="price">Apple</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
 
-        <div class="product-card">
+        <div class="product-card" data-price="310">
             <div class="product">
                 <img src="./fruits/fruit2.webp" class="img1">
                 <img src="./fruits/fruit2.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:310.00
-                <span>Rs:330.00</span>
+                From Rs:
+                <span class="final-price">310.00</span>
+                <span class="old-price">Rs:330.00</span>
             </p>
             <h3 class="price">Pomegranate</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="70">
             <div class="product">
                 <img src="./fruits/fruit3.webp" class="img1">
                 <img src="./fruits/fruit3.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:70.00
-                <span>Rs:90.00</span>
+                From Rs:
+                <span class="final-price">70.00</span>
+                <span class="old-price">Rs:90.00</span>
             </p>
             <h3 class="price">Banana</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="140">
             <div class="product">
                 <img src="./fruits/fruit4.webp" class="img1">
                 <img src="./fruits/fruit4.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:140.00
-                <span>Rs:180.00</span>
+                From Rs:
+                <span class="final-price">140.00</span>
+                <span class="old-price">Rs:180.00</span>
             </p>
             <h3 class="price">Papaya</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
         <!-- Next row automatically -->
-        <div class="product-card">
+        <div class="product-card" data-price="150">
             <div class="product">
                 <img src="./fruits/fruit5.webp" class="img1">
                 <img src="./fruits/fruit5.webp" class="img2">
             </div>
             <p class="price">
-                From Rs:150.00
-                <span>Rs:130.00</span>
+                From Rs:
+                <span class="final-price">150.00</span>
+                <span class="old-price">Rs:130.00</span>
             </p>
             <h3 class="price">Watermelon</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="1200">
             <div class="product">
                 <img src="./fruits/fruit6.jpg" alt="" class="img1">
                 <img src="./fruits/fruit6.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:1200.00
-                <span>Rs:1100.00</span>
+                From Rs:
+                <span class="final-price">1200.00</span>
+                <span class="old-price">Rs:1100.00</span>
             </p>
             <h3 class="price">Alphanso Mango</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="125">
             <div class="product">
                 <img src="./fruits/fruit7.webp" alt="" class="img1">
                 <img src="./fruits/fruit7.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:125.00
-                <span>Rs:150.00</span>
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
             <h3 class="price">Chickoo (sapota)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="410">
             <div class="product">
                 <img src="./fruits/fruit8.webp" alt="" class="img1">
                 <img src="./fruits/fruit8.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:410.00
-                <span>Rs:200.00</span>
+                From Rs:
+                <span class="final-price">410.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
             <h3 class="price">Orange Indian (Nagpur)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="200">
             <div class="product">
                 <img src="./fruits/fruit9.webp" alt="" class="img1">
                 <img src="./fruits/fruit9.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:200.00
-                <span>Rs:250.00</span>
+                From Rs:
+                <span class="final-price">200.00</span>
+                <span class="old-price">Rs:250.00</span>
             </p>
             <h3 class="price">Muskmelon Kharbuja()</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="225">
             <div class="product">
                 <img src="./fruits/fruit10.webp" alt="" class="img1">
                 <img src="./fruits/fruit10.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:225.00
-                <span>Rs:265.00</span>
+                From Rs:
+                <span class="final-price">225.00</span>
+                <span class="old-price">Rs:265.00</span>
             </p>
             <h3 class="price">Pear Indian</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="110">
             <div class="product">
                 <img src="./fruits/fruit11.webp" alt="" class="img1">
                 <img src="./fruits/fruit11.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:110.00
-                <span>Rs:140.00</span>
+                From Rs:
+                <span class="final-price">110.00</span>
+                <span class="old-price">Rs:140.00</span>
             </p>
             <h3 class="price">Guava</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="450">
             <div class="product">
                 <img src="./fruits/fruit12.webp" alt="" class="img1">
                 <img src="./fruits/fruit12.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:450.00
-                <span>Rs:500.00</span>
+                From Rs:
+                <span class="final-price">450.00</span>
+                <span class="old-price">Rs:500.00</span>
             </p>
             <h3 class="price">Blueberry (Imported)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
 
-        <div class="product-card">
+        <div class="product-card" data-price="250">
             <div class="product">
                 <img src="./fruits/fruit13.jpg" alt="" class="img1">
                 <img src="./fruits/fruit13.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:250.00
-                <span>Rs:350.00</span>
+                From Rs:
+                <span class="final-price">250.00</span>
+                <span class="old-price">Rs:350.00</span>
             </p>
             <h3 class="price">Strawberry Indian</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="125">
             <div class="product">
                 <img src="./fruits/fruit14.webp" alt="" class="img1">
                 <img src="./fruits/fruit14.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:125.00
-                <span>Rs:150.00</span>
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
             <h3 class="price">Sweet Lime (mosambi) </h3>
             <button class="cart-btn">Add To Cart</button>
@@ -645,116 +747,161 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="225">
             <div class="product">
                 <img src="./fruits/fruit15.webp" alt="" class="img1">
                 <img src="./fruits/fruit15.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:225.00
-                <span>Rs:265.00</span>
+                From Rs:
+                <span class="final-price">225.00</span>
+                <span class="old-price">Rs:265.00</span>
             </p>
             <h3 class="price">Pineapple Whole</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="225">
             <div class="product">
                 <img src="./fruits/fruit16.webp" alt="" class="img1">
                 <img src="./fruits/fruit16.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:225.00
-                <span>Rs:275.00</span>
+                From Rs:
+                <span class="final-price">225.00</span>
+                <span class="old-price">Rs:275.00</span>
             </p>
             <h3 class="price">Kiwi Green Imported</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="700">
             <div class="product">
                 <img src="./fruits/fruit17.jpg" alt="" class="img1">
                 <img src="./fruits/fruit17.jpg" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:700.00
-                <span>Rs:750.00</span>
+                From Rs:
+                <span class="final-price">700.00</span>
+                <span class="old-price">Rs:750.00</span>
             </p>
             <h3 class="price">Kesar Mango</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="400">
             <div class="product">
                 <img src="./fruits/fruit18.webp" alt="" class="img1">
                 <img src="./fruits/fruit18.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:400.00
-                <span>Rs:450.00</span>
+                From Rs:
+                <span class="final-price">400.00</span>
+                <span class="old-price">Rs:450.00</span>
             </p>
             <h3 class="price">Avacoda Has Imported</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="225">
             <div class="product">
                 <img src="./fruits/fruit19.webp" alt="" class="img1">
                 <img src="./fruits/fruit19.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:225.00
-                <span>Rs:275.00</span>
+                From Rs:
+                <span class="final-price">225.00</span>
+                <span class="old-price">Rs:275.00</span>
             </p>
             <h3 class="price">Dragon Fruit White Flesh</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="175">
             <div class="product">
                 <img src="./fruits/fruit20.webp" alt="" class="img1">
                 <img src="./fruits/fruit20.webp" alt="" class="img2">
             </div>
             <p class="price">
-                From Rs:175.00
-                <span>Rs:200.00</span>
+                From Rs:
+                <span class="final-price">175.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
             <h3 class="price">Valencia Orange Imported</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
     </div>
-    <footer class="footer">
 
+
+    <div id="overlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div style="display:flex;justify-content:space-between;">
+            <h1>Your Cart</h1>
+            <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
+        </div>
+        <div id="cartItems"></div>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+    </div>
+
+    <!-- ADDRESS -->
+    <div id="addressPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closeAddress()">✖</span>
+            <h2>Delivery Address</h2>
+            <input type="text" placeholder="Full Name"><br><br>
+            <input type="text" placeholder="Phone Number"><br><br>
+            <input type="text" placeholder="House / Flat No"><br><br>
+            <input type="text" placeholder="Street / Area"><br><br>
+            <input type="text" placeholder="City"><br><br>
+            <input type="text" placeholder="Pincode"><br><br>
+            <button onclick="checkoutNow()">Continue</button>
+        </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div id="paymentPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">✖</span>
+            <h2>Complete Payment</h2>
+            <h2>Total ₹<span id="totalAmount">0</span></h2>
+            <img src="./scanner.jpeg" class="qr-image">
+            <p>Scan QR and complete payment</p>
+            <button onclick="paymentDone()">Payment Done</button>
+        </div>
+    </div>
+
+    <footer class="footer">
         <!-- Top Section -->
         <div class="footer-top">
 
@@ -823,34 +970,154 @@
     </footer>
     <script>
 
+
         function increase(btn) {
-            let value = btn.parentElement.querySelector("span");
-            let count = parseInt(value.innerText);
-            value.innerText = count + 1;
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            count++;
+            qtySpan.innerText = count;
+            updatePrice(card, count);
         }
-
         function decrease(btn) {
-            let value = btn.parentElement.querySelector("span");
-            let count = parseInt(value.innerText);
 
-            if (count > 0) {
-                value.innerText = count - 1;
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            if (count > 1) {
+                count--;
+                qtySpan.innerText = count;
+                updatePrice(card, count);
             }
         }
+        function updatePrice(card, qty) {
 
-        function toggleDropdown() {
-            let menu = document.getElementById("dropdownMenu");
-
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
+            let originalPrice = parseFloat(card.dataset.price);
+            let total = originalPrice * qty;
+            card.querySelector(".final-price").innerText = total.toFixed(2);
         }
-         function toggleMenu() {
+
+        function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
+        let cart = [];
+
+        // Add to cart
+        document.querySelectorAll(".cart-btn").forEach(btn => {
+
+            btn.onclick = function () {
+
+                let card = btn.closest(".product-card");
+
+                let name = card.querySelector("h3").innerText;
+                let price = parseFloat(card.querySelector(".final-price").innerText);
+                let image = card.querySelector(".img1").src;
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image
+                });
+
+                showCart();
+                openCart();
+
+            }
+        });
+
+        // Show cart
+        function showCart() {
+
+            let items = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+
+                items += `
+<div class="cart-item">
+
+<img src="${item.image}" class="cart-img">
+
+<div>
+<h3>${item.name}</h3>
+<p>Rs ${item.price}</p>
+</div>
+
+<button class="remove-btn" onclick="removeItem(${index})">X</button>
+
+</div>
+`;
+
+                total += item.price;
+
+            });
+
+            document.getElementById("cartItems").innerHTML = items;
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            showCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartSidebar").style.right = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+
+
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.right = "-400px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function openAddress() {
+            document.getElementById("addressPopup").style.display = "flex";
+        }
+
+        function closeAddress() {
+            document.getElementById("addressPopup").style.display = "none";
+        }
+
+        function checkoutNow() {
+
+            let total = document.getElementById("total").innerText;
+
+            document.getElementById("totalAmount").innerText = total;
+
+            document.getElementById("addressPopup").style.display = "none";
+
+            let phone = "919640546718";
+
+            let msg = `Dear Customer,
+Thank you for taking time to purchase our products.
+
+Please complete payment using QR code shown on website.`;
+
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+
+            document.getElementById("paymentPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("paymentPopup").style.display = "none";
+        }
+
+        function paymentDone() {
+
+            alert("Payment successful! Your order will be delivered within 1 week.");
+
+            cart = [];
+            showCart();
+
+            closePopup();
+            closeCart();
+        }
+
     </script>
 
 </body>

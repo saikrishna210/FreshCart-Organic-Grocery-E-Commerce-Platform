@@ -1,236 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Products</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
 
-<style>
-     body{
-         background-color:whitesmoke;
-    } 
-    .top-bar {
-    background-color: #d35400;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    font-size: 14px;
-    }
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
 
-/* Header */
-    .header {
-    background-color: #0b3d2e;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    }
+        .top-bar {
+            background-color: #d35400;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
 
-    .logo {
-    font-size: 22px;
-    font-weight: bold;
-    }
+        /* Header */
+        .header {
+            background-color: #0b3d2e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
 
-/* Search box */
-    .search-box {
-    display: flex;
-    background: white;
-    border-radius: 30px;
-    overflow: hidden;
-    }
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
 
-    .search-box select {
-    border: none;
-    padding: 10px;
-    background: orange;
-    color: white;
-    }
+        /* Search box */
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+        }
 
-    .search-box input {
-    border: none;
-    padding: 10px;
-    width: 250px;
-    outline: none;
-    }
+        .search-box select {
+            border: none;
+            padding: 10px;
+            background: orange;
+            color: white;
+        }
 
-    .help {
-    font-size: 14px;
-    }
-    .banner {
-    background-color: #b7d3b1;
-    padding: 40px 40px;
-    margin-bottom: 20px;
-    }
+        .search-box input {
+            border: none;
+            padding: 10px;
+            width: 250px;
+            outline: none;
+        }
 
-    .banner h1 {
-    color: #063d2b;
-    font-size: 40px;
-    }
-    /* 🔥 GRID LAYOUT */
-    .main-container {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 per row */
-        gap: 20px;
-        padding: 20px;
-        /* background:#e6c9a8; */
-    }
-    .product-card{
-        text-align: center;
-    }
-    /* 🔹 Product container */
-    .product {
-        width: 100%;
-        height: 220px;
-        position: relative;
-        overflow: hidden;
-        border-radius:20px;
-        background: white;
-    }
+        .help {
+            font-size: 14px;
+        }
 
-    /* 🔹 Images */
-    .product img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        position: absolute;
-        top:0;
-        left:0;
-        transition: opacity 0.5s ease;
-    }
+        .banner {
+            background-color: #b7d3b1;
+            padding: 40px 40px;
+            margin-bottom: 20px;
+        }
 
-    /* 🔹 Second image hidden */
-    .product .img2 {
-        transform: translateY(250px);
-    }
+        .banner h1 {
+            color: #063d2b;
+            font-size: 40px;
+        }
 
-    /* 🔥 Hover effect */
-    .product:hover .img2 {
-        transform: translateY(0);
-    }
+        /* 🔥 GRID LAYOUT */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 per row */
+            gap: 20px;
+            padding: 20px;
+            /* background:#e6c9a8; */
+        }
 
-    .product:hover .img1 {
-        transform: translateY(250px);
-    }
-    .price {
-    font-weight: bold;
-    margin: 10px 0;
-}
+        .product-card {
+            text-align: center;
+        }
 
-.price span {
-    text-decoration: line-through;
-    color: gray;
-    margin-left: 10px;
-}
+        /* 🔹 Product container */
+        .product {
+            width: 100%;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: white;
+        }
 
-h3 {
-    margin: 5px 0;
-}
+        /* 🔹 Images */
+        .product img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease;
+        }
 
-/* 🔥 BUTTON FIX */
-button {
-    background: green;
-    color: white;
-    border: none;
-    padding: 10px 18px;
-    border-radius: 20px;
-    cursor: pointer;
-}
+        /* 🔹 Second image hidden */
+        .product .img2 {
+            transform: translateY(250px);
+        }
 
-/* 🔥 QTY FIX */
-.qty {
-    margin-top: 10px;
-}
+        /* 🔥 Hover effect */
+        .product:hover .img2 {
+            transform: translateY(0);
+        }
 
-.qty button {
-    padding: 5px 10px;
-    background: lightgray;
-    color: black;
-}
-.footer {
-        background: #064e2c;
-        color: white;
-        font-family: Arial, sans-serif;
-        padding: 30px;
-    }
+        .product:hover .img1 {
+            transform: translateY(250px);
+        }
 
-    /* Top */
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .final-price {
+            font-weight: bold;
+            margin: 10px 0;
+        }
 
-    .logo h2 {
-        margin: 0;
-    }
+        .old-price {
+            text-decoration: line-through;
+            color: gray;
+            margin-left: 10px;
+        }
 
-    .newsletter input {
-        padding: 12px;
-        border-radius: 20px;
-        border: none;
-        width: 200px;
-    }
+        h3 {
+            margin: 5px 0;
+        }
 
-    .newsletter button {
-        background: orange;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 20px;
-        margin-left: 10px;
-        color: white;
-        cursor: pointer;
-    }
+        /* 🔥 BUTTON FIX */
+        button {
+            background: green;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
 
-    /* Middle */
-    .footer-middle {
-        display: flex;
-        gap: 20px;
-        margin-top: 30px;
-    }
+        /* 🔥 QTY FIX */
+        .qty {
+            margin-top: 10px;
+        }
 
-    .card {
-        background: #f1f1f1;
-        color: black;
-        border-radius: 20px;
-        padding: 20px;
-        display: flex;
-        gap: 40px;
-        flex: 2;
-    }
+        .qty button {
+            padding: 5px 10px;
+            background: lightgray;
+            color: black;
+        }
 
-    .col h4 {
-        margin-bottom: 10px;
-    }
+        .footer {
+            background: #064e2c;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
 
-    .col p {
-        margin: 5px 0;
-    }
+        /* Top */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .about-box {
-        background: #cfd8dc;
-        color: black;
-        border-radius: 20px;
-        padding: 20px;
-        flex: 1;
-    }
+        .logo h2 {
+            margin: 0;
+        }
 
-    /* Bottom */
-    .footer-bottom {
-        margin-top: 20px;
-        text-align: center;
-        background: #d84315;
-        padding: 10px;
-    }
+        .newsletter input {
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            width: 200px;
+        }
+
+        .newsletter button {
+            background: orange;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Middle */
+        .footer-middle {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f1f1f1;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            flex: 2;
+        }
+
+        .col h4 {
+            margin-bottom: 10px;
+        }
+
+        .col p {
+            margin: 5px 0;
+        }
+
+        .about-box {
+            background: #cfd8dc;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            background: #d84315;
+            padding: 10px;
+        }
 
 
-    
+
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-       
+
         .dropdown {
             display: none;
             position: absolute;
@@ -242,7 +251,7 @@ button {
             padding: 20px;
         }
 
-      
+
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -263,15 +272,18 @@ button {
             color: white;
             text-decoration: none;
         }
-        .back{
+
+        .back {
             color: white;
             text-decoration: none;
         }
+
         .contact-link {
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .offers {
             color: white;
             text-decoration: none;
         }
@@ -284,10 +296,12 @@ button {
             color: white;
             font-size: 14px;
         }
-         .navbar {
+
+        .navbar {
             position: relative;
             z-index: 1000;
         }
+
         .navbar div {
             cursor: pointer;
         }
@@ -296,7 +310,91 @@ button {
             color: #a5d6a7;
         }
 
-</style>
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 25px;
+            transition: .4s;
+            z-index: 9999;
+            overflow: auto;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9998;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .remove-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .popup-box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
 </head>
 
 <body>
@@ -305,27 +403,27 @@ button {
     </div>
 
     <div class="header">
-      
+
         <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
 
-    <div class="search-box">
-    <select>
-        <option>All Categories</option>
-        <option>A2 BUTTER GHEE</option>
+        <div class="search-box">
+            <select>
+                <option>All Categories</option>
+                <option>A2 BUTTER GHEE</option>
                 <option>Best Seller-V</option>
                 <option>Best Seller-G</option>
                 <option>Cold Pressed Guices</option>
                 <option>Fresh Fruits</option>
                 <option>Fresh Leafy Greens</option>
-    </select>
-    <input type="text" placeholder="Search">
+            </select>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="help">
+            📞 HOW CAN WE HELP?
+        </div>
     </div>
 
-    <div class="help">
-        📞 HOW CAN WE HELP?
-    </div>
-    </div>
-    
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
@@ -351,372 +449,430 @@ button {
         <h1>RICE & MILLETS</h1>
     </div>
 
-<div class="main-container">
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice1.webp" class="img1">
-            <img src="./rice_millets/riceone.webp" class="img2">
+    <div class="main-container">
+        <div class="product-card" data-price="102">
+            <div class="product">
+                <img src="./rice_millets/rice1.webp" class="img1">
+                <img src="./rice_millets/riceone.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">102.00</span>
+                <span class="old-price">Rs:125.00</span>
+            </p>
+            <h3 class="price">Kolam Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
         </div>
-        <p class="price">
-        From Rs:102.00 
-        <span>Rs:125.00</span>
-        </p>
-    <h3 class="price">Kolam Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
+
+
+        <div class="product-card" data-price="180">
+            <div class="product">
+                <img src="./rice_millets/rice2.webp" class="img1">
+                <img src="./rice_millets/ricetwo.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">180.00</span>
+                <span class="old-price">Rs:200.00</span>
+            </p>
+            <h3 class="price">Ambemohar Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="80">
+            <div class="product">
+                <img src="./rice_millets/rice3.webp" class="img1">
+                <img src="./rice_millets/ricethree.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:100.00</span>
+            </p>
+            <h3 class="price">Indrayani Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="140">
+            <div class="product">
+                <img src="./rice_millets/rice4.webp" class="img1">
+                <img src="./rice_millets/ricefour.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">140.00</span>
+                <span class="old-price">Rs:160.00</span>
+            </p>
+            <h3 class="price">Basmati White Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <!-- Next row automatically -->
+        <div class="product-card" data-price="70">
+            <div class="product">
+                <img src="./rice_millets/rice5.webp" class="img1">
+                <img src="./rice_millets/ricefive.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price"></span>70.00
+                <span class="old-price">Rs:90.00</span>
+            </p>
+            <h3 class="price">Idly Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="80">
+            <div class="product">
+                <img src="./rice_millets/rice6.webp" alt="" class="img1">
+                <img src="./rice_millets/ricesix.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:85.00</span>
+            </p>
+            <h3 class="price">Jowar Millet (Sorghum)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="65">
+            <div class="product">
+                <img src="./rice_millets/rice7.webp" alt="" class="img1">
+                <img src="./rice_millets/riceseven.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">65.00</span>
+                <span class="old-price">Rs:85.00</span>
+            </p>
+            <h3 class="price">Ragi Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="84">
+            <div class="product">
+                <img src="./rice_millets/rice8.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeight.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">84.00</span>
+                <span class="old-price">Rs:100.00</span>
+            </p>
+            <h3 class="price">Sonamasoori Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="150">
+            <div class="product">
+                <img src="./rice_millets/rice9.webp" alt="" class="img1">
+                <img src="./rice_millets/ricenine.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">150.00</span>
+                <span class="old-price">Rs:165.00</span>
+            </p>
+            <h3 class="price">Basmati Brown Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="220">
+            <div class="product">
+                <img src="./rice_millets/rice10.webp" alt="" class="img1">
+                <img src="./rice_millets/riceten.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">220.00</span>
+                <span class="old-price">Rs:250.00</span>
+            </p>
+            <h3 class="price">Quinoa</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="65">
+            <div class="product">
+                <img src="./rice_millets/rice11.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeleven.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">65.00</span>
+                <span class="old-price">Rs:80.00</span>
+            </p>
+            <h3 class="price">Bajra Whole</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="100">
+            <div class="product">
+                <img src="./rice_millets/rice12.webp" class="img1">
+                <img src="./rice_millets/ricetwelve.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">100.00</span>
+                <span class="old-price">Rs:130.00</span>
+            </p>
+            <h3 class="price">Red Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="140">
+            <div class="product">
+                <img src="./rice_millets/rice13.webp" alt="" class="img1">
+                <img src="./rice_millets/ricethirteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">140.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Barnyard Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./rice_millets/rice14.webp" alt="" class="img1">
+                <img src="./rice_millets/ricefourteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:160.00</span>
+            </p>
+            <h3 class="price">Millet Kichidi</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="130">
+            <div class="product">
+                <img src="./rice_millets/rice15.webp" alt="" class="img1">
+                <img src="./rice_millets/ricefifteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Little Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="130">
+            <div class="product">
+                <img src="./rice_millets/rice16.webp" alt="" class="img1">
+                <img src="./rice_millets/ricesixteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Foxtail Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="130">
+            <div class="product">
+                <img src="./rice_millets/rice17.webp" alt="" class="img1">
+                <img src="./rice_millets/riceseventeen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Kodo Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="160">
+            <div class="product">
+                <img src="./rice_millets/rice18.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeighteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">160.00</span>
+                <span class="old-price">Rs:190.00</span>
+            </p>
+            <h3 class="price">Amaranath Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./rice_millets/rice19.webp" alt="" class="img1">
+                <img src="./rice_millets/ricenineenten.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:160.00</span>
+            </p>
+            <h3 class="price">Multi Millet Mix</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./rice_millets/rice20.webp" alt="" class="img1">
+                <img src="./rice_millets/ricetweenty.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Proso Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
     </div>
-</div>
 
-
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice2.webp" class="img1">
-            <img src="./rice_millets/ricetwo.webp" class="img2">
+    <div id="overlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div style="display:flex;justify-content:space-between;">
+            <h1>Your Cart</h1>
+            <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
         </div>
-        <p class="price">
-        From Rs:180.00 
-        <span>Rs:200.00</span>
-        </p>
-    <h3 class="price">Ambemohar Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>   
-</div>
-
-    <div class="product-card">
-        <div class="product">
-             <img src="./rice_millets/rice3.webp" class="img1">
-            <img src="./rice_millets/ricethree.webp" class="img2">
-        </div>
-        <p class="price">
-        From Rs:80.00 
-        <span>Rs:100.00</span>
-        </p>
-    <h3 class="price">Indrayani Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>   
-</div>
-
-    <div class="product-card">
-        <div class="product">
-           <img src="./rice_millets/rice4.webp" class="img1">
-            <img src="./rice_millets/ricefour.webp" class="img2">  
-        </div>
-        <p class="price">
-        From Rs:140.00 
-        <span>Rs:160.00</span>
-        </p>
-    <h3 class="price">Basmati White Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>   
-</div>
-
-    <!-- Next row automatically -->
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice5.webp" class="img1">
-            <img src="./rice_millets/ricefive.webp" class="img2">
-        </div>
-         <p class="price">
-        From Rs:70.00 
-        <span>Rs:90.00</span>
-        </p>
-    <h3 class="price">Idly Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>         
-</div>
-
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice6.webp" alt="" class="img1">
-            <img src="./rice_millets/ricesix.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-        From Rs:80.00 
-        <span>Rs:85.00</span>
-        </p>
-    <h3 class="price">Jowar Millet (Sorghum)</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
+        <div id="cartItems"></div>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
-</div>
 
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice7.webp" alt="" class="img1">
-            <img src="./rice_millets/riceseven.webp" alt="" class="img2">
+    <!-- ADDRESS -->
+    <div id="addressPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closeAddress()">✖</span>
+            <h2>Delivery Address</h2>
+            <input type="text" placeholder="Full Name"><br><br>
+            <input type="text" placeholder="Phone Number"><br><br>
+            <input type="text" placeholder="House / Flat No"><br><br>
+            <input type="text" placeholder="Street / Area"><br><br>
+            <input type="text" placeholder="City"><br><br>
+            <input type="text" placeholder="Pincode"><br><br>
+            <button onclick="checkoutNow()">Continue</button>
         </div>
-        <p class="price">
-        From Rs:65.00 
-        <span>Rs:85.00</span>
-        </p>
-    <h3 class="price">Ragi Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
     </div>
-</div>
 
-    <div class="product-card">
-        <div class="product">
-             <img src="./rice_millets/rice8.webp" alt="" class="img1">
-            <img src="./rice_millets/riceeight.webp" alt="" class="img2">
+    <!-- PAYMENT -->
+    <div id="paymentPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">✖</span>
+            <h2>Complete Payment</h2>
+            <h2>Total ₹<span id="totalAmount">0</span></h2>
+            <img src="./scanner.jpeg" class="qr-image">
+            <p>Scan QR and complete payment</p>
+            <button onclick="paymentDone()">Payment Done</button>
         </div>
-        <p class="price">
-            From Rs:84.00
-        <span>Rs:100.00</span>
-        </p>
-    <h3 class="price">Sonamasoori Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
     </div>
-</div>
 
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice9.webp" alt="" class="img1">
-            <img src="./rice_millets/ricenine.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:150.00
-        <span>Rs:165.00</span>
-        </p>
-    <h3 class="price">Basmati Brown Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
 
-    <div class="product-card">
-        <div class="product">
-             <img src="./rice_millets/rice10.webp" alt="" class="img1">
-            <img src="./rice_millets/riceten.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:220.00
-       <span>Rs:250.00</span>
-        </p>
-    <h3 class="price">Quinoa</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-    <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice11.webp" alt="" class="img1">
-            <img src="./rice_millets/riceeleven.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:65.00
-         <span>Rs:80.00</span>
-        </p>
-    <h3 class="price">Bajra Whole</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
- <div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice12.webp" class="img1">
-            <img src="./rice_millets/ricetwelve.webp" class="img2">
-        </div>
-         <p class="price">
-        From Rs:100.00 
-        <span>Rs:130.00</span>
-        </p>
-    <h3 class="price">Red Rice</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>         
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice13.webp" alt="" class="img1">
-            <img src="./rice_millets/ricethirteen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:140.00
-         <span>Rs:150.00</span>
-        </p>
-    <h3 class="price">Barnyard Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice14.webp" alt="" class="img1">
-            <img src="./rice_millets/ricefourteen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:125.00
-         <span>Rs:160.00</span>
-        </p>
-    <h3 class="price">Millet Kichidi</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice15.webp" alt="" class="img1">
-            <img src="./rice_millets/ricefifteen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:130.00
-         <span>Rs:150.00</span>
-        </p>
-    <h3 class="price">Little Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice16.webp" alt="" class="img1">
-            <img src="./rice_millets/ricesixteen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:130.00
-         <span>Rs:150.00</span>
-        </p>
-    <h3 class="price">Foxtail Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice17.webp" alt="" class="img1">
-            <img src="./rice_millets/riceseventeen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:130.00
-         <span>Rs:150.00</span>
-        </p>
-    <h3 class="price">Kodo Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice18.webp" alt="" class="img1">
-            <img src="./rice_millets/riceeighteen.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:160.00
-         <span>Rs:190.00</span>
-        </p>
-    <h3 class="price">Amaranath Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice19.webp" alt="" class="img1">
-            <img src="./rice_millets/ricenineenten.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:125.00
-         <span>Rs:160.00</span>
-        </p>
-    <h3 class="price">Multi Millet Mix</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-
-<div class="product-card">
-        <div class="product">
-            <img src="./rice_millets/rice20.webp" alt="" class="img1">
-            <img src="./rice_millets/ricetweenty.webp" alt="" class="img2">
-        </div>
-         <p class="price">
-            From Rs:125.00
-         <span>Rs:150.00</span>
-        </p>
-    <h3 class="price">Proso Millet</h3>
-    <button class="cart-btn">Add To Cart</button>
-    <div class="qty">
-        <button onclick="decrease(this)">-</button>
-        <span>0</span>
-        <button onclick="increase(this)">+</button>
-    </div>
-</div>
-</div>
-
-<footer class="footer">
-
+    <footer class="footer">
         <!-- Top Section -->
         <div class="footer-top">
 
@@ -783,27 +939,157 @@ button {
         </div>
 
     </footer>
-<script>
-    
-function increase(btn) {
-    let value = btn.parentElement.querySelector("span");
-    let count = parseInt(value.innerText);
-    value.innerText = count + 1;
-}
+    <script>
 
-function decrease(btn) {
-    let value = btn.parentElement.querySelector("span");
-    let count = parseInt(value.innerText);
-    
-    if (count > 0) {
-        value.innerText = count - 1;
-    }
-}
- function toggleMenu() {
+        function increase(btn) {
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            count++;
+            qtySpan.innerText = count;
+            updatePrice(card, count);
+        }
+        function decrease(btn) {
+
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            if (count > 1) {
+                count--;
+                qtySpan.innerText = count;
+                updatePrice(card, count);
+            }
+        }
+        function updatePrice(card, qty) {
+
+            let originalPrice = parseFloat(card.dataset.price);
+            let total = originalPrice * qty;
+            card.querySelector(".final-price").innerText = total.toFixed(2);
+        }
+
+        function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
-</script>
+
+        let cart = [];
+
+        // Add to cart
+        document.querySelectorAll(".cart-btn").forEach(btn => {
+
+            btn.onclick = function () {
+
+                let card = btn.closest(".product-card");
+
+                let name = card.querySelector("h3").innerText;
+                let price = parseFloat(card.querySelector(".final-price").innerText);
+                let image = card.querySelector(".img1").src;
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image
+                });
+
+                showCart();
+                openCart();
+
+            }
+        });
+
+        // Show cart
+        function showCart() {
+
+            let items = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+
+                items += `
+<div class="cart-item">
+
+<img src="${item.image}" class="cart-img">
+
+<div>
+<h3>${item.name}</h3>
+<p>Rs ${item.price}</p>
+</div>
+
+<button class="remove-btn" onclick="removeItem(${index})">X</button>
+
+</div>
+`;
+
+                total += item.price;
+
+            });
+
+            document.getElementById("cartItems").innerHTML = items;
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            showCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartSidebar").style.right = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+
+
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.right = "-400px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function openAddress() {
+            document.getElementById("addressPopup").style.display = "flex";
+        }
+
+        function closeAddress() {
+            document.getElementById("addressPopup").style.display = "none";
+        }
+
+        function checkoutNow() {
+
+            let total = document.getElementById("total").innerText;
+
+            document.getElementById("totalAmount").innerText = total;
+
+            document.getElementById("addressPopup").style.display = "none";
+
+            let phone = "919640546718";
+
+            let msg = `Dear Customer,
+Thank you for taking time to purchase our products.
+
+Please complete payment using QR code shown on website.`;
+
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
+
+            document.getElementById("paymentPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("paymentPopup").style.display = "none";
+        }
+
+        function paymentDone() {
+
+            alert("Payment successful! Your order will be delivered within 1 week.");
+
+            cart = [];
+            showCart();
+
+            closePopup();
+            closeCart();
+        }
+    </script>
 
 </body>
+
 </html>
