@@ -205,6 +205,39 @@
     <h1>MANGOES</h1>
 </div>
 
+
+
+
+<div id="paymentPopup"
+style="display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+justify-content:center;
+align-items:center;">
+<div style="
+background:white;
+padding:30px;
+width:400px;
+text-align:center;">
+<h2>Delivery Details</h2>
+<input id="custName"
+placeholder="Name">
+<br><br>
+<input id="address"
+placeholder="Address">
+<br><br>
+<button onclick="checkout()">
+Continue
+</button>
+</div>
+</div>
+
+
+
 <body>
     <div class="main-container">
         <div class="container-1">
@@ -219,27 +252,129 @@
             <h1>Alphonso Mango (Hapus) –<br>
                 Premium Ratnagiri & Devgad</h1>
             <h2 style="text-align: center;">One Dozen</h2>
-            <h3>Rs:1999.00</h3>
+            <h3 id="price">Rs:1999.00</h3>
             <s>Rs:3000.00</s>
             <p>Taxes included.<a href="">Shipping</a> calculated at checkout.</p>
             <button onclick="Decrement()">-</button>
             <span id="name">0</span>
             <button onclick="Increment()">+</button>
             <script>
-                let count = 0;
+                let qty = 1;
                 function Increment() {
-                    count++;
-                    document.getElementById("name").innerHTML = count;
+                    qty++;
+                    document.getElementById("name").innerHTML = qty;
+                    updatePrice();
                 }
+
                 function Decrement() {
-                    count--;
-                    document.getElementById("name").innerHTML = count;
+                    if (qty > 1) {
+                        qty--;
+                        document.getElementById("name").innerHTML = qty;
+                        updatePrice();
+                    }
                 }
+
+                function updatePrice() {
+                    let total = 1999 * qty;
+                    document.getElementById("price").innerHTML =
+                        "Rs:" + total.toFixed(2);
+                }
+
                 function changeImage(img) {
                     document.getElementById("mainImage").src = img.src;
                 }
+
+
+function addCart(){
+
+document.getElementById(
+"paymentPopup"
+).style.display="flex";
+
+}
+
+function checkout(){
+
+let phone=
+"919640546718";
+
+let msg=
+`Dear Customer,
+
+Thank you for taking time to purchase our products.
+
+Product:
+Alphonso Mango
+
+Quantity:
+${qty}
+
+Amount:
+₹${1999*qty}
+
+Please complete payment using QR code shown on website.`;
+
+window.open(
+"https://wa.me/"
++phone+
+"?text="
++encodeURIComponent(msg)
+);
+
+showQR();
+
+}
+
+function showQR(){
+
+document.getElementById(
+"paymentPopup"
+).innerHTML=`
+
+<div style="
+background:white;
+padding:30px;
+text-align:center;">
+
+<h2>
+Complete Payment
+</h2>
+
+<img
+src="./scanner.jpeg"
+width="250">
+
+<br><br>
+
+<button
+onclick="paymentDone()">
+
+Payment Done
+
+</button>
+
+</div>
+
+`;
+
+}
+
+function paymentDone(){
+
+alert(
+"Thank you! Your order will be delivered within 1 week."
+);
+
+document.getElementById(
+"paymentPopup"
+).style.display=
+"none";
+
+}
+
+
             </script>
-            <button class="button">Add To Cart</button>
+            <button class="button" onclick="addCart()">Add To Cart</button>
             <div class="container-3">
                 <p>🪴Freshly Harvested , Packed & Delivered.</p>
                 <p> No Pesticides , No Preservatives - Ever!</p>
