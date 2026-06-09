@@ -65,44 +65,82 @@ def rice_millets(request):
 @csrf_exempt
 def save_order(request):
     try:
-        if request.method == "POST":
-            data = json.loads(request.body)
-            order = Order.objects.create(
-                customer_name=data.get("name"),
-                mobile=data.get("mobile"),
-                address=data.get("address"),
-                products=data.get("products"),
-                total_amount=float(
+        if request.method=="POST":
+            data=json.loads(
+                request.body
+            )
+            order=Order.objects.create(
+                customer_name=
+                data.get("name"),
+
+                mobile=
+                data.get("mobile"),
+
+                address=
+                data.get("address"),
+
+                products=
+                data.get("products"),
+
+                total_amount=
+                float(
                     data.get("amount")
                 ),
-                utr_number=data.get("utr"),
-                payment_status="Paid"
+
+                utr_number=
+                data.get("utr"),
+
+                payment_status=
+                "Paid"
+
             )
-            msg=f"""
-Order ID: {order.id}
-Customer:{order.customer_name}
-Products:{order.products}
-Amount:₹{order.total_amount}
-UTR:{order.utr_number}
-Address:{order.address}
-"""
+
+            msg={
+
+                "id":
+                order.id,
+
+                "customer":
+                order.customer_name,
+
+                "products":
+                order.products,
+
+                "amount":
+                str(
+                    order.total_amount
+                ),
+
+                "utr":
+                order.utr_number,
+
+                "address":
+                order.address
+
+            }
 
             send_whatsapp(
+
                 "919640546718",
+
                 msg
+
             )
 
             return JsonResponse({
 
-                "status":"success",
+                "status":
+                "success",
 
-                "order_id":order.id
+                "order_id":
+                order.id
 
             })
 
         return JsonResponse({
 
-            "status":"failed"
+            "status":
+            "failed"
 
         })
 
@@ -110,9 +148,11 @@ Address:{order.address}
 
         return JsonResponse({
 
-            "status":"error",
+            "status":
+            "error",
 
-            "message":str(e)
+            "message":
+            str(e)
 
         })
 

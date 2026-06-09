@@ -1,26 +1,35 @@
 import requests
-TOKEN="EAAOKZBCNUGLMBRmvOOvsoZAlyaHZAez2L0TENEQirOSoRZCUTX9n1tkqTQ97pUi07Y6q2RZCZASOLKix98K61LGQOlhsWzBe68o42AaZBp98VAGNEohqEImMySLZBj1aJk2Vm7VatFS05UkWwoVHFuROuw5yKeFDRjhLhz25EBZCDb0NPYHHIeMTDjZBe8Fec4xQmvYUkiDp551UIZA8dm7wyNWZCJrmNQLw9FQY9lBvTYG1SusLZAPlQiEJdZCM4D3K2URrzj0wtkVUTR6JZCIK6pEaKcm7ccvvQZDZD"
+TOKEN="EAAOKZBCNUGLMBRtGZBwCE6WA4slHtHJKjlW2vwidC0z78s3NCcKY900vZC1rDAL2gbNAN6xeAmfEQaiCXPqOxIo5BrV8ZBjDmeOZCZBO9Nknuh6V2LKcjCDP5z3xpBzu0LiQ181axu12ENzEB4BV7AAwdciBsIQ5Vo9FHYAs9sjQuPvY5JVl2j7ugi3wkVobcdZBvUTlOhliknbJ16Rl9K5841yCoNyZApS1ZCmIBIR3xQiXyjxyOa9HY1V0SvoZAFZBl13i5lTZBIuCZANuVuzTzbJEEhWYP"
 PHONE_ID="1188781930979463"
+
 def send_whatsapp(phone,msg):
-    url=(
-        f"https://graph.facebook.com/v23.0/"
-        f"{PHONE_ID}/messages"
-    )
+    url=f"https://graph.facebook.com/v23.0/{PHONE_ID}/messages"
     headers={
-        "Authorization":
-        f"Bearer {TOKEN}",
-        "Content-Type":
-        "application/json"
+        "Authorization":f"Bearer {TOKEN}",
+        "Content-Type":"application/json"
     }
     payload={
         "messaging_product":"whatsapp",
-        "to":phone,
+        "to":"919640546718",
         "type":"template",
         "template":{
-            "name":"hello_world",
+            "name":"orderconfirmation",
             "language":{
                 "code":"en_US"
-            }
+            },
+            "components":[
+                {
+                    "type":"body",
+                    "parameters":[
+                        {"type":"text","text":str(msg["id"])},
+                        {"type":"text","text":msg["customer"]},
+                        {"type":"text","text":msg["products"]},
+                        {"type":"text","text":str(msg["amount"])},
+                        {"type":"text","text":msg["utr"]},
+                        {"type":"text","text":msg["address"]}
+                    ]
+                }
+            ]
         }
     }
     response=requests.post(
@@ -28,4 +37,5 @@ def send_whatsapp(phone,msg):
         json=payload,
         headers=headers
     )
-    print(response.text)
+    print("STATUS:",response.status_code)
+    print("RESPONSE:",response.text)
