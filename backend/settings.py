@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure-u__^^+a6#luh@ze21^56f_cah%hk7@=pb25m$f!c$a0ynu+m!5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "freshcart-organic-grocery-e-commerce.onrender.com",
+
+    "127.0.0.1",
+
+    "localhost"
+]
 
 
 # Application definition
