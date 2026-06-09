@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -232,6 +233,8 @@
             padding: 10px;
         }
 
+
+
         .menu-item {
             position: relative;
             cursor: pointer;
@@ -271,18 +274,21 @@
             text-decoration: none;
         }
 
+        .back {
+            color: white;
+            text-decoration: none;
+        }
+
         .contact-link {
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .offers {
             color: white;
             text-decoration: none;
         }
-        .back{
-            color: white;
-            text-decoration: none;
-        }
+
         .navbar {
             display: flex;
             gap: 25px;
@@ -304,6 +310,7 @@
         .navbar div:hover {
             color: #a5d6a7;
         }
+
         #cartSidebar {
             position: fixed;
             top: 0;
@@ -397,7 +404,8 @@
     </div>
 
     <div class="header">
-        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+
+        <div class="logo"><a href="/"><button>KEDIA ORGANIC</button></a></div>
 
         <div class="search-box">
             <select>
@@ -420,14 +428,14 @@
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
-                <a href="ghee_oil.html">GHEE & OILS</a>
-                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
-                <a href="pulses_dal.html">DALS & PULSES</a>
-                <a href="grains_cereals.html">GRAINS & CEREALS</a>
-                <a href="rice_millets.html">RICE & MILLETS</a>
-                <a href="fruits.html">FRUITS</a>
-                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
-                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <a href="/ghee_oil/">GHEE & OILS</a>
+                <a href="/seeds_dryfruits/">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="/pulses_dal/">DALS & PULSES</a>
+                <a href="/grains_cereals/">GRAINS & CEREALS</a>
+                <a href="/rice_millets/">RICE & MILLETS</a>
+                <a href="/fruits/">FRUITS</a>
+                <a href="/sweet_salts/">SWEETENERS & SALTS</a>
+                <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
             </div>
         </div>
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
@@ -437,22 +445,23 @@
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
+
     <div class="banner">
-        <h1>SNACKS FOR KIDS & ADULTS</h1>
+        <h1>RICE & MILLETS</h1>
     </div>
 
     <div class="main-container">
-        <div class="product-card" data-price="150">
+        <div class="product-card" data-price="102">
             <div class="product">
-                <img src="./snacks/item1.webp" class="img1">
-                <img src="./snacks/itemone.webp" class="img2">
+                <img src="./rice_millets/rice1.webp" class="img1">
+                <img src="./rice_millets/riceone.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">150.00</span>
-                <!-- <span>Rs:150.00</span> -->
+                <span class="final-price">102.00</span>
+                <span class="old-price">Rs:125.00</span>
             </p>
-            <h3 class="price">Almond Heart Millet Puff</h3>
+            <h3 class="price">Kolam Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -462,17 +471,17 @@
         </div>
 
 
-        <div class="product-card" data-price="150">
+        <div class="product-card" data-price="180">
             <div class="product">
-                <img src="./snacks/item2.webp" class="img1">
-                <img src="./snacks/itemtwo.webp" class="img2">
+                <img src="./rice_millets/rice2.webp" class="img1">
+                <img src="./rice_millets/ricetwo.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">150.00</span>
-                <!-- <span>Rs:100.00</span> -->
+                <span class="final-price">180.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
-            <h3 class="price">Tomato Rice Sticks</h3>
+            <h3 class="price">Ambemohar Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -481,17 +490,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="150">
+        <div class="product-card" data-price="80">
             <div class="product">
-                <img src="./snacks/item3.webp" class="img1">
-                <img src="./snacks/itemthree.webp" class="img2">
+                <img src="./rice_millets/rice3.webp" class="img1">
+                <img src="./rice_millets/ricethree.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">150.00</span>
-                <!-- <span>Rs:160.00</span> -->
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:100.00</span>
             </p>
-            <h3 class="price">Apple Fruit Puff</h3>
+            <h3 class="price">Indrayani Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -500,16 +509,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="150">
+        <div class="product-card" data-price="140">
             <div class="product">
-                <img src="./snacks/item4.webp" class="img1">
-                <img src="./snacks/itemfour.webp" class="img2">
+                <img src="./rice_millets/rice4.webp" class="img1">
+                <img src="./rice_millets/ricefour.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">150</span>
+                <span class="final-price">140.00</span>
+                <span class="old-price">Rs:160.00</span>
             </p>
-            <h3 class="price">Strawberry Fruit Puff</h3>
+            <h3 class="price">Basmati White Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -519,36 +529,93 @@
         </div>
 
         <!-- Next row automatically -->
-        <div class="product-card" data-price="550">
+        <div class="product-card" data-price="70">
             <div class="product">
-                <img src="./snacks/item5.webp" class="img1">
-                <img src="./snacks/itemfive.webp" class="img2">
+                <img src="./rice_millets/rice5.webp" class="img1">
+                <img src="./rice_millets/ricefive.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">550.00</span>
-                <!-- <span>Rs:150.00</span> -->
+                <span class="final-price"></span>70.00
+                <span class="old-price">Rs:90.00</span>
             </p>
-            <h3 class="price">Multivitamin Gummies</h3>
+            <h3 class="price">Idly Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="80">
+            <div class="product">
+                <img src="./rice_millets/rice6.webp" alt="" class="img1">
+                <img src="./rice_millets/ricesix.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:85.00</span>
+            </p>
+            <h3 class="price">Jowar Millet (Sorghum)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="65">
+            <div class="product">
+                <img src="./rice_millets/rice7.webp" alt="" class="img1">
+                <img src="./rice_millets/riceseven.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">65.00</span>
+                <span class="old-price">Rs:85.00</span>
+            </p>
+            <h3 class="price">Ragi Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="84">
+            <div class="product">
+                <img src="./rice_millets/rice8.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeight.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">84.00</span>
+                <span class="old-price">Rs:100.00</span>
+            </p>
+            <h3 class="price">Sonamasoori Rice</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
 
         <div class="product-card" data-price="150">
             <div class="product">
-                <img src="./snacks/item6.webp" alt="" class="img1">
-                <img src="./snacks/itemsix.webp" alt="" class="img2">
+                <img src="./rice_millets/rice9.webp" alt="" class="img1">
+                <img src="./rice_millets/ricenine.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">150.00</span>
-                <!-- <span>Rs:145.00</span> -->
+                <span class="old-price">Rs:165.00</span>
             </p>
-            <h3 class="price">Mango Fruit Puff</h3>
+            <h3 class="price">Basmati Brown Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -557,17 +624,55 @@
             </div>
         </div>
 
-        <div class="product-card">
-            <div class="product" data-price="140">
-                <img src="./snacks/item8.webp" alt="" class="img1">
-                <img src="./snacks/itemeight.webp" alt="" class="img2">
+        <div class="product-card" data-price="220">
+            <div class="product">
+                <img src="./rice_millets/rice10.webp" alt="" class="img1">
+                <img src="./rice_millets/riceten.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">140.00</span>
-                <!-- <span>Rs:150.00</span> -->
+                <span class="final-price">220.00</span>
+                <span class="old-price">Rs:250.00</span>
             </p>
-            <h3 class="price">Rainbow Crunchies</h3>
+            <h3 class="price">Quinoa</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="65">
+            <div class="product">
+                <img src="./rice_millets/rice11.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeleven.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">65.00</span>
+                <span class="old-price">Rs:80.00</span>
+            </p>
+            <h3 class="price">Bajra Whole</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="100">
+            <div class="product">
+                <img src="./rice_millets/rice12.webp" class="img1">
+                <img src="./rice_millets/ricetwelve.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">100.00</span>
+                <span class="old-price">Rs:130.00</span>
+            </p>
+            <h3 class="price">Red Rice</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -578,15 +683,15 @@
 
         <div class="product-card" data-price="140">
             <div class="product">
-                <img src="./snacks/item7.webp" alt="" class="img1">
-                <img src="./snacks/itemseven.webp" alt="" class="img2">
+                <img src="./rice_millets/rice13.webp" alt="" class="img1">
+                <img src="./rice_millets/ricethirteen.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">140.00</span>
-                <!-- <span>Rs:80.00</span> -->
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Creamy Crunchies</h3>
+            <h3 class="price">Barnyard Millet</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -595,17 +700,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="140">
+        <div class="product-card" data-price="125">
             <div class="product">
-                <img src="./snacks/item9.webp" alt="" class="img1">
-                <img src="./snacks/itemnine.webp" alt="" class="img2">
+                <img src="./rice_millets/rice14.webp" alt="" class="img1">
+                <img src="./rice_millets/ricefourteen.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">140.00</span>
-                <!-- <span>Rs:150.00</span> -->
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:160.00</span>
             </p>
-            <h3 class="price">Dry Fruit Muesil-BerryNut Booster</h3>
+            <h3 class="price">Millet Kichidi</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -614,18 +719,17 @@
             </div>
         </div>
 
-        
-        <div class="product-card" data-price="1200">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./snacks/item10.webp" alt="" class="img1">
-                <img src="./snacks/itemten.webp" alt="" class="img2">
+                <img src="./rice_millets/rice15.webp" alt="" class="img1">
+                <img src="./rice_millets/ricefifteen.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">1200.00</span>
-                <!-- <span>Rs:80.00</span> -->
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Try it all (Gummies, Fruit&Millet Puff Combo)</h3>
+            <h3 class="price">Little Millet</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -634,38 +738,17 @@
             </div>
         </div>
 
-        
-        <div class="product-card" data-price="700">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./snacks/item11.webp" alt="" class="img1">
-                <img src="./snacks/itemeleven.webp" alt="" class="img2">
+                <img src="./rice_millets/rice16.webp" alt="" class="img1">
+                <img src="./rice_millets/ricesixteen.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">700.00</span>
-                <!-- <span>Rs:80.00</span> -->
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Almond Hearts + Tomato Sticks + Apple + Mango + Strawberry</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>0</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        
-        <div class="product-card" data-price="700">
-            <div class="product">
-                <img src="./snacks/item12.webp" alt="" class="img1">
-                <img src="./snacks/itemtweleve.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">700.00</span>
-                <!-- <span>Rs:80.00</span> -->
-            </p>
-            <h3 class="price">Chyawanprash Gummies + Apple + Mango + Strawberry</h3>
+            <h3 class="price">Foxtail Millet</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -674,22 +757,78 @@
             </div>
         </div>
 
-        
-        <div class="product-card" data-price="590">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./snacks/item13.webp" alt="" class="img1">
-                <img src="./snacks/item13.webp" alt="" class="img2">
+                <img src="./rice_millets/rice17.webp" alt="" class="img1">
+                <img src="./rice_millets/riceseventeen.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">590.00</span>
-                <!-- <span>Rs:80.00</span> -->
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Apple + Mango + Strawberry Fruit Puff</h3>
+            <h3 class="price">Kodo Millet</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
-                <span>0</span>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="160">
+            <div class="product">
+                <img src="./rice_millets/rice18.webp" alt="" class="img1">
+                <img src="./rice_millets/riceeighteen.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">160.00</span>
+                <span class="old-price">Rs:190.00</span>
+            </p>
+            <h3 class="price">Amaranath Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./rice_millets/rice19.webp" alt="" class="img1">
+                <img src="./rice_millets/ricenineenten.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:160.00</span>
+            </p>
+            <h3 class="price">Multi Millet Mix</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./rice_millets/rice20.webp" alt="" class="img1">
+                <img src="./rice_millets/ricetweenty.webp" alt="" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:150.00</span>
+            </p>
+            <h3 class="price">Proso Millet</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
@@ -734,10 +873,7 @@
     </div>
 
 
-
-
     <footer class="footer">
-
         <!-- Top Section -->
         <div class="footer-top">
 
@@ -802,10 +938,10 @@
         <div class="footer-bottom">
             <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
         </div>
+
     </footer>
     <script>
 
-        
         function increase(btn) {
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -836,6 +972,7 @@
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
+
         let cart = [];
 
         // Add to cart

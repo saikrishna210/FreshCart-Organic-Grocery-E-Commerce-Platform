@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +126,7 @@
             margin: 10px 0;
         }
 
-        .old-price {
+        .old-price{
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -233,13 +234,13 @@
         }
 
 
-
+        
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-
+       
         .dropdown {
             display: none;
             position: absolute;
@@ -251,7 +252,7 @@
             padding: 20px;
         }
 
-
+      
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -272,22 +273,19 @@
             color: white;
             text-decoration: none;
         }
+        .back{
+            color: white;
+            text-decoration: none;
+        }
 
         .contact-link {
             color: white;
             text-decoration: none;
         }
-
-        .offers {
+        .offers{
             color: white;
             text-decoration: none;
         }
-
-        .back {
-            color: white;
-            text-decoration: none;
-        }
-
         .navbar {
             display: flex;
             gap: 25px;
@@ -296,12 +294,10 @@
             color: white;
             font-size: 14px;
         }
-
-        .navbar {
+         .navbar {
             position: relative;
             z-index: 1000;
         }
-
         .navbar div {
             cursor: pointer;
         }
@@ -309,6 +305,7 @@
         .navbar div:hover {
             color: #a5d6a7;
         }
+
 
         #cartSidebar {
             position: fixed;
@@ -394,6 +391,7 @@
             width: 250px;
             height: 250px;
         }
+    
     </style>
 </head>
 
@@ -403,7 +401,7 @@
     </div>
 
     <div class="header">
-        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+        <div class="logo"><a href="/"><button>KEDIA ORGANIC</button></a></div>
 
         <div class="search-box">
             <select>
@@ -423,18 +421,17 @@
         </div>
     </div>
 
-
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
-                <a href="ghee_oil.html">GHEE & OILS</a>
-                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
-                <a href="pulses_dal.html">DALS & PULSES</a>
-                <a href="grains_cereals.html">GRAINS & CEREALS</a>
-                <a href="rice_millets.html">RICE & MILLETS</a>
-                <a href="fruits.html">FRUITS</a>
-                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
-                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <a href="/ghee_oil/">GHEE & OILS</a>
+                <a href="/seeds_dryfruits/">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="/pulses_dal/">DALS & PULSES</a>
+                <a href="/grains_cereals/">GRAINS & CEREALS</a>
+                <a href="/rice_millets/">RICE & MILLETS</a>
+                <a href="/fruits/">FRUITS</a>
+                <a href="/sweet_salts/">SWEETENERS & SALTS</a>
+                <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
             </div>
         </div>
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
@@ -446,21 +443,21 @@
 
 
     <div class="banner">
-        <h1>GRAINS & CEREALS</h1>
+        <h1>PULSES & DALS</h1>
     </div>
 
     <div class="main-container">
-        <div class="product-card" data-price="95">
+        <div class="product-card" data-price="135">
             <div class="product">
-                <img src="./grains_cereals/grain1.webp" class="img1">
-                <img src="./grains_cereals/grainone.webp" class="img2">
+                <img src="./Dals_Pulses/dal1.webp" class="img1">
+                <img src="./Dals_Pulses/dalone.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">95.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="final-price">135.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">Barley Pearl</h3>
+            <h3 class="price">Moong Dal Yellow Split</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -470,17 +467,36 @@
         </div>
 
 
-        <div class="product-card" data-price="80">
+        <div class="product-card" data-price="170">
             <div class="product">
-                <img src="./grains_cereals/grain2.webp" class="img1">
-                <img src="./grains_cereals/graintwo.webp" class="img2">
+                <img src="./Dals_Pulses/dal2.webp" class="img1">
+                <img src="./Dals_Pulses/daltwo.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">80.00</span>
-                <span class="old-price">Rs:110.00</span>
+                <span class="final-price">170.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
-            <h3 class="price">Barley with Husk</h3>
+            <h3 class="price">Toor Dal Split</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="125">
+            <div class="product">
+                <img src="./Dals_Pulses/dal3.webp" class="img1">
+                <img src="./Dals_Pulses/dalthree.webp" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">125.00</span>
+                <span class="old-price">Rs:170.00</span>
+            </p>
+            <h3 class="price">Moong Green Whole</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -491,34 +507,15 @@
 
         <div class="product-card" data-price="150">
             <div class="product">
-                <img src="./grains_cereals/grain3.webp" class="img1">
-                <img src="./grains_cereals/grainthree.webp" class="img2">
+                <img src="./Dals_Pulses/dal4.webp" class="img1">
+                <img src="./Dals_Pulses/dalfour.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">150.00</span>
-                <span class="old-price">Rs:200.00</span>
+                <span class="old-price">Rs:175.00</span>
             </p>
-            <h3 class="price">Groundnut</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="120">
-            <div class="product">
-                <img src="./grains_cereals/grain4.webp" class="img1">
-                <img src="./grains_cereals/grainfour.webp" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">120.00</span>
-                <span class="old-price">Rs:160.00</span>
-            </p>
-            <h3 class="price">Idly Rava</h3>
+            <h3 class="price">Kabuli Chana</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -528,17 +525,17 @@
         </div>
 
         <!-- Next row automatically -->
-        <div class="product-card" data-price="199">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./grains_cereals/grain5.webp" class="img1">
-                <img src="./grains_cereals/grainfive.webp" class="img2">
+                <img src="./Dals_Pulses/dalfive.webp" class="img1">
+                <img src="./Dals_Pulses/dal5.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">199.00</span>
-                <span class="old-price">Rs:240.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">khapli Wheat</h3>
+            <h3 class="price">Masoor Dal Red Split</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -549,15 +546,15 @@
 
         <div class="product-card" data-price="90">
             <div class="product">
-                <img src="./grains_cereals/grain6.webp" alt="" class="img1">
-                <img src="./grains_cereals/grainsix.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal6.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/dalsix.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">90.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="old-price">Rs:110.00</span>
             </p>
-            <h3 class="price">Poha Red</h3>
+            <h3 class="price">Chana Brown</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -566,17 +563,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="80">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./grains_cereals/grain7.webp" alt="" class="img1">
-                <img src="./grains_cereals/grainseven.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal7.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/dalseven.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">80.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">Poha White</h3>
+            <h3 class="price">Moong Dal Green Split</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -585,17 +582,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="220">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./grains_cereals/grain8.webp" alt="" class="img1">
-                <img src="./grains_cereals/graineight.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal8.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/daleight.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">220.00</span>
-                <span class="old-price">Rs:250.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">Quinoa</h3>
+            <h3 class="price">Urad Dal White Split</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -604,17 +601,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="75">
+        <div class="product-card" data-price="100">
             <div class="product">
-                <img src="./grains_cereals/grain9.webp" alt="" class="img1">
-                <img src="./grains_cereals/grain10.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal9.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/dalnine.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">75.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="final-price">100.00</span>
+                <span class="old-price">Rs:130.00</span>
             </p>
-            <h3 class="price">Rava (Sooji)</h3>
+            <h3 class="price">Chana Dal</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -623,17 +620,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="75">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./grains_cereals/grain10.webp" alt="" class="img1">
-                <img src="./grains_cereals/grainten.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal10.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/dalten.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">75.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">Roasted Chana Dal</h3>
+            <h3 class="price">Masoor Black Whole</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -642,17 +639,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="65">
+        <div class="product-card" data-price="110">
             <div class="product">
-                <img src="./grains_cereals/grain11.webp" alt="" class="img1">
-                <img src="./grains_cereals/graineleven.webp" alt="" class="img2">
+                <img src="./Dals_Pulses/dal11.webp" alt="" class="img1">
+                <img src="./Dals_Pulses/daleleven.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">65.00</span>
-                <span class="old-price">Rs:95.00</span>
+                <span class="final-price">110.00</span>
+                <span class="old-price">Rs:125.00</span>
             </p>
-            <h3 class="price">Wheat Daliya</h3>
+            <h3 class="price">Chana Green</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -661,17 +658,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="85">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./grains_cereals/grain12.webp" class="img1">
-                <img src="./grains_cereals/graintwelve.webp" class="img2">
+                <img src="./Dals_Pulses/dal12.webp" class="img1">
+                <img src="./Dals_Pulses/daltwelve.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">85.00</span>
-                <span class="old-price">Rs:100.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:170.00</span>
             </p>
-            <h3 class="price">Wheat Whole</h3>
+            <h3 class="price">Moth Beans (Matki)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -680,6 +677,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div id="overlay" onclick="closeCart()"></div>
@@ -692,8 +690,6 @@
         <h2>Total: Rs <span id="total">0</span></h2>
         <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
-
-
 
 
     <!-- ADDRESS -->
@@ -727,9 +723,8 @@
 
 
 
-
-
     <footer class="footer">
+
         <!-- Top Section -->
         <div class="footer-top">
 
@@ -798,8 +793,8 @@
     </footer>
     <script>
 
-
-        function increase(btn) {
+        
+          function increase(btn) {
 
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -825,11 +820,12 @@
             let total = originalPrice * qty;
             card.querySelector(".final-price").innerText = total.toFixed(2);
         }
-        function toggleMenu() {
+
+
+         function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
-
         let cart = [];
 
         // Add to cart

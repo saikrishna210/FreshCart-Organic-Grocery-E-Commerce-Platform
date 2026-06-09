@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -670,9 +671,6 @@
             color: white;
         }
 
-
-
-
         .scrool-1 {
             padding: 40px 0;
             background: #e6efe8;
@@ -787,7 +785,6 @@
     </div>
 
     <div class="header">
-
         <!-- Logo -->
         <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
 
@@ -795,11 +792,11 @@
         <div class="search-box">
             <select onchange="goPage(this.value)">
                 <option>All Categories</option>
-                <option value="ghee_oil.html">A2 BUTTER GHEE</option>
+                <option value="/ghee_oil/">A2 BUTTER GHEE</option>
                 <option>Best Seller-V</option>
                 <option>Best Seller-G</option>
                 <option value="juices.html">Cold Pressed Guices</option>
-                <option value="fruits.html">Fresh Fruits</option>
+                <option value="/fruits/">Fresh Fruits</option>
                 <option value="vegetables.html">Fresh Leafy Greens</option>
             </select>
             <input type="text" placeholder="Search">
@@ -818,22 +815,22 @@
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
-                <a href="ghee_oil.html">GHEE & OILS</a>
-                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
-                <a href="pulses_dal.html">DALS & PULSES</a>
-                <a href="grains_cereals.html">GRAINS & CEREALS</a>
-                <a href="rice_millets.html">RICE & MILLETS</a>
+                <a href="/ghee_oil/">GHEE & OILS</a>
+                <a href="/seeds_dryfruits/">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="/pulses_dal/">DALS & PULSES</a>
+                <a href="/grains_cereals/">GRAINS & CEREALS</a>
+                <a href="/rice_millets/">RICE & MILLETS</a>
                 <a href="#" onclick="goPage('fruits.html')">FRUITS</a>
-                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
-                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <a href="/sweet_salts/">SWEETENERS & SALTS</a>
+                <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
                 <!-- </div> -->
             </div>
         </div>
-        <a href="over_story.html" class="overstory-link">OUR STORY</a>
-        <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
-        <a href="offers.html" class="offers">OFFERS</a>
-        <a href="giving_back.html" class="back">GIVING BACK</a>
-        <a href="contact.html" class="contact-link">CONTACT US</a>
+        <a href="/over_story/" class="overstory-link">OUR STORY</a>
+        <a href="/happy_farmers/" class="farmers">HAPPY_FARMERS</a>
+        <a href="/offers/" class="offers">OFFERS</a>
+        <a href="/giving_back/" class="back">GIVING BACK</a>
+        <a href="/contact_us/" class="contact-link">CONTACT US</a>
     </div>
 
     <!-- Info Bar -->
@@ -850,7 +847,7 @@
             <!-- Left Image -->
             <div class="card-left">
                 <video autoplay muted loop>
-                    <source src="./mangovideo.mp4">
+                    <source src="{% static 'mangovideo.mp4' %}">
                     your browser does not support video.
                 </video>
                 <div class="overlay-text">Carbide & chemical free</div>
@@ -861,7 +858,7 @@
                 <h1>Farm Fresh Alphonso Mangoes Delivered to You</h1>
                 <p class="small">Handpicked from Devgad & Ratnagiri</p>
                 <p class="small">Naturally Sweet. 100% Chemical Free.</p>
-                <a href="mangoes.html"><button>Order Fresh Mangoes</button></a>
+                <a href="/mangoes/"><button>Order Fresh Mangoes</button></a>
             </div>
         </div>
         </div>
@@ -872,8 +869,7 @@
         <!-- LEFT HERO -->
         <div class="hero">
 
-            <img src="./organic_farming.png" alt="farm">
-
+            <img src="{% static 'organic_farming.png' %}">
             <div class="hero-content">
                 <span class="badge">Super Deals</span>
 
@@ -896,24 +892,27 @@
                 <div class="tag">DEALS<br>EVERY<br>WEEK!</div>
             </div>
 
-            <img src="./group_of_images/vegetables.jpg" alt="fruits">
-            <button><a href="vegetables.html" class="outline-btn">View Offers</a></button>
-            <!-- <a href="#" onclick="goPage('vegetables.html')" class="outline-btn"><button>View Offers</button></a> -->
+            <!-- <img src="./group_of_images/vegetables.jpg" alt="fruits"> -->
+            <img src="{% static 'group_of_images/vegetables.jpg' %}">
+            <button><a href="/vegetables/" class="outline-btn">View Offers</a></button>
         </div>
     </div>
 
     <h3 id="shop">Shop By Category</h3>
     <div id="images">
-        <a href="vegetables.html"><img src="./group_of_images/vegetables.jpg" alt="" width="200" height="200"></a>
-        <a href="fruits.html"><img src="./group_of_images/fruits.webp" alt="" width="200" height="200"></a>
-        <a href="ghee_oil.html"><img src="./group_of_images/oils.webp" alt="" width="200" height="200"></a>
-        <a href="pulses_dal.html"><img src="./group_of_images/pulses.webp" alt="" width="200" height="200"></a>
-        <a href="juices.html"><img src="./group_of_images/cold_pressed_juices.webp" alt="" width="200" height="200"></a>
+        <a href="/vegetables/"><img src="{% static 'group_of_images/vegetables.jpg' %}" alt="" width="200"
+                height="200"></a>
+        <a href="/fruits/"><img src="{% static 'group_of_images/fruits.webp' %}" alt="" width="200" height="200"></a>
+        <a href="/ghee_oil/"><img src="{% static 'group_of_images/oils.webp' %}" alt="" width="200" height="200"></a>
+        <a href="/pulses_dal/"><img src="{% static 'group_of_images/pulses.webp' %}" alt="" width="200"
+                height="200"></a>
+        <a href="/juices/"><img src="{% static 'group_of_images/cold_pressed_juices.webp' %}" alt="" width="200"
+                height="200"></a>
     </div>
     <div class="mainone">
         <h1 class="h1text">Top Picks For You - Chemical- Free, Fresh & Farm-<br>Trusted</h1>
-        <a href="ghee_oil.html"><button class="buttons">☀️Super Deals</button></a>
-        <a href="juices.html"><button class="buttons">Kedia Essentials</button></a>
+        <a href="/ghee_oil/"><button class="buttons">☀️Super Deals</button></a>
+        <a href="/juices/"><button class="buttons">Kedia Essentials</button></a>
         <a href=""><button class="buttons">Farm FreshPicks</button></a>
         <a href=""><button class="buttons">Immunity & Wellness</button></a>
     </div>
@@ -921,7 +920,7 @@
     <div class="maintwo">
         <!-- LEFT CARD -->
         <div class="card-one">
-            <img src="./fruits_vege.avif" alt="">
+            <img src="{% static 'fruits_vege.avif' %}" alt="">
 
             <div class="overlay">
                 <h2>Fresh Picks, Local & Seasonal</h2>
@@ -930,13 +929,13 @@
 
             <div class="badge">DEALS<br>EVERY<br>WEEK!</div>
 
-            <a href="vegetables.html">
+            <a href="/vegetables/">
                 <div class="bottom-link">Shop Fresh Produce</div>
             </a>
         </div>
         <!-- RIGHT CARD -->
         <div class="card-one">
-            <img src="./dalimage.jpg" alt="">
+            <img src="{% static 'dalimage.jpg' %}" alt="">
 
             <div class="overlay">
                 <h2>Chemical-Free grains, spices & pantry staples</h2>
@@ -944,7 +943,7 @@
                 <p>Grocery Essentials</p>
             </div>
 
-            <a href="kitchen_essentails.html">
+            <a href="/kitchen_essentails/">
                 <div class="bottom-link">Buy Now →</div>
             </a>
         </div>
@@ -959,14 +958,14 @@
             <div class="slider-window">
                 <div class="slider-track" id="sliderTrack">
                     <!-- Add all 10 images here -->
-                    <div class="card-1"><img src="./order1.webp"></div>
-                    <div class="card-1"><img src="./order2.webp"></div>
-                    <div class="card-1"><img src="./order3.webp"></div>
-                    <div class="card-1"><img src="./order4.webp"></div>
-                    <div class="card-1"><img src="./order5.webp"></div>
-                    <div class="card-1"><img src="./order6.webp"></div>
-                    <div class="card-1"><img src="./order7.webp"></div>
-                    <div class="card-1"><img src="./order8.webp"></div>
+                    <div class="card-1"><img src="{% static 'order1.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order2.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order3.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order4.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order5.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order6.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order7.webp' %}"></div>
+                    <div class="card-1"><img src="{% static 'order8.webp' %}"></div>
                 </div>
                 <!-- Right Arrow -->
                 <button class="arrow right" onclick="moveRight()">❯</button>
@@ -976,56 +975,23 @@
 
 
 
+    <div id="paymentPopup" style="display:none;position:fixed;top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    background:rgba(0,0,0,.5);
+                    justify-content:center;
+                    align-items:center;">
 
+    <div style="background:white;padding:30px;width:420px;border-radius:20px;
+                    text-align:center;">
 
-
-    <div id="paymentPopup" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.5);
-justify-content:center;
-align-items:center;">
-
-        <div style="
-background:white;
-padding:30px;
-width:420px;
-border-radius:20px;
-text-align:center;">
-
-            <span onclick="closePopup()" style="
-float:right;
-font-size:30px;
-cursor:pointer;">
-
-                ✖
-
-            </span>
-
-            <h2>
-                Delivery Address
-            </h2>
-
-            <input id="custName" placeholder="Name">
-
-            <br><br>
-
-            <input id="custAddress" placeholder="Address">
-
-            <br><br>
-
-            <button onclick="checkout()">
-
-                Continue
-
-            </button>
-
+    <span onclick="closePopup()" style="float:right;font-size:30px;cursor:pointer;">✖</span>
+            <h2>Delivery Address</h2>
+            <input id="custName" placeholder="Name"><br><br>
+            <input id="custAddress" placeholder="Address"><br><br>
+            <button onclick="checkout()">Continue</button>
         </div>
-
     </div>
 
 
@@ -1034,7 +1000,7 @@ cursor:pointer;">
 
         <!-- LEFT IMAGE -->
         <div class="product-image">
-            <img src="./high.webp" alt="Ghee">
+            <img src="{% static 'high.webp' %}" alt="Ghee">
         </div>
 
         <!-- RIGHT DETAILS -->
@@ -1080,42 +1046,38 @@ cursor:pointer;">
     </div>
 
 
-
-
-
-
     <h2 style="text-align: center; color: green;">Better Together: Farm-Fresh Combos</h2>
     <div class="combos">
         <div class="combo-1">
-            <img src="./offer1.png" alt="">
-            <a href="rice_millets.html"><button class="off2">View More Options</button></a>
+            <img src="{% static 'offer1.png' %}" alt="">
+            <a href="/rice_millets/"><button class="off2">View More Options</button></a>
         </div>
 
         <div class="combo-1">
-            <img src="./offer2.png" alt="">
-            <a href="vegetables.html"><button class="off2">Make First Purchases</button></a>
+            <img src="{% static 'offer2.png' %}" alt="">
+            <a href="/vegetables/"><button class="off2">Make First Purchases</button></a>
         </div>
 
         <div class="combo-1">
-            <img src="./offer3.png" alt="">
-            <a href="ghee_oil.html"><button class="off2">Checkout Deals For You</button></a>
+            <img src="{% static 'offer3.png' %}" alt="">
+            <a href="/ghee_oil/"><button class="off2">Checkout Deals For You</button></a>
         </div>
     </div>
 
     <h2 style="color: green; text-align: center;">As Featured In & Certified By</h2>
     <div class="scrool-1">
         <div class="scrool-2">
-            <img src="./scrool1.webp" alt="">
-            <img src="./scrool2.webp" alt="">
-            <img src="./scrool3.avif" alt="">
-            <img src="./scrool4.webp" alt="">
-            <img src="./scrool5.avif" alt="">
+            <img src="{% static 'scrool1.webp' %}" alt="">
+            <img src="{% static 'scrool2.webp' %}" alt="">
+            <img src="{% static 'scrool3.avif' %}" alt="">
+            <img src="{% static 'scrool4.webp' %}" alt="">
+            <img src="{% static 'scrool5.avif' %}" alt="">
 
-            <img src="./scrool1.webp" alt="">
-            <img src="./scrool2.webp" alt="">
-            <img src="./scrool3.avif" alt="">
-            <img src="./scrool4.webp" alt="">
-            <img src="./scrool5.avif" alt="">
+            <img src="{% static 'scrool1.webp' %}" alt="">
+            <img src="{% static 'scrool2.webp' %}" alt="">
+            <img src="{% static 'scrool3.avif' %}" alt="">
+            <img src="{% static 'scrool4.webp' %}" alt="">
+            <img src="{% static 'scrool5.avif' %}" alt="">
         </div>
     </div>
 
@@ -1257,76 +1219,31 @@ cursor:pointer;">
         let qty = 1;
 
         function increment() {
-
             qty++;
-
-            document
-                .getElementById(
-                    "qty"
-                )
-                .innerHTML =
-                qty;
-
+            document.getElementById("qty").innerHTML=qty;
             updatePrice();
-
         }
 
         function decrement() {
 
             if (qty > 1) {
-
                 qty--;
-
-                document
-                    .getElementById(
-                        "qty"
-                    )
-                    .innerHTML =
-                    qty;
-
+                document.getElementById("qty").innerHTML=qty;
                 updatePrice();
-
             }
-
         }
 
         function updatePrice() {
-
-            let total =
-                800 * qty;
-
-            document
-                .getElementById(
-                    "price"
-                )
-                .innerHTML =
-                "Rs. " +
-                total;
-
+            let total =800 * qty;
+                document.getElementById("price").innerHTML="Rs."+total;
         }
 
         function openAddress() {
-
-            document
-                .getElementById(
-                    "paymentPopup"
-                )
-                .style
-                .display =
-                "flex";
-
+            document.getElementById("paymentPopup").style.display ="flex";
         }
 
         function closePopup() {
-
-            document
-                .getElementById(
-                    "paymentPopup"
-                )
-                .style
-                .display =
-                "none";
-
+            document.getElementById("paymentPopup").style.display ="none";
         }
 
         function checkout() {
@@ -1353,58 +1270,27 @@ Amount:
 
 Please complete payment using QR shown on website.`;
 
-            window.open(
-                "https://wa.me/"
-                +
-                phone +
-                "?text=" +
-                encodeURIComponent(msg)
-            );
-
+            window.open("https://wa.me/"+phone +"?text=" +encodeURIComponent(msg));
             showScanner(total);
-
         }
 
         function showScanner(total) {
-
-            document
-                .getElementById(
-                    "paymentPopup"
-                )
-                .innerHTML = `
-
+            document.getElementById("paymentPopup").innerHTML = `
 <div
 style="
 background:white;
 padding:30px;
 text-align:center;">
 
-<h2>
+<h2>Complete Payment</h2>
 
-Complete Payment
+<h3>₹${total}</h3>
 
-</h2>
-
-<h3>
-
-₹${total}
-
-</h3>
-
-<img
-src="./scanner.jpeg"
-
-width="250">
+<img src="./scanner.jpeg" width="250">
 
 <br><br>
 
-<button
-onclick="paymentDone()">
-
-Payment Done
-
-</button>
-
+<button onclick="paymentDone()"> Payment Done </button>
 </div>
 
 `;
@@ -1412,18 +1298,13 @@ Payment Done
         }
 
         function paymentDone() {
-
             alert(
                 "Thank you! Your order will be delivered within 1 week."
             );
-
             closePopup();
-
         }
 
     </script>
 
-
 </body>
-
 </html>

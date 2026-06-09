@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=dev
+    ice-width, initial-scale=1.0">
     <title>Products</title>
 
     <style>
@@ -80,11 +82,6 @@
             padding: 20px;
             /* background:#e6c9a8; */
         }
-
-
-
-
-
 
         .product-card {
             text-align: center;
@@ -237,12 +234,14 @@
             padding: 10px;
         }
 
+
+        
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-
+       
         .dropdown {
             display: none;
             position: absolute;
@@ -254,7 +253,7 @@
             padding: 20px;
         }
 
-
+      
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -275,18 +274,20 @@
             color: white;
             text-decoration: none;
         }
+        .back{
+            color:white;
+            text-decoration: none;
+        }
 
         .contact-link {
             color: white;
             text-decoration: none;
         }
-
-        .offers {
+        .offers{
             color: white;
             text-decoration: none;
         }
-
-        .back {
+        .back{
             color: white;
             text-decoration: none;
         }
@@ -299,12 +300,10 @@
             color: white;
             font-size: 14px;
         }
-
-        .navbar {
+         .navbar {
             position: relative;
             z-index: 1000;
         }
-
         .navbar div {
             cursor: pointer;
         }
@@ -313,7 +312,7 @@
             color: #a5d6a7;
         }
 
-        #cartSidebar {
+ #cartSidebar {
             position: fixed;
             top: 0;
             right: -400px;
@@ -397,6 +396,9 @@
             width: 250px;
             height: 250px;
         }
+
+
+    
     </style>
 </head>
 
@@ -406,7 +408,7 @@
     </div>
 
     <div class="header">
-        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+        <div class="logo"><a href="/"><button>KEDIA ORGANIC</button></a></div>
 
         <div class="search-box">
             <select>
@@ -429,14 +431,14 @@
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
-                <a href="ghee_oil.html">GHEE & OILS</a>
-                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
-                <a href="pulses_dal.html">DALS & PULSES</a>
-                <a href="grains_cereals.html">GRAINS & CEREALS</a>
-                <a href="rice_millets.html">RICE & MILLETS</a>
-                <a href="fruits.html">FRUITS</a>
-                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
-                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <a href="/ghee_oil/">GHEE & OILS</a>
+                <a href="/seeds_dryfruits/">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="/pulses_dal/">DALS & PULSES</a>
+                <a href="/grains_cereals/">GRAINS & CEREALS</a>
+                <a href="/rice_millets/">RICE & MILLETS</a>
+                <a href="/fruits/">FRUITS</a>
+                <a href="/sweet_salts/">SWEETENERS & SALTS</a>
+                <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
             </div>
         </div>
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
@@ -446,22 +448,23 @@
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
+
     <div class="banner">
-        <h1>GHEES & OILS</h1>
+        <h1>NUTS, SEEDS & DRY FRUITS</h1>
     </div>
 
     <div class="main-container">
-        <div class="product-card" data-price="800">
+        <div class="product-card" data-price="160">
             <div class="product">
-                <img src="./ghee_oils/ghee1.webp" class="img1">
-                <img src="./ghee_oils/gheeone.webp" class="img2">
+                <img src="{% static 'dryfruits_seeds/dryfruit1.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitone.webp' %}" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">800.00</span>
-                <span class="old-price">Rs:1000.00</span>
+                <span class="final-price">160.00</span>
+                <span class="old-price">Rs:200.00</span>
             </p>
-            <h3 class="price">A2 Gir Cow Vedic Ghee</h3>
+            <h3 class="price">Almond (Badam)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -471,17 +474,303 @@
         </div>
 
 
-        <div class="product-card" data-price="550">
+        <div class="product-card" data-price="350">
             <div class="product">
-                <img src="./ghee_oils/ghee2.webp" class="img1">
-                <img src="./ghee_oils/gheetwo.webp" class="img2">
+                <img src="{% static 'dryfruits_seeds/dryfruit2.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruittwo.webp' %}" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">550.00</span>
-                <span class="old-price">Rs:750.00</span>
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:375.00</span>
             </p>
-            <h3 class="price">Groundnut Oil Cold Pressed</h3>
+            <h3 class="price">Foxnut (Makhana)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="250">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit3.jpg' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitthree.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">250.00</span>
+                <span class="old-price">Rs:290.00</span>
+            </p>
+            <h3 class="price">Raisins Black (Kali Kismis)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="375">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit4.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitfour.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">375.00</span>
+                <span class="old-price">Rs:500.00</span>
+            </p>
+            <h3 class="price">Walnut Kernels</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <!-- Next row automatically -->
+        <div class="product-card" data-price="200">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit5.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitfive.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">200.00</span>
+                <span class="old-price">Rs:250.00</span>
+            </p>
+            <h3 class="price">Cashew (Kaju)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="50">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit6.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitsix.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">50.00</span>
+                <span class="old-price">Rs:75.00</span>
+            </p>
+            <h3 class="price">Flax Seeds</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="440">
+            <div class="product">
+                <img src="{% static 'dryfruits_seeds/dryfruit7.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruit7.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">440.00</span>
+                <span class="old-price">Rs:600.00</span>
+            </p>
+            <h3 class="price">Kashmiri Saffron (Kesar)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="400">
+            <div class="product">
+                <img src="{% static 'dryfruits_seeds/dryfruit8.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruiteight.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">400.00</span>
+                <span class="old-price">Rs:450.00</span>
+            </p>
+            <h3 class="price">Pista Kernels Unsalted</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="325">
+            <div class="product">
+               <img src="{% static 'dryfruits_seeds/dryfruit9.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruit9.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">325.00</span>
+                <span class="old-price">Rs:350.00</span>
+            </p>
+            <h3 class="price">Pumpkin Seeds</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="175">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit11.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruiteleven.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">175.00</span>
+                <span class="old-price">Rs:200.00</span>
+            </p>
+            <h3 class="price">Khus Khus (Poppy Seeds)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="350">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruits12.jpg' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruits12.jpg' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:400.00</span>
+            </p>
+            <h3 class="price">Watermelon Seeds</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="300">
+            <div class="product">
+                <img src="{% static 'dryfruits_seeds/dryfruit13.jpg' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruit13.jpg' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:340.00</span>
+            </p>
+            <h3 class="price">Kismis Indian Yellow</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="80">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit14.jpg' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitfourteen.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:100.00</span>
+            </p>
+            <h3 class="price">Basil Seeds (Sabja)</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="300">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit15.jpg' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruit15.jpg' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:350.00</span>
+            </p>
+            <h3 class="price">Seeds Mix</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="250">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit16.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitsixteen.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">250.00</span>
+                <span class="old-price">Rs:350.00</span>
+            </p>
+            <h3 class="price">Sunflower Seeds</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="300">
+            <div class="product">
+                <img src="{% static 'dryfruits_seeds/dryfruit17.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruitseventeen.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:400.00</span>
+            </p>
+            <h3 class="price">Chia Seeds</h3>
+            <button class="cart-btn">Add To Cart</button>
+            <div class="qty">
+                <button onclick="decrease(this)">-</button>
+                <span>1</span>
+                <button onclick="increase(this)">+</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="350">
+            <div class="product">
+                 <img src="{% static 'dryfruits_seeds/dryfruit18.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruiteighteen.webp' %}" class="img2">
+            </div>
+            <p class="price">
+                From Rs:
+                <span class="final-price">350.00</span>
+                <span class="old-price">Rs:375.00</span>
+            </p>
+            <h3 class="price">Walnut In Shell</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -492,15 +781,15 @@
 
         <div class="product-card" data-price="600">
             <div class="product">
-                <img src="./ghee_oils/ghee3.webp" class="img1">
-                <img src="./ghee_oils/gheethree.webp" class="img2">
+                 <img src="{% static 'dryfruits_seeds/dryfruit19.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruit19.webp' %}" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">600.00</span>
-                <span class="old-price">Rs:750.00</span>
+                <span class="old-price">Rs:650.00</span>
             </p>
-            <h3 class="price">Sesame Cold Pressed Oil</h3>
+            <h3 class="price">Brazil Nut Imported</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -509,19 +798,17 @@
             </div>
         </div>
 
-
-        <div class="product-card" data-price="450">
+        <div class="product-card" data-price="500">
             <div class="product">
-                <img src="./ghee_oils/ghee4.webp" class="img1">
-                <img src="./ghee_oils/gheefour.webp" class="img2">
+                <img src="{% static 'dryfruits_seeds/dryfruit20.webp' %}" class="img1">
+                <img src="{% static 'dryfruits_seeds/dryfruittweenty.webp' %}" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">450.00</span>
-                <span class="old-price">Rs:500.00</span>
+                <span class="final-price">500.00</span>
+                <span class="old-price">Rs:550.00</span>
             </p>
-
-            <h3 class="price">Sun Flower Cold Pressed Oil</h3>
+            <h3 class="price">DryFruit Mix</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -529,130 +816,11 @@
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
-
-
-
-        <!-- Next row automatically -->
-        <div class="product-card" data-price="800">
-            <div class="product">
-                <img src="./ghee_oils/ghee5.webp" class="img1">
-                <img src="./ghee_oils/gheefive.webp" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">800.00</span>
-                <span class="old-price">Rs:950.00</span>
-            </p>
-            <h3 class="price">Cocount Cold Pressed Oil</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="425">
-            <div class="product">
-                <img src="./ghee_oils/ghee6.webp" alt="" class="img1">
-                <img src="./ghee_oils/gheesix.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">425.00</span>
-                <span class="old-price">Rs:500.00</span>
-            </p>
-            <h3 class="price">Mustard Cold Pressed Oil</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="1600">
-            <div class="product">
-                <img src="./ghee_oils/ghee7.webp" alt="" class="img1">
-                <img src="./ghee_oils/gheeseven.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">1600.00</span>
-                <span class="old-price">Rs:1800.00</span>
-            </p>
-            <h3 class="price">Olive Cold Pressed Oil</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="4000">
-            <div class="product">
-                <img src="./ghee_oils/ghee8.webp" alt="" class="img1">
-                <img src="./ghee_oils/ghee8.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">4000.00</span>
-                <span class="old-price">Rs:4300.00</span>
-            </p>
-            <h3 class="price">A2 Desi Cow Ghee (500ml X2)</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="2900">
-            <div class="product">
-                <img src="./ghee_oils/ghee9.webp" alt="" class="img1">
-                <img src="./ghee_oils/ghee9.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">2900.00</span>
-                <span class="old-price">Rs:3100.00</span>
-            </p>
-            <h3 class="price">A2 Desi Cow Ghee(500ml)</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="2200">
-            <div class="product">
-                <img src="./ghee_oils/ghee10.webp" alt="" class="img1">
-                <img src="./ghee_oils/ghee10.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">2200.00</span>
-                <span class="old-price">Rs:2400.00</span>
-            </p>
-            <h3 class="price">A2 Desi Cow Ghee(500ml)</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
     </div>
 
 
 
-
-
+    
     <div id="overlay" onclick="closeCart()"></div>
     <div id="cartSidebar">
         <div style="display:flex;justify-content:space-between;">
@@ -664,17 +832,18 @@
         <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
 
+
     <!-- ADDRESS -->
     <div id="addressPopup" class="popup-overlay">
         <div class="popup-box">
             <span class="close-btn" onclick="closeAddress()">✖</span>
             <h2>Delivery Address</h2>
-            <input type="text" placeholder="Full Name"><br><br>
-            <input type="text" placeholder="Phone Number"><br><br>
-            <input type="text" placeholder="House / Flat No"><br><br>
-            <input type="text" placeholder="Street / Area"><br><br>
-            <input type="text" placeholder="City"><br><br>
-            <input type="text" placeholder="Pincode"><br><br>
+            <input type="text" id="name" placeholder="Full Name">
+            <br><br>
+            <input type="text" id="mobile" placeholder="Phone Number">
+            <br><br>
+            <textarea id="address" aria-placeholder="House / Flat No, Street / Area, City, Pincode"></textarea>
+            <br><br>
             <button onclick="checkoutNow()">Continue</button>
         </div>
     </div>
@@ -685,19 +854,19 @@
             <span class="close-btn" onclick="closePopup()">✖</span>
             <h2>Complete Payment</h2>
             <h2>Total ₹<span id="totalAmount">0</span></h2>
-            <img src="./scanner.jpeg" class="qr-image">
+            <img src="{% static 'scanner.jpeg' %}" class="qr-image">
             <p>Scan QR and complete payment</p>
+            <input type="text" id="utr" placeholder="Enter UTR Number" required>
             <button onclick="paymentDone()">Payment Done</button>
         </div>
     </div>
 
 
-
-
-
     <footer class="footer">
+
         <!-- Top Section -->
         <div class="footer-top">
+
             <!-- Logo -->
             <div class="logo">
                 <h2>KEDIA</h2>
@@ -759,13 +928,12 @@
         <div class="footer-bottom">
             <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
         </div>
+
     </footer>
-
     <script>
-
-
-
-        function increase(btn) {
+        
+        
+  function increase(btn) {
 
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -785,19 +953,19 @@
                 updatePrice(card, count);
             }
         }
-        function updatePrice(card, qty) {
+         function updatePrice(card, qty) {
 
             let originalPrice = parseFloat(card.dataset.price);
             let total = originalPrice * qty;
             card.querySelector(".final-price").innerText = total.toFixed(2);
         }
 
-        function toggleMenu() {
+         function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
 
-        let cart = [];
+ let cart = [];
 
         // Add to cart
         document.querySelectorAll(".cart-btn").forEach(btn => {
@@ -863,9 +1031,6 @@
             document.getElementById("overlay").style.display = "block";
         }
 
-
-
-
         function closeCart() {
             document.getElementById("cartSidebar").style.right = "-400px";
             document.getElementById("overlay").style.display = "none";
@@ -880,39 +1045,129 @@
         }
 
         function checkoutNow() {
-
             let total = document.getElementById("total").innerText;
-
             document.getElementById("totalAmount").innerText = total;
-
             document.getElementById("addressPopup").style.display = "none";
-
-            let phone = "919640546718";
-
-            let msg = `Dear Customer,
-Thank you for taking time to purchase our products.
-
-Please complete payment using QR code shown on website.`;
-
-            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg), "_blank");
-
-            document.getElementById("paymentPopup").style.display = "flex";
+            document.getElementById("paymentPopup").style.display="flex";
         }
 
         function closePopup() {
             document.getElementById("paymentPopup").style.display = "none";
         }
 
-        function paymentDone() {
+         async function paymentDone(){
 
-            alert("Payment successful! Your order will be delivered within 1 week.");
+let utr=
+document.getElementById("utr").value;
 
-            cart = [];
-            showCart();
+if(!utr){
 
-            closePopup();
-            closeCart();
-        }
+alert("Enter UTR Number");
+
+return;
+
+}
+
+let orderData={
+
+name:
+document.getElementById("name").value,
+
+mobile:
+document.getElementById("mobile").value,
+
+address:
+document.getElementById("address").value,
+
+products:
+JSON.stringify(cart),
+
+amount:
+document.getElementById("total").innerText,
+
+utr:
+utr
+
+};
+
+try{
+
+let res=
+await fetch(
+
+"/save-order/",
+
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/json"
+
+},
+
+body:
+JSON.stringify(orderData)
+
+}
+
+);
+
+let data=
+await res.json();
+
+if(data.status==="success"){
+
+alert(
+"Order Saved & WhatsApp Sent"
+);
+
+cart=[];
+
+showCart();
+
+closePopup();
+
+closeCart();
+
+setTimeout(()=>{
+
+window.location.href=
+"/success/";
+
+},500);
+
+}
+
+else{
+
+alert(
+
+data.message ||
+
+"Order Save Failed"
+
+);
+
+}
+
+}
+
+catch(err){
+
+console.log(err);
+
+alert(
+
+"Something went wrong"
+
+);
+
+}
+
+}
 
 
 

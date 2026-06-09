@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,7 +126,7 @@
             margin: 10px 0;
         }
 
-        .old-price{
+        .old-price {
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -232,14 +233,12 @@
             padding: 10px;
         }
 
-
-        
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-       
+
         .dropdown {
             display: none;
             position: absolute;
@@ -251,7 +250,7 @@
             padding: 20px;
         }
 
-      
+
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -272,19 +271,22 @@
             color: white;
             text-decoration: none;
         }
-        .back{
-            color: white;
-            text-decoration: none;
-        }
 
         .contact-link {
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .offers {
             color: white;
             text-decoration: none;
         }
+
+        .back {
+            color: white;
+            text-decoration: none;
+        }
+
         .navbar {
             display: flex;
             gap: 25px;
@@ -293,10 +295,12 @@
             color: white;
             font-size: 14px;
         }
-         .navbar {
+
+        .navbar {
             position: relative;
             z-index: 1000;
         }
+
         .navbar div {
             cursor: pointer;
         }
@@ -304,8 +308,6 @@
         .navbar div:hover {
             color: #a5d6a7;
         }
-
-
         #cartSidebar {
             position: fixed;
             top: 0;
@@ -390,7 +392,6 @@
             width: 250px;
             height: 250px;
         }
-    
     </style>
 </head>
 
@@ -400,7 +401,7 @@
     </div>
 
     <div class="header">
-        <div class="logo"><a href="index.html"><button>KEDIA ORGANIC</button></a></div>
+        <div class="logo"><a href="/"><button>KEDIA ORGANIC</button></a></div>
 
         <div class="search-box">
             <select>
@@ -423,14 +424,14 @@
     <div class="navbar">
         <div class="menu-item" onclick="toggleMenu()">GROCERIES - ALL INDIA
             <div class="dropdown" id="dropdownMenu">
-                <a href="ghee_oil.html">GHEE & OILS</a>
-                <a href="seeds_dryfruits.html">NUTS, SEEDS & DRY FRUITS</a>
-                <a href="pulses_dal.html">DALS & PULSES</a>
-                <a href="grains_cereals.html">GRAINS & CEREALS</a>
-                <a href="rice_millets.html">RICE & MILLETS</a>
-                <a href="fruits.html">FRUITS</a>
-                <a href="sweet_salts.html">SWEETENERS & SALTS</a>
-                <a href="snacks.html">SNACKS FOR KIDS & ADULTS</a>
+                <a href="/ghee_oil/">GHEE & OILS</a>
+                <a href="/seeds_dryfruits/">NUTS, SEEDS & DRY FRUITS</a>
+                <a href="/pulses_dal/">DALS & PULSES</a>
+                <a href="/grains_cereals/">GRAINS & CEREALS</a>
+                <a href="/rice_millets/">RICE & MILLETS</a>
+                <a href="/fruits/">FRUITS</a>
+                <a href="/sweet_salts/">SWEETENERS & SALTS</a>
+                <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
             </div>
         </div>
         <a href="over_story.html" class="overstory-link">OUR STORY</a>
@@ -440,23 +441,22 @@
         <a href="contact.html" class="contact-link">CONTACT US</a>
     </div>
 
-
     <div class="banner">
-        <h1>PULSES & DALS</h1>
+        <h1>SWEETNERS & SALTS</h1>
     </div>
 
     <div class="main-container">
-        <div class="product-card" data-price="135">
+        <div class="product-card" data-price="100">
             <div class="product">
-                <img src="./Dals_Pulses/dal1.webp" class="img1">
-                <img src="./Dals_Pulses/dalone.webp" class="img2">
+                <img src="./sweatners_salts/image1.webp" class="img1">
+                <img src="./sweatners_salts/imageone.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">135.00</span>
-                <span class="old-price">Rs:170.00</span>
+                <span class="final-price">100.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Moong Dal Yellow Split</h3>
+            <h3 class="price">Himalayan Pink Salt</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -466,17 +466,17 @@
         </div>
 
 
-        <div class="product-card" data-price="170">
+        <div class="product-card" data-price="80">
             <div class="product">
-                <img src="./Dals_Pulses/dal2.webp" class="img1">
-                <img src="./Dals_Pulses/daltwo.webp" class="img2">
+                <img src="./sweatners_salts/image2.webp" class="img1">
+                <img src="./sweatners_salts/image2.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">170.00</span>
-                <span class="old-price">Rs:200.00</span>
+                <span class="final-price">80.00</span>
+                <span class="old-price">Rs:100.00</span>
             </p>
-            <h3 class="price">Toor Dal Split</h3>
+            <h3 class="price">Jaggery(Gul)</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -485,17 +485,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="125">
+        <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./Dals_Pulses/dal3.webp" class="img1">
-                <img src="./Dals_Pulses/dalthree.webp" class="img2">
+                <img src="./sweatners_salts/image3.webp" class="img1">
+                <img src="./sweatners_salts/imagethree.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">125.00</span>
-                <span class="old-price">Rs:170.00</span>
+                <span class="final-price">130.00</span>
+                <span class="old-price">Rs:160.00</span>
             </p>
-            <h3 class="price">Moong Green Whole</h3>
+            <h3 class="price">Sugar White Sulphur Less</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -504,17 +504,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="150">
+        <div class="product-card" data-price="300">
             <div class="product">
-                <img src="./Dals_Pulses/dal4.webp" class="img1">
-                <img src="./Dals_Pulses/dalfour.webp" class="img2">
+                <img src="./sweatners_salts/image4.webp" class="img1">
+                <img src="./sweatners_salts/imagefour.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">150.00</span>
-                <span class="old-price">Rs:175.00</span>
+                <span class="final-price">300.00</span>
+                <span class="old-price">Rs:400.00</span>
             </p>
-            <h3 class="price">Kabuli Chana</h3>
+            <h3 class="price">Multi Flora Raw Honey</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -524,74 +524,17 @@
         </div>
 
         <!-- Next row automatically -->
-        <div class="product-card" data-price="130">
+        <div class="product-card" data-price="110">
             <div class="product">
-                <img src="./Dals_Pulses/dalfive.webp" class="img1">
-                <img src="./Dals_Pulses/dal5.webp" class="img2">
+                <img src="./sweatners_salts/image5.webp" class="img1">
+                <img src="./sweatners_salts/imagefive.webp" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">130.00</span>
-                <span class="old-price">Rs:170.00</span>
+                <span class="final-price">110.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Masoor Dal Red Split</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="90">
-            <div class="product">
-                <img src="./Dals_Pulses/dal6.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/dalsix.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">90.00</span>
-                <span class="old-price">Rs:110.00</span>
-            </p>
-            <h3 class="price">Chana Brown</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="130">
-            <div class="product">
-                <img src="./Dals_Pulses/dal7.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/dalseven.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">130.00</span>
-                <span class="old-price">Rs:170.00</span>
-            </p>
-            <h3 class="price">Moong Dal Green Split</h3>
-            <button class="cart-btn">Add To Cart</button>
-            <div class="qty">
-                <button onclick="decrease(this)">-</button>
-                <span>1</span>
-                <button onclick="increase(this)">+</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="130">
-            <div class="product">
-                <img src="./Dals_Pulses/dal8.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/daleight.webp" alt="" class="img2">
-            </div>
-            <p class="price">
-                From Rs:
-                <span class="final-price">130.00</span>
-                <span class="old-price">Rs:170.00</span>
-            </p>
-            <h3 class="price">Urad Dal White Split</h3>
+            <h3 class="price">Jaggery Powder</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -602,15 +545,15 @@
 
         <div class="product-card" data-price="100">
             <div class="product">
-                <img src="./Dals_Pulses/dal9.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/dalnine.webp" alt="" class="img2">
+                <img src="./sweatners_salts/image6.webp" alt="" class="img1">
+                <img src="./sweatners_salts/imagesix.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">100.00</span>
-                <span class="old-price">Rs:130.00</span>
+                <span class="old-price">Rs:145.00</span>
             </p>
-            <h3 class="price">Chana Dal</h3>
+            <h3 class="price">Rock Salt</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -621,15 +564,15 @@
 
         <div class="product-card" data-price="130">
             <div class="product">
-                <img src="./Dals_Pulses/dal10.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/dalten.webp" alt="" class="img2">
+                <img src="./sweatners_salts/image7.webp" alt="" class="img1">
+                <img src="./sweatners_salts/imageseven.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
                 <span class="final-price">130.00</span>
-                <span class="old-price">Rs:170.00</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Masoor Black Whole</h3>
+            <h3 class="price">Sugar Brown</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -638,17 +581,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="110">
+        <div class="product-card" data-price="60">
             <div class="product">
-                <img src="./Dals_Pulses/dal11.webp" alt="" class="img1">
-                <img src="./Dals_Pulses/daleleven.webp" alt="" class="img2">
+                <img src="./sweatners_salts/image8.webp" alt="" class="img1">
+                <img src="./sweatners_salts/imageeight.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">110.00</span>
-                <span class="old-price">Rs:125.00</span>
+                <span class="final-price">60.00</span>
+                <span class="old-price">Rs:80.00</span>
             </p>
-            <h3 class="price">Chana Green</h3>
+            <h3 class="price">Salt Mineral White</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -657,17 +600,17 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="130">
+        <div class="product-card" data-price="100">
             <div class="product">
-                <img src="./Dals_Pulses/dal12.webp" class="img1">
-                <img src="./Dals_Pulses/daltwelve.webp" class="img2">
+                <img src="./sweatners_salts/image9.webp" alt="" class="img1">
+                <img src="./sweatners_salts/imagenine.webp" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">130.00</span>
-                <span class="old-price">Rs:170.00</span>
+                <span class="final-price">100</span>
+                <span class="old-price">Rs:150.00</span>
             </p>
-            <h3 class="price">Moth Beans (Matki)</h3>
+            <h3 class="price">Black Salt</h3>
             <button class="cart-btn">Add To Cart</button>
             <div class="qty">
                 <button onclick="decrease(this)">-</button>
@@ -676,7 +619,6 @@
             </div>
         </div>
     </div>
-
 
 
     <div id="overlay" onclick="closeCart()"></div>
@@ -689,7 +631,6 @@
         <h2>Total: Rs <span id="total">0</span></h2>
         <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
-
 
     <!-- ADDRESS -->
     <div id="addressPopup" class="popup-overlay">
@@ -706,8 +647,6 @@
         </div>
     </div>
 
-
-
     <!-- PAYMENT -->
     <div id="paymentPopup" class="popup-overlay">
         <div class="popup-box">
@@ -719,8 +658,6 @@
             <button onclick="paymentDone()">Payment Done</button>
         </div>
     </div>
-
-
 
     <footer class="footer">
 
@@ -788,13 +725,9 @@
         <div class="footer-bottom">
             <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
         </div>
-
     </footer>
     <script>
-
-        
-          function increase(btn) {
-
+        function increase(btn) {
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
             let count = parseInt(qtySpan.innerText);
@@ -820,8 +753,7 @@
             card.querySelector(".final-price").innerText = total.toFixed(2);
         }
 
-
-         function toggleMenu() {
+        function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
@@ -941,7 +873,6 @@ Please complete payment using QR code shown on website.`;
             closePopup();
             closeCart();
         }
-
 
     </script>
 
