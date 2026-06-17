@@ -673,163 +673,163 @@
 
         /* MOBILE RESPONSIVE */
 
-@media (max-width:768px){
+        @media (max-width:768px) {
 
-.header{
-flex-direction:column;
-gap:15px;
-padding:15px;
-}
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
 
-.logo{
-text-align:center;
-}
+            .logo {
+                text-align: center;
+            }
 
-.search-box{
-width:100%;
-}
+            .search-box {
+                width: 100%;
+            }
 
-.search-box select,
-.search-box input{
-width:100%;
-}
+            .search-box select,
+            .search-box input {
+                width: 100%;
+            }
 
-.header-right{
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
+            .header-right {
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
 
-.navbar{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-font-size:12px;
-}
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                font-size: 12px;
+            }
 
-.info-bar{
-flex-wrap:wrap;
-gap:15px;
-padding:15px;
-}
+            .info-bar {
+                flex-wrap: wrap;
+                gap: 15px;
+                padding: 15px;
+            }
 
-.card{
-width:95%;
-height:auto;
+            .card {
+                width: 95%;
+                height: auto;
 
-flex-direction:column;
-}
+                flex-direction: column;
+            }
 
-.card-left,
-.card-right{
-width:100%;
-}
+            .card-left,
+            .card-right {
+                width: 100%;
+            }
 
-.card-left video{
-height:300px;
-}
+            .card-left video {
+                height: 300px;
+            }
 
-.container{
-flex-direction:column;
-padding:10px;
-}
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
 
-.hero{
-width:100%;
-}
+            .hero {
+                width: 100%;
+            }
 
-.hero img{
-height:250px;
-}
+            .hero img {
+                height: 250px;
+            }
 
-.hero-content{
-top:20px;
-left:20px;
-}
+            .hero-content {
+                top: 20px;
+                left: 20px;
+            }
 
-.hero h1{
-font-size:26px;
-}
+            .hero h1 {
+                font-size: 26px;
+            }
 
-.offer-card{
-width:100%;
-}
+            .offer-card {
+                width: 100%;
+            }
 
-#images{
+            #images {
 
-display:grid;
+                display: grid;
 
-grid-template-columns:
-1fr 1fr;
+                grid-template-columns:
+                    1fr 1fr;
 
-padding:10px;
+                padding: 10px;
 
-gap:15px;
+                gap: 15px;
 
-}
+            }
 
-#images img{
+            #images img {
 
-width:100%;
+                width: 100%;
 
-height:auto;
+                height: auto;
 
-}
+            }
 
-.maintwo{
+            .maintwo {
 
-flex-direction:column;
+                flex-direction: column;
 
-}
+            }
 
-.card-one{
+            .card-one {
 
-width:100%;
+                width: 100%;
 
-}
+            }
 
-.combos{
+            .combos {
 
-flex-direction:column;
+                flex-direction: column;
 
-align-items:center;
+                align-items: center;
 
-}
+            }
 
-.combo-1{
+            .combo-1 {
 
-width:95%;
+                width: 95%;
 
-}
+            }
 
-.footer-top{
+            .footer-top {
 
-flex-direction:column;
+                flex-direction: column;
 
-text-align:center;
+                text-align: center;
 
-}
+            }
 
-.footer-middle{
+            .footer-middle {
 
-flex-direction:column;
+                flex-direction: column;
 
-}
+            }
 
-.newsletter input{
+            .newsletter input {
 
-width:100%;
+                width: 100%;
 
-}
+            }
 
-.about-box{
+            .about-box {
 
-width:100%;
+                width: 100%;
 
-}
+            }
 
-}
+        }
     </style>
 </head>
 
@@ -1038,10 +1038,10 @@ width:100%;
                     justify-content:center;
                     align-items:center;">
 
-    <div style="background:white;padding:30px;width:420px;border-radius:20px;
+        <div style="background:white;padding:30px;width:420px;border-radius:20px;
                     text-align:center;">
 
-    <span onclick="closePopup()" style="float:right;font-size:30px;cursor:pointer;">✖</span>
+            <span onclick="closePopup()" style="float:right;font-size:30px;cursor:pointer;">✖</span>
             <h2>Delivery Address</h2>
             <input id="custName" placeholder="Name"><br><br>
             <input id="custAddress" placeholder="Address"><br><br>
@@ -1223,7 +1223,7 @@ width:100%;
 
         function increment() {
             qty++;
-            document.getElementById("qty").innerHTML=qty;
+            document.getElementById("qty").innerHTML = qty;
             updatePrice();
         }
 
@@ -1231,14 +1231,14 @@ width:100%;
 
             if (qty > 1) {
                 qty--;
-                document.getElementById("qty").innerHTML=qty;
+                document.getElementById("qty").innerHTML = qty;
                 updatePrice();
             }
         }
 
         function updatePrice() {
-            let total =800 * qty;
-                document.getElementById("price").innerHTML="Rs."+total;
+            let total = 800 * qty;
+            document.getElementById("price").innerHTML = "Rs." + total;
         }
 
         // function openAddress() {
@@ -1246,7 +1246,7 @@ width:100%;
         // }
 
         function closePopup() {
-            document.getElementById("paymentPopup").style.display ="none";
+            document.getElementById("paymentPopup").style.display = "none";
         }
 
         function checkout() {
@@ -1273,7 +1273,7 @@ Amount:
 
 Please complete payment using QR shown on website.`;
 
-            window.open("https://wa.me/"+phone +"?text=" +encodeURIComponent(msg));
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg));
             showScanner(total);
         }
 
@@ -1310,4 +1310,5 @@ text-align:center;">
     </script>
 
 </body>
+
 </html>

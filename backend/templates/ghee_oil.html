@@ -400,6 +400,232 @@
             width: 250px;
             height: 250px;
         }
+
+
+
+
+
+        /* MOBILE RESPONSIVE */
+
+        @media screen and (max-width:768px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            /* Header */
+
+            .header {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .search-box {
+                width: 100%;
+                flex-direction: column;
+                border-radius: 15px;
+            }
+
+            .search-box select,
+            .search-box input {
+
+                width: 100%;
+
+                padding: 14px;
+
+                box-sizing: border-box;
+
+            }
+
+            .help {
+                font-size: 14px;
+            }
+
+            /* Navbar */
+
+            .navbar {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 12px;
+
+                padding: 15px;
+
+            }
+
+            .dropdown {
+
+                width: 90%;
+
+                left: 50%;
+
+                transform: translateX(-50%);
+
+            }
+
+            /* Banner */
+
+            .banner {
+
+                padding: 20px;
+
+                text-align: center;
+
+            }
+
+            .banner h1 {
+
+                font-size: 28px;
+
+            }
+
+            /* Product Grid */
+
+            .main-container {
+                grid-template-columns:repeat(2,1fr);
+                gap:12px;
+                padding:10px;
+            }
+
+            .product {
+                height: 180px;
+            }
+            .product img{
+
+                object-fit:contain;
+
+            }
+
+            .product-card {
+
+                width: 100%;
+
+            }
+
+            .price {
+
+                font-size: 14px;
+
+            }
+
+            h3 {
+
+                font-size: 14px;
+
+            }
+
+            button {
+
+                width: 100%;
+
+                padding: 12px;
+
+            }
+
+            /* Cart */
+
+            #cartSidebar {
+
+                width: 100%;
+
+                right: -100%;
+
+                padding: 20px;
+
+            }
+
+            .cart-item {
+
+                flex-wrap: wrap;
+
+            }
+
+            .cart-img {
+
+                width: 60px;
+
+                height: 60px;
+
+            }
+
+            /* Popups */
+
+            .popup-box {
+
+                width: 92%;
+
+                padding: 25px;
+
+                box-sizing: border-box;
+
+            }
+
+            .popup-box input,
+            .popup-box textarea {
+
+                width: 100%;
+
+                padding: 12px;
+
+                box-sizing: border-box;
+
+            }
+
+            .qr-image {
+
+                width: 220px;
+
+                height: 220px;
+
+            }
+
+            /* Footer */
+
+            .footer-top {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 20px;
+
+            }
+
+            .footer-middle {
+
+                flex-direction: column;
+
+            }
+
+            .card {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+            }
+
+            .newsletter input {
+
+                width: 100%;
+
+            }
+
+            .about-box {
+
+                width: auto;
+
+            }
+
+        }
     </style>
 </head>
 
@@ -659,8 +885,8 @@
             <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
         </div>
         <div id="cartItems"></div>
-            <h2>Total: Rs <span id="total">0</span></h2>
-            <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
 
     <!-- ADDRESS -->
