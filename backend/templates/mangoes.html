@@ -1,4 +1,4 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,7 +169,6 @@
         margin-top: 15px;
     }
 
-
     .thumbnail-container img {
         width: 100px;
         height: 100px;
@@ -206,9 +205,6 @@
     <h1>MANGOES</h1>
 </div>
 
-
-
-
 <div id="paymentPopup"
 style="display:none;
 position:fixed;
@@ -239,14 +235,15 @@ Continue
 
 
 
+
 <body>
     <div class="main-container">
         <div class="container-1">
-            <img src="./mangoone.jpg" id="mainImage">
+            <img src="{% static 'mangoone.jpg' %}" id="mainImage">
             <div class="thumbnail-container">
-                <img src="./mangoone.jpg" onclick="changeImage(this)">
-                <img src="./mangotwo.webp" onclick="changeImage(this)">
-                <img src="./mangotwo.webp" onclick="changeImage(this)">
+                <img src="{% static 'mangoone.jpg' %}" onclick="changeImage(this)">
+                <img src="{% static 'mangotwo.webp' %}" onclick="changeImage(this)">
+                <img src="{% static 'mangotwo.webp' %}" onclick="changeImage(this)">
             </div>
         </div>
         <div class="container-2">
@@ -259,6 +256,8 @@ Continue
             <button onclick="Decrement()">-</button>
             <span id="name">0</span>
             <button onclick="Increment()">+</button>
+
+            
             <script>
                 let qty = 1;
                 function Increment() {
@@ -285,96 +284,129 @@ Continue
                     document.getElementById("mainImage").src = img.src;
                 }
 
+                 async function paymentDone() {
 
-function addCart(){
+            let utr =
+                document.getElementById("utr").value;
 
-document.getElementById(
-"paymentPopup"
-).style.display="flex";
+            if (!utr) {
 
-}
+                alert("Enter UTR Number");
 
-function checkout(){
+                return;
 
-let phone=
-"919640546718";
+            }
 
-let msg=
-`Dear Customer,
+            let orderData = {
 
-Thank you for taking time to purchase our products.
+                name:
+                    document.getElementById("name").value,
 
-Product:
-Alphonso Mango
+                mobile:
+                    document.getElementById("mobile").value,
 
-Quantity:
-${qty}
+                address:
+                    document.getElementById("address").value,
 
-Amount:
-₹${1999*qty}
+                products:
+                    JSON.stringify(cart),
 
-Please complete payment using QR code shown on website.`;
+                amount:
+                    document.getElementById("total").innerText,
 
-window.open(
-"https://wa.me/"
-+phone+
-"?text="
-+encodeURIComponent(msg)
-);
+                utr:
+                    utr
 
-showQR();
+            };
 
-}
+            try {
 
-function showQR(){
+                let res =
+                    await fetch(
 
-document.getElementById(
-"paymentPopup"
-).innerHTML=`
+                        "/save-order/",
 
-<div style="
-background:white;
-padding:30px;
-text-align:center;">
+                        {
 
-<h2>
-Complete Payment
-</h2>
+                            method: "POST",
 
-<img
-src="./scanner.jpeg"
-width="250">
+                            headers: {
 
-<br><br>
+                                "Content-Type":
+                                    "application/json"
 
-<button
-onclick="paymentDone()">
+                            },
 
-Payment Done
+                            body:
+                                JSON.stringify(orderData)
 
-</button>
+                        }
 
-</div>
+                    );
 
-`;
+                let data =
+                    await res.json();
 
-}
+                if (data.status === "success") {
 
-function paymentDone(){
+                    alert(
+                        "Order Saved & WhatsApp Sent"
+                    );
 
-alert(
-"Thank you! Your order will be delivered within 1 week."
-);
+                    cart = [];
 
-document.getElementById(
-"paymentPopup"
-).style.display=
-"none";
+                    showCart();
 
-}
+                    closePopup();
+
+                    closeCart();
+
+                    setTimeout(() => {
+
+                        window.location.href =
+                            "/success/";
+
+                    }, 500);
+
+                }
+
+                else {
+
+                    alert(
+
+                        data.message ||
+
+                        "Order Save Failed"
+
+                    );
+
+                }
+
+            }
+
+            catch (err) {
+
+                console.log(err);
+
+                alert(
+
+                    "Something went wrong"
+
+                );
+
+            }
+
+        }
+                
+
+
+
+
+
 
 
             </script>
+
             <button class="button" onclick="addCart()">Add To Cart</button>
             <div class="container-3">
                 <p>🪴Freshly Harvested , Packed & Delivered.</p>

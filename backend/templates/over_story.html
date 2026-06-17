@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
 
     .hero {
         height: 200px;
-        background-image: url("backimage.jpg");
+        background-image: url("/static/backimage.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -272,13 +273,13 @@
 
     <center>
         <video width="600" height="500" controls>
-            <source src="./Nitara_Compressed_cef4bacb-3de2-4b30-8db2-b42c767e76c4.mp4">
+            <source src="{% static 'Nitara_Compressed_cef4bacb-3de2-4b30-8db2-b42c767e76c4.mp4' %}">
         </video>
     </center>
 
     <h1 class="far">Farming is OUR way of life</h1>
     <div class="image-1">
-        <img src="./farm1.webp" alt="" height="500" width="600">
+        <img src="{% static 'farm1.webp' %}" alt="" height="500" width="600">
     </div>
     <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
         Mr. Dinesh Kedia ~ Crop Scientist, Plant Whisperer.
@@ -340,8 +341,8 @@
         healthier lifestyle.
     </p>
     <div class="image-2">
-        <img src="./farm2.webp" alt="" height="500" width="600"><br>
-        <img src="./farm3.webp" alt="" height="500" width="600">
+        <img src="{% static 'farm2.webp' %}" alt="" height="500" width="600"><br>
+        <img src="{% static 'farm3.webp' %}" alt="" height="500" width="600">
     </div>
     <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
         Mrs. Prerana Kedia ~ Packaging Queen, Supply Chain Wizard.
@@ -396,8 +397,8 @@
         that’s not the definition of a BAWSE, we don’t know what is.
     </p>
     <div class="image-3">
-        <img src="./farm4.webp" alt="" height="350" width="600"><br>
-        <img src="./farm5.webp" alt="" height="500" width="600">
+        <img src="{% static 'farm4.webp' %}" alt="" height="350" width="600"><br>
+        <img src="{% static 'farm5.webp' %}" alt="" height="500" width="600">
     </div>
     <p style="color:#d35400; font-size: 20px; font-weight: bold; text-align: center;">
         Nitaraa Kedia ~ Chief Tasting Officer, Mulberry Specialist.
@@ -455,7 +456,7 @@
         know what we mean.
     </p>
     <div class="image-4">
-        <img src="./Vanajangi.jpg" alt="" height="400" width="500">
+        <img src="{% static 'Vanajangi.jpg' %}" alt="" height="400" width="500">
     </div>
     <div class="details">
         <h1 style="color:green">Contact US</h1>

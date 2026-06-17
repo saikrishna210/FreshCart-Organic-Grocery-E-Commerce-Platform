@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +59,7 @@
 
     .hero {
         height: 200px;
-        background-image: url("backimage.jpg");
+        background-image: url("/static/backimage.jpg");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -292,7 +293,7 @@
     </div>
 
     <div class="image-1">
-        <img src="./hap_far/image1.webp" alt="" height="220px" width="600px" class="farm-1">
+        <img src="{% static 'hap_far/image1.webp' %}" alt="" height="220px" width="600px" class="farm-1">
     </div>
 
     <h1 class="text">
@@ -334,11 +335,11 @@
     </div>
 
     <div class="image-2">
-        <img src="./hap_far/image2.webp" alt="" height="350" width="550" class="farm-2">
+        <img src="{% static 'hap_far/image2.webp' %}" alt="" height="350" width="550" class="farm-2">
     </div>
 
     <div class="image-3">
-        <img src="./hap_far/image3.webp" alt="" height="250" width="350" class="farm-3">
+        <img src="{% static 'hap_far/image3.webp' %}" alt="" height="250" width="350" class="farm-3">
     </div>
 
     <h2 class="text-2">Gauri Aaji, from Murbad.</h2>
@@ -363,7 +364,7 @@
 
     <center>
         <video height="500" width="600" controls>
-            <source src="./hap_far/Happy_Farmers_Compressed.mp4">
+            <source src="{% static 'hap_far/Happy_Farmers_Compressed.mp4' %}">
         </video>
     </center>
 
@@ -386,11 +387,11 @@
     </div>
 
     <div class="image-4">
-        <img src="./hap_far/image4.webp" alt="" height="250" width="350" class="farm-4">
+        <img src="{% static 'hap_far/image4.webp' %}" alt="" height="250" width="350" class="farm-4">
     </div>
 
     <div class="image-5">
-        <img src="./hap_far/image5.webp" alt="" height="250" width="350" class="farm-5">
+        <img src="{% static 'hap_far/image5.webp' %}" alt="" height="250" width="350" class="farm-5">
     </div>
 
      <h2 class="text-2">Jay, from Assam.</h2>
@@ -441,7 +442,7 @@
      </div>
 
      <div class="image-6">
-        <img src="./hap_far/image6.webp" alt="" class="farm-6">
+        <img src="{% static 'hap_far/image6.webp' %}" alt="" class="farm-6">
      </div>
      
      <div class="details">

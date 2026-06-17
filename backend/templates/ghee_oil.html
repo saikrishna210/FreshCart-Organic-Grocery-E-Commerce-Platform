@@ -76,16 +76,10 @@
         .main-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            /* 4 per row */
             gap: 20px;
             padding: 20px;
-            /* background:#e6c9a8; */
+
         }
-
-
-
-
-
 
         .product-card {
             text-align: center;
@@ -161,6 +155,10 @@
             background: lightgray;
             color: black;
         }
+
+
+
+
 
         .footer {
             background: #064e2c;
@@ -314,6 +312,10 @@
             color: #a5d6a7;
         }
 
+
+
+
+
         #cartSidebar {
             position: fixed;
             top: 0;
@@ -440,11 +442,11 @@
                 <a href="/snacks/">SNACKS FOR KIDS & ADULTS</a>
             </div>
         </div>
-        <a href="over_story.html" class="overstory-link">OUR STORY</a>
-        <a href="happy_famers.html" class="farmers">HAPPY_FARMERS</a>
-        <a href="offers.html" class="offers">OFFERS</a>
-        <a href="giving_back.html" class="back">GIVING BACK</a>
-        <a href="contact.html" class="contact-link">CONTACT US</a>
+        <a href="/over_story/" class="overstory-link">OUR STORY</a>
+        <a href="/happy_farmers/" class="farmers">HAPPY_FARMERS</a>
+        <a href="/offers/" class="offers">OFFERS</a>
+        <a href="/giving_back/" class="back">GIVING BACK</a>
+        <a href="/contact_us/" class="contact-link">CONTACT US</a>
     </div>
 
     <div class="banner">
@@ -647,11 +649,7 @@
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
-
     </div>
-
-
-
 
 
     <div id="overlay" onclick="closeCart()"></div>
@@ -661,8 +659,8 @@
             <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
         </div>
         <div id="cartItems"></div>
-        <h2>Total: Rs <span id="total">0</span></h2>
-        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+            <h2>Total: Rs <span id="total">0</span></h2>
+            <button class="checkout-btn" onclick="openAddress()">Checkout</button>
     </div>
 
     <!-- ADDRESS -->
@@ -761,9 +759,6 @@
     </footer>
 
     <script>
-
-
-
         function increase(btn) {
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -818,7 +813,6 @@
             let items = "";
             let total = 0;
             cart.forEach((item, index) => {
-
                 items += `
 <div class="cart-item">
 
