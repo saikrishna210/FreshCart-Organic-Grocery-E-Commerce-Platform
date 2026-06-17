@@ -401,12 +401,6 @@
             height: 250px;
         }
 
-
-
-
-
-        /* MOBILE RESPONSIVE */
-
         @media screen and (max-width:768px) {
 
             body {
@@ -416,213 +410,166 @@
             /* Header */
 
             .header {
-                flex-direction: column;
-                padding: 15px;
-                gap: 15px;
-                text-align: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                gap: 10px;
+                flex-wrap: wrap;
             }
 
             .logo {
-                font-size: 18px;
+                width: 100%;
+                text-align: center;
             }
 
             .search-box {
+                display: flex;
                 width: 100%;
-                flex-direction: column;
+                flex-direction: row;
                 border-radius: 15px;
+                overflow: hidden;
             }
 
-            .search-box select,
+            .search-box select {
+                width: 35%;
+                padding: 12px;
+            }
+
             .search-box input {
-
-                width: 100%;
-
-                padding: 14px;
-
-                box-sizing: border-box;
-
+                width: 65%;
+                padding: 12px;
             }
 
             .help {
-                font-size: 14px;
+                width: 100%;
+                text-align: center;
+                font-size: 13px;
+                margin-top: 10px;
             }
 
             /* Navbar */
 
             .navbar {
-
+                display: flex;
                 flex-wrap: wrap;
-
                 justify-content: center;
-
-                gap: 12px;
-
-                padding: 15px;
-
+                gap: 15px;
+                padding: 12px;
+                font-size: 13px;
             }
 
             .dropdown {
-
                 width: 90%;
-
                 left: 50%;
-
                 transform: translateX(-50%);
-
             }
 
             /* Banner */
 
             .banner {
-
                 padding: 20px;
-
                 text-align: center;
-
             }
 
             .banner h1 {
-
                 font-size: 28px;
-
             }
 
-            /* Product Grid */
+            /* Products */
 
             .main-container {
-                grid-template-columns:repeat(2,1fr);
-                gap:12px;
-                padding:10px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                padding: 10px;
             }
 
             .product {
                 height: 180px;
             }
-            .product img{
 
-                object-fit:contain;
-
+            .product img {
+                object-fit: contain;
             }
 
             .product-card {
-
                 width: 100%;
-
             }
 
             .price {
-
                 font-size: 14px;
-
             }
 
             h3 {
-
                 font-size: 14px;
-
             }
 
             button {
-
                 width: 100%;
-
                 padding: 12px;
-
             }
 
             /* Cart */
 
             #cartSidebar {
-
                 width: 100%;
-
                 right: -100%;
-
                 padding: 20px;
-
             }
 
             .cart-item {
-
                 flex-wrap: wrap;
-
             }
 
             .cart-img {
-
                 width: 60px;
-
                 height: 60px;
-
             }
 
-            /* Popups */
+            /* Popup */
 
             .popup-box {
-
                 width: 92%;
-
                 padding: 25px;
-
                 box-sizing: border-box;
-
             }
 
             .popup-box input,
             .popup-box textarea {
-
                 width: 100%;
-
                 padding: 12px;
-
                 box-sizing: border-box;
-
             }
 
             .qr-image {
-
                 width: 220px;
-
                 height: 220px;
-
             }
 
             /* Footer */
 
             .footer-top {
-
                 flex-direction: column;
-
                 text-align: center;
-
                 gap: 20px;
-
             }
 
             .footer-middle {
-
                 flex-direction: column;
-
             }
 
             .card {
-
                 flex-direction: column;
-
                 gap: 20px;
-
             }
 
             .newsletter input {
-
                 width: 100%;
-
             }
 
             .about-box {
-
                 width: auto;
-
             }
 
         }
