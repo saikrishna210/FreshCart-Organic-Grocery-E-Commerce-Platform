@@ -392,6 +392,123 @@
             width: 250px;
             height: 250px;
         }
+
+
+         @media screen and (max-width:768px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* Header */
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box select {
+                width: 35%;
+            }
+
+            .search-box input {
+                width: 65%;
+            }
+
+            .help {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            /* Navbar */
+
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            /* PRODUCTS → 2 PER ROW */
+
+            .main-container {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+
+                padding: 10px;
+
+                width: 100%;
+
+            }
+
+            .product-card {
+
+                width: 100%;
+
+                overflow: hidden;
+
+            }
+
+            .product {
+
+                width: 100%;
+
+                height: 180px;
+
+            }
+
+            .product img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+            }
+
+            /* Prevent overflow */
+
+            .banner,
+            .footer,
+            .popup-box,
+            #cartSidebar {
+
+                max-width: 100%;
+
+            }
+
+            #cartSidebar {
+
+                width: 100%;
+
+            }
+
+            .popup-box {
+
+                width: 92%;
+
+            }
+
+        }
     </style>
 </head>
 

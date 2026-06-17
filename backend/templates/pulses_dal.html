@@ -126,7 +126,7 @@
             margin: 10px 0;
         }
 
-        .old-price{
+        .old-price {
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -234,13 +234,13 @@
         }
 
 
-        
+
         .menu-item {
             position: relative;
             cursor: pointer;
         }
 
-       
+
         .dropdown {
             display: none;
             position: absolute;
@@ -252,7 +252,7 @@
             padding: 20px;
         }
 
-      
+
         .dropdown a {
             display: block;
             text-decoration: none;
@@ -273,7 +273,8 @@
             color: white;
             text-decoration: none;
         }
-        .back{
+
+        .back {
             color: white;
             text-decoration: none;
         }
@@ -282,10 +283,12 @@
             color: white;
             text-decoration: none;
         }
-        .offers{
+
+        .offers {
             color: white;
             text-decoration: none;
         }
+
         .navbar {
             display: flex;
             gap: 25px;
@@ -294,10 +297,12 @@
             color: white;
             font-size: 14px;
         }
-         .navbar {
+
+        .navbar {
             position: relative;
             z-index: 1000;
         }
+
         .navbar div {
             cursor: pointer;
         }
@@ -391,7 +396,126 @@
             width: 250px;
             height: 250px;
         }
-    
+
+
+
+
+
+        @media screen and (max-width:768px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* Header */
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box select {
+                width: 35%;
+            }
+
+            .search-box input {
+                width: 65%;
+            }
+
+            .help {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            /* Navbar */
+
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            /* PRODUCTS → 2 PER ROW */
+
+            .main-container {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+
+                padding: 10px;
+
+                width: 100%;
+
+            }
+
+            .product-card {
+
+                width: 100%;
+
+                overflow: hidden;
+
+            }
+
+            .product {
+
+                width: 100%;
+
+                height: 180px;
+
+            }
+
+            .product img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+            }
+
+            /* Prevent overflow */
+
+            .banner,
+            .footer,
+            .popup-box,
+            #cartSidebar {
+
+                max-width: 100%;
+
+            }
+
+            #cartSidebar {
+
+                width: 100%;
+
+            }
+
+            .popup-box {
+
+                width: 92%;
+
+            }
+
+        }
     </style>
 </head>
 
@@ -622,7 +746,7 @@
 
         <div class="product-card" data-price="130">
             <div class="product">
-            <img src="{% static 'Dals_Pulses/dal10.webp' %}" alt="" class="img1">
+                <img src="{% static 'Dals_Pulses/dal10.webp' %}" alt="" class="img1">
                 <img src="{% static 'Dals_Pulses/dalten.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
@@ -641,7 +765,7 @@
 
         <div class="product-card" data-price="110">
             <div class="product">
-             <img src="{% static 'Dals_Pulses/dal1.webp' %}" alt="" class="img1">
+                <img src="{% static 'Dals_Pulses/dal1.webp' %}" alt="" class="img1">
                 <img src="{% static 'Dals_Pulses/daleleven.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
@@ -660,7 +784,7 @@
 
         <div class="product-card" data-price="130">
             <div class="product">
-             <img src="{% static 'Dals_Pulses/dal12.webp' %}" alt="" class="img1">
+                <img src="{% static 'Dals_Pulses/dal12.webp' %}" alt="" class="img1">
                 <img src="{% static 'Dals_Pulses/daltwelve.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
@@ -697,7 +821,7 @@
         <div class="popup-box">
             <span class="close-btn" onclick="closeAddress()">✖</span>
             <h2>Delivery Address</h2>
-             <input type="text" id="name" placeholder="Full Name">
+            <input type="text" id="name" placeholder="Full Name">
             <br><br>
             <input type="text" id="mobile" placeholder="Phone Number">
             <br><br>
@@ -792,8 +916,8 @@
     </footer>
     <script>
 
-        
-          function increase(btn) {
+
+        function increase(btn) {
 
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -819,7 +943,7 @@
             card.querySelector(".final-price").innerText = total.toFixed(2);
         }
 
-         function toggleMenu() {
+        function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
@@ -901,14 +1025,14 @@
             let total = document.getElementById("total").innerText;
             document.getElementById("totalAmount").innerText = total;
             document.getElementById("addressPopup").style.display = "none";
-            document.getElementById("paymentPopup").style.display="flex";
+            document.getElementById("paymentPopup").style.display = "flex";
         }
 
         function closePopup() {
             document.getElementById("paymentPopup").style.display = "none";
         }
 
-       async function paymentDone() {
+        async function paymentDone() {
 
             let utr =
                 document.getElementById("utr").value;
