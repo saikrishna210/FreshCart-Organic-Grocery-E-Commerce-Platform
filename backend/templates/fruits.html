@@ -76,17 +76,15 @@
         .main-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            /* 4 per row */
             gap: 20px;
             padding: 20px;
-            /* background:#e6c9a8; */
+            
         }
 
         .product-card {
             text-align: center;
         }
 
-        /* 🔹 Product container */
         .product {
             width: 100%;
             height: 220px;
@@ -96,7 +94,6 @@
             background: white;
         }
 
-        /* 🔹 Images */
         .product img {
             width: 100%;
             height: 100%;
@@ -107,12 +104,11 @@
             transition: opacity 0.5s ease;
         }
 
-        /* 🔹 Second image hidden */
+      
         .product .img2 {
             transform: translateY(250px);
         }
 
-        /* 🔥 Hover effect */
         .product:hover .img2 {
             transform: translateY(0);
         }
@@ -136,7 +132,7 @@
             margin: 5px 0;
         }
 
-        /* 🔥 BUTTON FIX */
+        
         button {
             background: green;
             color: white;
@@ -146,7 +142,7 @@
             cursor: pointer;
         }
 
-        /* 🔥 QTY FIX */
+        
         .qty {
             margin-top: 10px;
         }
@@ -169,7 +165,7 @@
             gap: 20px;
         }
 
-        */ .contact-link {
+         .contact-link {
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -262,8 +258,6 @@
             background: #d84315;
             padding: 10px;
         }
-
-
 
         .menu-item {
             position: relative;
@@ -1091,9 +1085,8 @@
         </div>
 
     </footer>
+
     <script>
-
-
         function increase(btn) {
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
@@ -1113,8 +1106,8 @@
                 updatePrice(card, count);
             }
         }
-        function updatePrice(card, qty) {
 
+        function updatePrice(card, qty) {
             let originalPrice = parseFloat(card.dataset.price);
             let total = originalPrice * qty;
             card.querySelector(".final-price").innerText = total.toFixed(2);
@@ -1130,9 +1123,7 @@
         document.querySelectorAll(".cart-btn").forEach(btn => {
 
             btn.onclick = function () {
-
                 let card = btn.closest(".product-card");
-
                 let name = card.querySelector("h3").innerText;
                 let price = parseFloat(card.querySelector(".final-price").innerText);
                 let image = card.querySelector(".img1").src;

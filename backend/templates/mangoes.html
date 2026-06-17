@@ -181,7 +181,183 @@
     .thumbnail-container img:hover {
         border: 2px solid #0b4d2b;
     }
+
+    .popup-box{
+
+background:white;
+
+padding:30px;
+
+width:350px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+.popup-box input,
+.popup-box textarea{
+
+width:100%;
+
+padding:12px;
+
+}
+
+@media(max-width:768px){
+
+.main-container{
+
+flex-direction:column;
+
+padding:20px;
+
+}
+
+#mainImage{
+
+width:100%;
+
+}
+
+.container-1 img{
+
+width:100%;
+
+}
+
+.thumbnail-container{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.container-2{
+
+max-width:100%;
+
+}
+
+.popup-box{
+
+width:90%;
+
+}
+
+}
 </style>
+<!-- ADDRESS -->
+
+<div id="addressPopup"
+style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+justify-content:center;
+align-items:center;
+">
+
+<div class="popup-box">
+
+<h2>Delivery Address</h2>
+
+<input id="custName"
+placeholder="Name">
+
+<br><br>
+
+<input id="mobile"
+placeholder="Phone Number">
+
+<br><br>
+
+<textarea
+id="address"
+placeholder="Address">
+</textarea>
+
+<br><br>
+
+<button
+onclick="openPayment()">
+Continue
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- PAYMENT -->
+
+<div id="paymentPopup"
+
+style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+justify-content:center;
+align-items:center;
+">
+
+<div class="popup-box">
+
+<h2>Complete Payment</h2>
+
+<img
+src="{% static 'qr.jpg' %}"
+width="220">
+
+<br><br>
+
+<h3>
+
+Total:
+
+₹
+
+<span id="totalAmount">
+
+1999
+
+</span>
+
+</h3>
+
+<input
+id="utr"
+
+placeholder="Enter UTR">
+
+<br><br>
+
+<button
+onclick="paymentDone()">
+
+Confirm Order
+
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
 <div class="top-bar">
     Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
 </div>
@@ -284,6 +460,46 @@ Continue
                     document.getElementById("mainImage").src = img.src;
                 }
 
+                function addCart(){
+
+document
+.getElementById(
+"addressPopup"
+)
+.style.display=
+"flex";
+
+}
+
+
+function openPayment(){
+
+let total=
+1999*qty;
+
+document
+.getElementById(
+"totalAmount"
+)
+.innerText=
+total;
+
+document
+.getElementById(
+"addressPopup"
+)
+.style.display=
+"none";
+
+document
+.getElementById(
+"paymentPopup"
+)
+.style.display=
+"flex";
+
+}
+
                  async function paymentDone() {
 
             let utr =
@@ -300,7 +516,7 @@ Continue
             let orderData = {
 
                 name:
-                    document.getElementById("name").value,
+                    document.getElementById("custName").value,
 
                 mobile:
                     document.getElementById("mobile").value,
@@ -308,11 +524,9 @@ Continue
                 address:
                     document.getElementById("address").value,
 
-                products:
-                    JSON.stringify(cart),
+                products:"Alphonso Mongo",
 
-                amount:
-                    document.getElementById("total").innerText,
+                amount:1999*qty,
 
                 utr:
                     utr

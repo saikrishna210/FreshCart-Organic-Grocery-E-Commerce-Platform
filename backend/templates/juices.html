@@ -155,7 +155,393 @@
         background: lightgray;
         color: black;
     }
-    
+
+
+    .dropdown p {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+         .contact-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .overstory-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .farmers {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #064e2c;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+
+        /* Top */
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            margin: 0;
+        }
+
+        .newsletter input {
+            padding: 12px;
+            border-radius: 20px;
+            border: none;
+            width: 200px;
+        }
+
+        .newsletter button {
+            background: orange;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            margin-left: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Middle */
+        .footer-middle {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #f1f1f1;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            flex: 2;
+        }
+
+        .col h4 {
+            margin-bottom: 10px;
+        }
+
+        .col p {
+            margin: 5px 0;
+        }
+
+        .about-box {
+            background: #cfd8dc;
+            color: black;
+            border-radius: 20px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        /* Bottom */
+        .footer-bottom {
+            margin-top: 20px;
+            text-align: center;
+            background: #d84315;
+            padding: 10px;
+        }
+
+        .menu-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: #eee;
+            width: 400px;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+
+        .dropdown a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 0;
+        }
+
+        .dropdown a:hover {
+            color: green;
+        }
+
+        .overstory-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .farmers {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .offers {
+            color: white;
+            text-decoration: none;
+        }
+
+        .back {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 25px;
+            background: #063d24;
+            padding: 12px 20px;
+            color: white;
+            font-size: 14px;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar div {
+            cursor: pointer;
+        }
+
+        .navbar div:hover {
+            color: #a5d6a7;
+        }
+
+        #cartSidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 350px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 25px;
+            transition: .4s;
+            z-index: 9999;
+            overflow: auto;
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .5);
+            z-index: 9998;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cart-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+        }
+
+        .remove-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: green;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .6);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .popup-box {
+            background: white;
+            padding: 30px;
+            width: 420px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 25px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .qr-image {
+            width: 250px;
+            height: 250px;
+        }
+
+
+
+
+         @media screen and (max-width:768px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* Header */
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box select {
+                width: 35%;
+            }
+
+            .search-box input {
+                width: 65%;
+            }
+
+            .help {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            /* Navbar */
+
+            .navbar {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            /* PRODUCTS → 2 PER ROW */
+
+            .main-container {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+
+                padding: 10px;
+
+                width: 100%;
+
+            }
+
+            .product-card {
+
+                width: 100%;
+
+                overflow: hidden;
+
+            }
+
+            .product {
+
+                width: 100%;
+
+                height: 180px;
+
+            }
+
+            .product img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+            }
+
+            /* Prevent overflow */
+
+            .banner,
+            .footer,
+            .popup-box,
+            #cartSidebar {
+
+                max-width: 100%;
+
+            }
+
+            #cartSidebar {
+
+                width: 100%;
+
+            }
+
+            .popup-box {
+
+                width: 92%;
+
+            }
+
+        }
+
 </style>
 
 <body>
@@ -184,10 +570,10 @@
 
     
     <div class="main-container">
-        <div class="product-card">
+        <div class="product-card" data-price="500">
             <div class="product">
-                <img src="{% static 'juices/juice1.webp' %}" alt="">
-                <img src="{% static 'juices/juiceone.webp' %}" alt="">
+                <img src="{% static 'juices/juice1.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juiceone.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -203,10 +589,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
-                <img src="{% static 'juices/juice2webp' %}" alt="">
-                <img src="{% static 'juices/juicetwo.webp' %}" alt="">
+                <img src="{% static 'juices/juice2.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juicetwo.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -222,10 +608,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
-                <img src="{% static 'juices/juice3.webp' %}" alt="">
-                <img src="{% static 'juices/juicethree.webp' %}" alt="">
+                <img src="{% static 'juices/juice3.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juicethree.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -241,10 +627,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
-                <img src="{% static 'juices/juice4.webp' %}" alt="">
-                <img src="{% static 'juices/juicefour.webp' %}" alt="">
+                <img src="{% static 'juices/juice4.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juicefour.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -260,10 +646,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="500">
             <div class="product">
-                <img src="{% static 'juices/juice5.webp' %}" alt="">
-                <img src="{% static 'juices/juicefive.webp' %}" alt="">
+                <img src="{% static 'juices/juice5.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juicefive.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -279,10 +665,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
-                <img src="{% static 'juices/juice6.webp' %}" alt="">
-                <img src="{% static 'juices/juicesix.webp' %}" alt="">
+                <img src="{% static 'juices/juice6.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juicesix.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -298,10 +684,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="500">
             <div class="product">
-                <img src="{% static 'juices/juice7.webp' %}" alt="">
-                <img src="{% static 'juices/juiceseven.webp' %}" alt="">
+                <img src="{% static 'juices/juice7.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juiceseven.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -317,10 +703,10 @@
             </div>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-price="600">
             <div class="product">
-                <img src="{% static 'juices/juice8.webp' %}" alt="">
-                <img src="{% static 'juices/juice8.webp' %}" alt="">
+                <img src="{% static 'juices/juice8.webp' %}" alt="" class="img1">
+                <img src="{% static 'juices/juice8.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
@@ -335,25 +721,351 @@
                 <button onclick="increase(this)">+</button>
             </div>
         </div>
+</div>
+
+    
+    <div id="overlay" onclick="closeCart()"></div>
+    <div id="cartSidebar">
+        <div style="display:flex;justify-content:space-between;">
+            <h1>Your Cart</h1>
+            <span onclick="closeCart()" style="font-size:35px;cursor:pointer;">✖</span>
+        </div>
+        <div id="cartItems"></div>
+        <h2>Total: Rs <span id="total">0</span></h2>
+        <button class="checkout-btn" onclick="openAddress()">Checkout</button>
+    </div>
+
+    <!-- ADDRESS -->
+    <div id="addressPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closeAddress()">✖</span>
+            <h2>Delivery Address</h2>
+            <input type="text" id="name" placeholder="Full Name">
+            <br><br>
+            <input type="text" id="mobile" placeholder="Phone Number">
+            <br><br>
+            <textarea id="address" placeholder="House / Flat No, Street / Area, City, Pincode"></textarea>
+            <br><br>
+            <button onclick="checkoutNow()">Continue</button>
+        </div>
+    </div>
+
+    <!-- PAYMENT -->
+    <div id="paymentPopup" class="popup-overlay">
+        <div class="popup-box">
+            <span class="close-btn" onclick="closePopup()">✖</span>
+            <h2>Complete Payment</h2>
+            <h2>Total ₹<span id="totalAmount">0</span></h2>
+            <img src="{% static 'scanner.jpeg' %}" class="qr-image">
+            <p>Scan QR and complete payment</p>
+            <input type="text" id="utr" placeholder="Enter UTR Number" required>
+            <button onclick="paymentDone()">Confirm Payment</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <!-- Top Section -->
+        <div class="footer-top">
+
+            <!-- Logo -->
+            <div class="logo">
+                <h2>KEDIA</h2>
+                <p>ORGANIC</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="newsletter">
+                <p>Join our newsletter to stay up to date.</p>
+                <input type="email" placeholder="Email *">
+                <button>Subscribe</button>
+            </div>
+
+        </div>
+
+        <!-- Middle Section -->
+        <div class="footer-middle">
+
+            <div class="card">
+                <div class="col">
+                    <h4>Info</h4>
+                    <p>OUR STORY</p>
+                    <p>ACTIVITIES</p>
+                    <p>FARM TOUR</p>
+                </div>
+
+                <div class="col">
+                    <h4>Quick links</h4>
+                    <p>GROCERIES - ALL INDIA</p>
+                    <p>FRESH PRODUCE - MUMBAI ONLY</p>
+                    <p>OUR STORY</p>
+                    <p>K FARMS</p>
+                    <p>OFFERS</p>
+                    <p>GIVING BACK</p>
+                    <p>CONTACT US</p>
+                </div>
+
+                <div class="col">
+                    <h4>Head Office</h4>
+                    <p>Jay Sudhanshu Chambers,<br>
+                        3rd Floor B wing Office No - 307,<br>
+                        Thane, Maharashtra, India 421301</p>
+                </div>
+            </div>
+
+            <div class="about-box">
+                <p>Kedia Organic Agro Farms brings pure, naturally grown groceries
+                    and farm-fresh produce to homes across Mumbai, Thane, and Navi Mumbai
+                    .Our range includes A2 Gir Cow Bilona Ghee, traditional flours, unpolished
+                    pulses, cold-pressed oils, raw honey, and seasonal fruits and vegetables—sourced
+                    responsibly from trusted farms.We work closely with small farmers and ethical growers,
+                    ensuring food that is clean, authentic, and full of natural goodness.Pure food. Trusted
+                    sourcing. Delivered fresh in Mumbai.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© 2026, Kedia Organic Agro Farms, Powered by Shopify</p>
+        </div>
+
+    </footer>
 
 
         
         <script>
+              function increase(btn) {
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            count++;
+            qtySpan.innerText = count;
+            updatePrice(card, count);
+        }
+        function decrease(btn) {
 
-            function increase(btn) {
-                let value = btn.parentElement.querySelector("span");
-                let count = parseInt(value.innerText);
-                value.innerText = count + 1;
+            let card = btn.closest(".product-card");
+            let qtySpan = card.querySelector(".qty span");
+            let count = parseInt(qtySpan.innerText);
+            if (count > 1) {
+                count--;
+                qtySpan.innerText = count;
+                updatePrice(card, count);
+            }
+        }
+
+        function updatePrice(card, qty) {
+            let originalPrice = parseFloat(card.dataset.price);
+            let total = originalPrice * qty;
+            card.querySelector(".final-price").innerText = total.toFixed(2);
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+
+        let cart = [];
+        document.querySelectorAll(".cart-btn").forEach(btn => {
+
+            btn.onclick = function () {
+                let card = btn.closest(".product-card");
+                let name = card.querySelector("h3").innerText;
+                let price = parseFloat(card.querySelector(".final-price").innerText);
+                let image = card.querySelector(".img1").src;
+
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image
+                });
+
+                showCart();
+                openCart();
+
+            }
+        });
+
+        // Show cart
+        function showCart() {
+
+            let items = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+
+                items += `
+<div class="cart-item">
+
+<img src="${item.image}" class="cart-img">
+
+<div>
+<h3>${item.name}</h3>
+<p>Rs ${item.price}</p>
+</div>
+
+<button class="remove-btn" onclick="removeItem(${index})">X</button>
+
+</div>
+`;
+
+                total += item.price;
+
+            });
+
+            document.getElementById("cartItems").innerHTML = items;
+            document.getElementById("total").innerText = total.toFixed(2);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            showCart();
+        }
+
+        function openCart() {
+            document.getElementById("cartSidebar").style.right = "0";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closeCart() {
+            document.getElementById("cartSidebar").style.right = "-400px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        function openAddress() {
+            document.getElementById("addressPopup").style.display = "flex";
+        }
+
+        function closeAddress() {
+            document.getElementById("addressPopup").style.display = "none";
+        }
+
+        function checkoutNow() {
+            let total = document.getElementById("total").innerText;
+            document.getElementById("totalAmount").innerText = total;
+            document.getElementById("addressPopup").style.display = "none";
+            document.getElementById("paymentPopup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("paymentPopup").style.display = "none";
+        }
+
+         async function paymentDone() {
+
+            let utr =
+                document.getElementById("utr").value;
+
+            if (!utr) {
+
+                alert("Enter UTR Number");
+
+                return;
+
             }
 
-            function decrease(btn) {
-                let value = btn.parentElement.querySelector("span");
-                let count = parseInt(value.innerText);
+            let orderData = {
 
-                if (count > 0) {
-                    value.innerText = count - 1;
+                name:
+                    document.getElementById("name").value,
+
+                mobile:
+                    document.getElementById("mobile").value,
+
+                address:
+                    document.getElementById("address").value,
+
+                products:
+                    JSON.stringify(cart),
+
+                amount:
+                    document.getElementById("total").innerText,
+
+                utr:
+                    utr
+
+            };
+
+            try {
+
+                let res =
+                    await fetch(
+
+                        "/save-order/",
+
+                        {
+
+                            method: "POST",
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+                            body:
+                                JSON.stringify(orderData)
+
+                        }
+
+                    );
+
+                let data =
+                    await res.json();
+
+                if (data.status === "success") {
+
+                    alert(
+                        "Order Saved & WhatsApp Sent"
+                    );
+
+                    cart = [];
+
+                    showCart();
+
+                    closePopup();
+
+                    closeCart();
+
+                    setTimeout(() => {
+
+                        window.location.href =
+                            "/success/";
+
+                    }, 500);
+
                 }
+
+                else {
+
+                    alert(
+
+                        data.message ||
+
+                        "Order Save Failed"
+
+                    );
+
+                }
+
             }
+
+            catch (err) {
+
+                console.log(err);
+
+                alert(
+
+                    "Something went wrong"
+
+                );
+
+            }
+
+        }
+           
         </script>
 </body>
 
