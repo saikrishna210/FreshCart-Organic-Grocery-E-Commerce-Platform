@@ -398,6 +398,161 @@
             width: 250px;
             height: 250px;
         }
+
+        /* MOBILE RESPONSIVE */
+
+        @media screen and (max-width:768px) {
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                width: 100%;
+                overflow-x: hidden;
+                margin: 0;
+            }
+
+            /* HEADER */
+
+            .header {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .search-box select {
+                width: 35%;
+            }
+
+            .search-box input {
+                width: 65%;
+                min-width: 0;
+            }
+
+            /* NAVBAR */
+
+            .navbar {
+                display: grid;
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 10px;
+
+                text-align: center;
+
+                padding: 15px;
+
+            }
+
+            .dropdown {
+
+                width: 90%;
+
+                max-width: 300px;
+
+                left: 50%;
+
+                transform:
+                    translateX(-50%);
+
+            }
+
+            /* BANNER */
+
+            .banner {
+                padding: 25px;
+            }
+
+            .banner h1 {
+                font-size: 24px;
+            }
+
+            /* PRODUCTS */
+
+            .main-container {
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+                padding: 10px;
+
+            }
+
+            .product {
+
+                height: 180px;
+
+            }
+
+            .product-card {
+
+                width: 100%;
+
+            }
+
+            .product img {
+
+                width: 100%;
+
+                height: 100%;
+
+                object-fit: contain;
+
+            }
+
+            h3 {
+
+                font-size: 14px;
+
+            }
+
+            .price {
+
+                font-size: 13px;
+
+            }
+
+            /* CART */
+
+            #cartSidebar {
+
+                width: 100%;
+
+                max-width: 350px;
+
+            }
+
+            .popup-box {
+
+                width: 92%;
+
+            }
+
+            .footer-top,
+            .footer-middle,
+            .card {
+
+                flex-direction: column;
+
+            }
+
+        }
     </style>
 </head>
 

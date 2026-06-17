@@ -1,13 +1,14 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
-     .top-bar {
+    .top-bar {
         background-color: #d35400;
         color: white;
         text-align: center;
@@ -55,7 +56,7 @@
     .help {
         font-size: 14px;
     }
-    
+
     .hero {
         height: 200px;
         background-image: url("/static/backimage.jpg");
@@ -65,6 +66,7 @@
         position: relative;
         margin-bottom: 50px;
     }
+
     .overlay {
         position: absolute;
         top: 0;
@@ -89,44 +91,55 @@
         /* light green like your image */
         font-size: 40px;
     }
-    .container-1{
+
+    .container-1 {
         text-align: center;
         align-items: center;
     }
-    .container-1>.img-1{
+
+    .container-1>.img-1 {
         border-radius: 20px;
     }
-    .container-2{
+
+    .container-2 {
         padding-left: 330px;
         margin-bottom: 30px;
     }
-    .container-2>.img-2{
+
+    .container-2>.img-2 {
         border-radius: 10px;
     }
-    .para-1{
+
+    .para-1 {
         /* text-align: center;
         align-items: center; */
         padding-left: 330px;
         margin-bottom: 30px;
     }
-    .para-2{
+
+    .para-2 {
         padding-left: 330px;
     }
-    .para-3{
+
+    .para-3 {
         padding-left: 330px;
     }
-    .gallery{
+
+    .gallery {
         text-align: center;
         align-items: center;
     }
-    .gallery> .img{
-          border-radius: 20px;
+
+    .gallery>.img {
+        border-radius: 20px;
     }
-    .details{
+
+    .details {
         text-align: center;
         align-items: center;
     }
-     form {
+
+    form {
         max-width: 700px;
         margin: auto;
     }
@@ -167,12 +180,14 @@
         color: #0b4d2b;
         margin-bottom: 30px;
     }
-     #form {
+
+    #form {
         background-color: #d6cbb7;
         padding: 50px;
         text-align: center;
     }
-      .footer {
+
+    .footer {
         background: #064e2c;
         color: white;
         font-family: Arial, sans-serif;
@@ -239,6 +254,7 @@
         padding: 20px;
         flex: 1;
     }
+
     /* Bottom */
     .footer-bottom {
         margin-top: 20px;
@@ -246,9 +262,185 @@
         background: #d84315;
         padding: 10px;
     }
+
+
+
+
+
+    /* MOBILE RESPONSIVE */
+
+    @media screen and (max-width:768px) {
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .search-box select {
+            width: 35%;
+        }
+
+        .search-box input {
+            width: 65%;
+            min-width: 0;
+        }
+
+        .help {
+            text-align: center;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 180px;
+        }
+
+        .overlay {
+            padding: 20px;
+        }
+
+        .overlay h1 {
+            font-size: 28px;
+        }
+
+        .overlay p {
+            font-size: 13px;
+        }
+
+        /* CONTENT */
+
+        .container-1,
+        .container-2,
+        .para-1,
+        .para-2,
+        .para-3 {
+
+            padding-left: 0 !important;
+
+            text-align: center;
+
+        }
+
+        .container-1 img,
+        .container-2 img {
+
+            width: 95%;
+
+            height: auto;
+
+        }
+
+        /* GALLERY */
+
+        .gallery img {
+
+            width: 95%;
+
+            height: auto;
+
+            border-radius: 15px;
+
+        }
+
+        /* PARAGRAPHS */
+
+        .para-1,
+        .para-2,
+        .para-3 {
+
+            padding: 0 15px;
+
+            line-height: 1.8;
+
+        }
+
+        /* CONTACT */
+
+        .details {
+
+            padding: 20px;
+
+        }
+
+        /* FORM */
+
+        #form {
+
+            padding: 25px;
+
+        }
+
+        .row {
+
+            flex-direction: column;
+
+            gap: 0;
+
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+        }
+
+        button {
+
+            width: 100%;
+
+        }
+
+        /* FOOTER */
+
+        .footer-top,
+        .footer-middle,
+        .card {
+
+            flex-direction: column;
+
+        }
+
+        .newsletter input {
+
+            width: 100%;
+
+        }
+
+        .about-box {
+
+            width: auto;
+
+        }
+
+    }
 </style>
+
 <body>
-     <div class="top-bar">
+    <div class="top-bar">
         Order Today • Get It Fresh Tomorrow (Mon–Sat, Mumbai)
     </div>
 
@@ -284,9 +476,11 @@
         <img src="{% static 'Gau_seva/image1.webp' %}" alt="" height="300px" width="800px" class="img-1">
     </div>
 
-    <big><h1 style="text-align: center; color: #d35400; font-style:italic;">GAU SEVA</h1></big>
+    <big>
+        <h1 style="text-align: center; color: #d35400; font-style:italic;">GAU SEVA</h1>
+    </big>
     <div class="para-1">
-        <p>The farmers and Gau Sevaks share a special bond with our Cows. They also provide</p> 
+        <p>The farmers and Gau Sevaks share a special bond with our Cows. They also provide</p>
         <p>shelter to cows that are abandoned and look after them like their own family. The </p>
         <p>auspicious Festival of Gopashtami is celebrated with all pomp and joy by our nearby</p>
         <p>villagers and farmers. They worship the Gau-Mata, play bhajans, and feed them apples,</p>
@@ -300,31 +494,31 @@
     </div>
 
     <div class="para-3">
-       <p> Meet Pravin, our most dedicated Gau Sevak.</p>
+        <p> Meet Pravin, our most dedicated Gau Sevak.</p>
     </div>
 
     <div class="para-1">
         <p>“Gau Seva is in my blood. My father and grandfather were Gau Sevaks in their time. It is</p>
         <p>not a job for me. It’s my childhood passion. I can’t imagine doing anything else.” Rearing</p>
-        <p>cows is especially tedious during the monsoons. But Pravin has been meticulous even on</p> 
+        <p>cows is especially tedious during the monsoons. But Pravin has been meticulous even on</p>
         <p>rainy days. Every day, he gets up before the sun does and cuts caff for the cows. Talks to</p>
         <p>them.</p>
     </div>
 
     <div class="para-1">
-        <p>From milking to bathing, massaging the cows, letting them move around the farm and</p> 
-        <p>graze without a worry- Pravin looks after everything. He’s constantly on his feet, playing</p> 
-        <p>bhajans to relax the cows every day, helping with births, and taking care of abandoned</p> 
+        <p>From milking to bathing, massaging the cows, letting them move around the farm and</p>
+        <p>graze without a worry- Pravin looks after everything. He’s constantly on his feet, playing</p>
+        <p>bhajans to relax the cows every day, helping with births, and taking care of abandoned</p>
         <p>and sick cows. He treats them just like his kids. Pravin believes that milking the cows by</p>
-        <p>hand, without the help of machinery, affects the energy and ultimately the purity of the</p> 
-        <p>milk. Thus, he prefers to milk the cows naturally as our forefathers did. During the</p> 
-        <p>infamous floods, Pravin risked his life and played a major role in helping us rescue</p> 
+        <p>hand, without the help of machinery, affects the energy and ultimately the purity of the</p>
+        <p>milk. Thus, he prefers to milk the cows naturally as our forefathers did. During the</p>
+        <p>infamous floods, Pravin risked his life and played a major role in helping us rescue</p>
         stranded cows.
     </div>
 
     <div class="para-1">
-       <p>“गाय असेल तर आम्ही आहोत, गाय नसेल तर आम्ही नाही” - says Pravin, while pledging to spend his</p> 
-       entire life in the service of Gau Mata.
+        <p>“गाय असेल तर आम्ही आहोत, गाय नसेल तर आम्ही नाही” - says Pravin, while pledging to spend his</p>
+        entire life in the service of Gau Mata.
     </div>
 
     <div class="container-2">
@@ -334,7 +528,9 @@
     <div class="container-2">
         <img src="{% static 'Gau_seva/cow_image2.jpeg' %}" alt="" height="300px" width="400px" class="img-2">
     </div>
-    <big><h1 style="text-align: center; color: #d35400; font-style:italic;">GALLERY</h1></big>
+    <big>
+        <h1 style="text-align: center; color: #d35400; font-style:italic;">GALLERY</h1>
+    </big>
 
     <div class="gallery">
         <img src="{% static 'Gau_seva/image4.webp' %}" alt="" height="900px" width="700px" class="img"><br><br>
@@ -359,7 +555,7 @@
         <p>Monday to Saturday · 10:00 AM – 6:00 PM</p>
     </div>
 
-    
+
     <div id="form">
         <h1>Contact form</h1>
         <form>
@@ -372,7 +568,7 @@
             <button type="submit">Send</button>
         </form>
     </div>
-   <footer class="footer">
+    <footer class="footer">
 
         <!-- Top Section -->
         <div class="footer-top">
@@ -437,4 +633,5 @@
 
     </footer>
 </body>
+
 </html>

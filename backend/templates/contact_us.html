@@ -226,6 +226,222 @@
         margin-left: 15px;
         cursor: pointer;
     }
+
+
+    /* MOBILE RESPONSIVE */
+
+    @media screen and (max-width:768px) {
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        .header {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            padding: 10px;
+
+        }
+
+        .logo {
+
+            text-align: center;
+
+        }
+
+        .search-box {
+
+            width: 100%;
+
+        }
+
+        .search-box select {
+
+            width: 35%;
+
+        }
+
+        .search-box input {
+
+            width: 65%;
+
+            min-width: 0;
+
+        }
+
+        .help {
+
+            text-align: center;
+
+        }
+
+        /* HERO */
+
+        .hero {
+
+            height: 180px;
+
+        }
+
+        .overlay {
+
+            padding: 20px;
+
+            padding-left: 20px;
+
+        }
+
+        .overlay h1 {
+
+            font-size: 28px;
+
+        }
+
+        .overlay p {
+
+            font-size: 13px;
+
+        }
+
+        /* CONTACT AREA */
+
+        #space {
+
+            padding: 20px;
+
+        }
+
+        #space h1 {
+
+            font-size: 28px;
+
+        }
+
+        #space h2 {
+
+            font-size: 22px;
+
+        }
+
+        #space h3 {
+
+            font-size: 16px;
+
+        }
+
+        /* FORM */
+
+        #form {
+
+            padding: 25px;
+
+        }
+
+        .row {
+
+            flex-direction: column;
+
+            gap: 0;
+
+        }
+
+        input,
+        textarea {
+
+            width: 100%;
+
+        }
+
+        button {
+
+            width: 100%;
+
+        }
+
+        /* FOOTER */
+
+        .footer {
+
+            padding: 20px;
+
+        }
+
+        .footer-top {
+
+            flex-direction: column;
+
+            gap: 20px;
+
+            text-align: center;
+
+        }
+
+        .subscribe-box {
+
+            flex-direction: column;
+
+        }
+
+        .subscribe-box input {
+
+            width: 100%;
+
+        }
+
+        .subscribe-box button {
+
+            width: 100%;
+
+        }
+
+        .footer-middle {
+
+            flex-direction: column;
+
+        }
+
+        .box,
+        .about {
+
+            width: 100%;
+
+        }
+
+        .footer-bottom {
+
+            flex-direction: column;
+
+            gap: 10px;
+
+            text-align: center;
+
+        }
+
+        .footer-bottom .links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+
+        }
+
+    }
 </style>
 
 <body>
