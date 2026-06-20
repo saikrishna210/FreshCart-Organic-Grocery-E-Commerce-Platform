@@ -8,6 +8,120 @@
     <title>Products</title>
 
     <style>
+        /* PRODUCTS MOBILE FIX */
+
+.main-container{
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:12px;
+
+padding:10px;
+
+overflow-x:hidden;
+
+}
+
+.product-card{
+
+width:100%;
+
+min-width:0;
+
+}
+
+.product{
+
+height:170px;
+
+}
+
+.product img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+}
+
+.price{
+
+font-size:14px;
+
+}
+
+h3{
+
+font-size:16px;
+
+min-height:45px;
+
+}
+
+button{
+
+padding:10px;
+
+font-size:14px;
+
+}
+
+/* CART */
+
+#cartSidebar{
+
+width:100%;
+
+right:-100%;
+
+padding:20px;
+
+box-sizing:border-box;
+
+}
+
+.popup-box{
+
+width:92%;
+
+padding:25px;
+
+box-sizing:border-box;
+
+}
+
+.popup-box input,
+.popup-box textarea{
+
+width:100%;
+
+box-sizing:border-box;
+
+}
+
+.qr-image{
+
+width:220px;
+
+height:220px;
+
+}
+
+/* REMOVE RIGHT SCROLL */
+
+html,
+body{
+
+overflow-x:hidden;
+
+width:100%;
+
+}
         body {
             background-color: whitesmoke;
         }
@@ -84,6 +198,8 @@
 
         .product-card {
             text-align: center;
+            min-width: 0;
+            overflow: hidden;
         }
 
         /* 🔹 Product container */
