@@ -10,118 +10,119 @@
     <style>
         /* PRODUCTS MOBILE FIX */
 
-.main-container{
+        .main-container {
 
-display:grid;
+            display: grid;
 
-grid-template-columns:
-repeat(2,1fr);
+            grid-template-columns:
+                repeat(2, 1fr);
 
-gap:12px;
+            gap: 12px;
 
-padding:10px;
+            padding: 10px;
 
-overflow-x:hidden;
+            overflow-x: hidden;
 
-}
+        }
 
-.product-card{
+        .product-card {
 
-width:100%;
+            width: 100%;
 
-min-width:0;
+            min-width: 0;
 
-}
+        }
 
-.product{
+        .product {
 
-height:170px;
+            height: 170px;
 
-}
+        }
 
-.product img{
+        .product img {
 
-width:100%;
+            width: 100%;
 
-height:100%;
+            height: 100%;
 
-object-fit:contain;
+            object-fit: contain;
 
-}
+        }
 
-.price{
+        .price {
 
-font-size:14px;
+            font-size: 14px;
 
-}
+        }
 
-h3{
+        h3 {
 
-font-size:16px;
+            font-size: 16px;
 
-min-height:45px;
+            min-height: 45px;
 
-}
+        }
 
-button{
+        button {
 
-padding:10px;
+            padding: 10px;
 
-font-size:14px;
+            font-size: 14px;
 
-}
+        }
 
-/* CART */
+        /* CART */
 
-#cartSidebar{
+        #cartSidebar {
 
-width:100%;
+            width: 100%;
 
-right:-100%;
+            right: -100%;
 
-padding:20px;
+            padding: 20px;
 
-box-sizing:border-box;
+            box-sizing: border-box;
 
-}
+        }
 
-.popup-box{
+        .popup-box {
 
-width:92%;
+            width: 92%;
 
-padding:25px;
+            padding: 25px;
 
-box-sizing:border-box;
+            box-sizing: border-box;
 
-}
+        }
 
-.popup-box input,
-.popup-box textarea{
+        .popup-box input,
+        .popup-box textarea {
 
-width:100%;
+            width: 100%;
 
-box-sizing:border-box;
+            box-sizing: border-box;
 
-}
+        }
 
-.qr-image{
+        .qr-image {
 
-width:220px;
+            width: 220px;
 
-height:220px;
+            height: 220px;
 
-}
+        }
 
-/* REMOVE RIGHT SCROLL */
+        /* REMOVE RIGHT SCROLL */
 
-html,
-body{
+        html,
+        body {
 
-overflow-x:hidden;
+            overflow-x: hidden;
 
-width:100%;
+            width: 100%;
 
-}
+        }
+
         body {
             background-color: whitesmoke;
         }
@@ -189,11 +190,9 @@ width:100%;
         /* 🔥 GRID LAYOUT */
         .main-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            /* 4 per row */
-            gap: 20px;
-            padding: 20px;
-            /* background:#e6c9a8; */
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 16px;
+            padding: 12px;
         }
 
         .product-card {
@@ -242,7 +241,7 @@ width:100%;
             margin: 10px 0;
         }
 
-        .old-price{
+        .old-price {
             text-decoration: line-through;
             color: gray;
             margin-left: 10px;
@@ -273,8 +272,8 @@ width:100%;
             color: black;
         }
 
-       
- 
+
+
         .menu-item {
             position: relative;
             cursor: pointer;
@@ -435,7 +434,14 @@ width:100%;
             width: 250px;
             height: 250px;
         }
-         @media (max-width:768px) {
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+        @media (max-width:768px) {
 
             .header {
                 flex-direction: column;
@@ -642,7 +648,7 @@ width:100%;
 
         <div class="product-card" data-price="800">
             <div class="product">
-               <img src="{% static 'kitchen_essentails/image2.webp' %}" class="img1">
+                <img src="{% static 'kitchen_essentails/image2.webp' %}" class="img1">
                 <img src="{% static 'kitchen_essentails/imagetwo.webp' %}" class="img2">
             </div>
             <p class="price">
@@ -680,7 +686,7 @@ width:100%;
 
         <div class="product-card" data-price="135">
             <div class="product">
-               <img src="{% static 'kitchen_essentails/image4.webp' %}" class="img1">
+                <img src="{% static 'kitchen_essentails/image4.webp' %}" class="img1">
                 <img src="{% static 'kitchen_essentails/imagefour.webp' %}" class="img2">
             </div>
             <p class="price">
@@ -700,7 +706,7 @@ width:100%;
         <!-- Next row automatically -->
         <div class="product-card" data-price="80">
             <div class="product">
-             <img src="{% static 'kitchen_essentails/image5.webp' %}" class="img1">
+                <img src="{% static 'kitchen_essentails/image5.webp' %}" class="img1">
                 <img src="{% static 'kitchen_essentails/image5.webp' %}" class="img2">
             </div>
             <p class="price">
@@ -719,7 +725,7 @@ width:100%;
 
         <div class="product-card" data-price="550">
             <div class="product">
-               <img src="{% static 'kitchen_essentails/image6.webp' %}" class="img1">
+                <img src="{% static 'kitchen_essentails/image6.webp' %}" class="img1">
                 <img src="{% static 'kitchen_essentails/imagesix.webp' %}" class="img2">
             </div>
             <p class="price">
@@ -736,7 +742,7 @@ width:100%;
 
         <div class="product-card" data-price="300">
             <div class="product">
-               <img src="{% static 'kitchen_essentails/image7.webp' %}" class="img1">
+                <img src="{% static 'kitchen_essentails/image7.webp' %}" class="img1">
                 <img src="{% static 'kitchen_essentails/imageseven.webp' %}" class="img2">
             </div>
             <p class="price">
@@ -830,7 +836,7 @@ width:100%;
         </div>
     </div>
 
-  <div id="overlay" onclick="closeCart()"></div>
+    <div id="overlay" onclick="closeCart()"></div>
     <div id="cartSidebar">
         <div style="display:flex;justify-content:space-between;">
             <h1>Your Cart</h1>
@@ -855,7 +861,7 @@ width:100%;
         </div>
     </div>
 
-<div id="paymentPopup" class="popup-overlay">
+    <div id="paymentPopup" class="popup-overlay">
         <div class="popup-box">
             <span class="close-btn" onclick="closePopup()">✖</span>
             <h2>Complete Payment</h2>
@@ -870,7 +876,7 @@ width:100%;
 
     <script>
 
- function increase(btn) {
+        function increase(btn) {
             let card = btn.closest(".product-card");
             let qtySpan = card.querySelector(".qty span");
             let count = parseInt(qtySpan.innerText);
@@ -890,7 +896,7 @@ width:100%;
             }
         }
 
-         function updatePrice(card, qty) {
+        function updatePrice(card, qty) {
             let originalPrice = parseFloat(card.dataset.price);
             let total = originalPrice * qty;
             card.querySelector(".final-price").innerText = total.toFixed(2);
@@ -919,7 +925,7 @@ width:100%;
             }
         });
 
-         function showCart() {
+        function showCart() {
             let items = "";
             let total = 0;
             cart.forEach((item, index) => {
@@ -961,14 +967,14 @@ width:100%;
             document.getElementById("overlay").style.display = "none";
         }
 
-         function openAddress() {
+        function openAddress() {
             document.getElementById("addressPopup").style.display = "flex";
         }
 
         function closeAddress() {
             document.getElementById("addressPopup").style.display = "none";
         }
-    
+
 
         function checkoutNow() {
             let total = document.getElementById("total").innerText;
