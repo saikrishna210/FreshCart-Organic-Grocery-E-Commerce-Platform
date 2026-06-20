@@ -64,12 +64,17 @@ def rice_millets(request):
 
 @csrf_exempt
 def save_order(request):
+
     try:
+
         if request.method=="POST":
+
             data=json.loads(
                 request.body
             )
+
             order=Order.objects.create(
+
                 customer_name=
                 data.get("name"),
 
@@ -95,6 +100,31 @@ def save_order(request):
 
             )
 
+            # ONLY PRODUCT NAMES
+
+            try:
+                product_data=json.loads(
+                    order.products
+                )
+
+                product_names=", ".join(
+
+                    [
+
+                    i["name"]
+
+                    for i in product_data
+
+                    ]
+
+                )
+
+            except:
+
+                product_names=str(
+                    order.products
+                )
+
             msg={
 
                 "id":
@@ -104,12 +134,10 @@ def save_order(request):
                 order.customer_name,
 
                 "products":
-                order.products,
+                product_names,
 
                 "amount":
-                str(
-                    order.total_amount
-                ),
+                order.total_amount,
 
                 "utr":
                 order.utr_number,
@@ -119,12 +147,12 @@ def save_order(request):
 
             }
 
+            phone=str(order.mobile).strip()
+            if not phone.startswith("91"):
+                phone="91"+phone
             send_whatsapp(
-
-            "91"+order.mobile,
-
+            phone,
             msg
-
             )
 
             return JsonResponse({
