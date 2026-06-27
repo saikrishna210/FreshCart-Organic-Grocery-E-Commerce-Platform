@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-u__^^+a6#luh@ze21^56f_cah%hk7@=pb25m$f!c$a0ynu+m!5'
-
+RAZOR_KEY='rzp_test_T58KHb0pCVL81m'
+RAZOR_SECRET='dqyzEh39EuQw0sMob643ojAv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -81,11 +82,13 @@ ASGI_APPLICATION='asgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+"default":
+dj_database_url.parse(
+"postgresql://neondb_owner:npg_RcXK5lfzF4Dr@ep-flat-wind-aodsusxf.c-2.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+)
 }
 
 # Password validation

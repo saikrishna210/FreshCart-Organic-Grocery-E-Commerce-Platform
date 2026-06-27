@@ -4,6 +4,9 @@ from django.http import JsonResponse
 from .models import Order
 import json
 from .whatsapp import send_whatsapp
+from .payment import create_order
+
+
 
 def home(request):
     return render(request,"index.html")
@@ -64,9 +67,7 @@ def rice_millets(request):
 
 @csrf_exempt
 def save_order(request):
-
     try:
-
         if request.method=="POST":
 
             data=json.loads(
@@ -148,11 +149,20 @@ def save_order(request):
             }
 
             phone=str(order.mobile).strip()
+            if phone.startswith("+"):
+                phone=phone[1:]
+
             if not phone.startswith("91"):
                 phone="91"+phone
-            send_whatsapp(
-            phone,
-            msg
+            try:
+                send_whatsapp(
+                phone,
+                msg
+            )
+            except Exception as e:
+                print(
+                    "WhatsApp Error:",
+                    e
             )
 
             return JsonResponse({
@@ -187,3 +197,23 @@ def save_order(request):
 def success(request):
     return render(request,"success.html")
 
+@csrf_exempt
+def start_payment(request):
+
+    if request.method=="POST":
+
+        data=json.loads(
+            request.body
+        )
+
+        amount=float(
+            data["amount"]
+        )
+
+        order=create_order(
+            amount
+        )
+
+        return JsonResponse(
+            order
+        )

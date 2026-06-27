@@ -92,58 +92,88 @@
         font-size: 40px;
     }
 
-    .image-1{
+    .image-1 {
         text-align: center;
     }
+
     .image-1>.farm-1 {
         border-radius: 15px;
     }
-    .image-2{
+
+    .image-2 {
         text-align: center;
     }
-    .image-2>.farm-2{
+
+    .image-2>.farm-2 {
         border-radius: 15px;
         margin-bottom: 10px;
     }
-    .image-3{
+
+    .image-3 {
         text-align: center;
     }
-    .image-3>.farm-3{
+
+    .image-3>.farm-3 {
         border-radius: 15px;
         margin-left: 100px;
     }
-    .image-4{
+
+    .image-4 {
         text-align: center;
     }
-    .image-4>.farm-4{
+
+    .image-4>.farm-4 {
         border-radius: 15px;
         margin-bottom: 20px;
     }
-    .image-5{
+
+    .image-5 {
         text-align: center;
     }
-    .image-5>.farm-5{
+
+    .image-5>.farm-5 {
         border-radius: 15px;
     }
-    .image-6{
+
+    .image-6 {
         text-align: center;
     }
-    .text{
+
+    .text {
         color: green;
         text-align: center;
     }
-    .text-2{
-        color:#d35400;
+
+    .text-2 {
+        color: #d35400;
         padding-left: 320px;
     }
-    .para-1, .para-2, .para-3, .para-4, .para-5, .para-6, .para-7, .para-8, .para-9, .para-10, .para-11, .para-12, .para-13, .para-14, .para-15, .para-16{
+
+    .para-1,
+    .para-2,
+    .para-3,
+    .para-4,
+    .para-5,
+    .para-6,
+    .para-7,
+    .para-8,
+    .para-9,
+    .para-10,
+    .para-11,
+    .para-12,
+    .para-13,
+    .para-14,
+    .para-15,
+    .para-16 {
         text-align: center;
         line-height: 1;
     }
+
     .details {
         text-align: center;
     }
-     form {
+
+    form {
         max-width: 700px;
         margin: auto;
     }
@@ -184,199 +214,208 @@
         color: #0b4d2b;
         margin-bottom: 30px;
     }
-     #form {
+
+    #form {
         background-color: #d6cbb7;
         padding: 50px;
         text-align: center;
     }
-  
+
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: white;
+        font-size: 14px;
+    }
+
+    .details {
+        color: white;
+    }
 
     /* MOBILE RESPONSIVE */
 
-@media screen and (max-width:768px){
+    @media screen and (max-width:768px) {
 
-*{
-box-sizing:border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-html,
-body{
-margin:0;
-width:100%;
-overflow-x:hidden;
-}
+        html,
+        body {
+            margin: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-/* HEADER */
+        /* HEADER */
 
-.header{
-display:flex;
-flex-direction:column;
-padding:10px;
-gap:10px;
-}
+        .header {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
 
-.logo{
-text-align:center;
-}
+        .logo {
+            text-align: center;
+        }
 
-.search-box{
-width:100%;
-}
+        .search-box {
+            width: 100%;
+        }
 
-.search-box select{
-width:35%;
-}
+        .search-box select {
+            width: 35%;
+        }
 
-.search-box input{
-width:65%;
-min-width:0;
-}
+        .search-box input {
+            width: 65%;
+            min-width: 0;
+        }
 
-.help{
-text-align:center;
-}
+        .help {
+            text-align: center;
+        }
 
-/* HERO */
+        /* HERO */
 
-.hero{
-height:180px;
-}
+        .hero {
+            height: 180px;
+        }
 
-.overlay{
-padding:20px;
-}
+        .overlay {
+            padding: 20px;
+        }
 
-.overlay h1{
-font-size:28px;
-}
+        .overlay h1 {
+            font-size: 28px;
+        }
 
-.overlay p{
-font-size:13px;
-}
+        .overlay p {
+            font-size: 13px;
+        }
 
-/* TEXT */
+        /* TEXT */
 
-.text,
-.text-2{
+        .text,
+        .text-2 {
 
-padding-left:0 !important;
+            padding-left: 0 !important;
 
-text-align:center;
+            text-align: center;
 
-font-size:22px;
+            font-size: 22px;
 
-}
+        }
 
-/* IMAGES */
+        /* IMAGES */
 
-.image-1 img,
-.image-2 img,
-.image-3 img,
-.image-4 img,
-.image-5 img,
-.image-6 img{
+        .image-1 img,
+        .image-2 img,
+        .image-3 img,
+        .image-4 img,
+        .image-5 img,
+        .image-6 img {
 
-width:95%;
+            width: 95%;
 
-height:auto;
+            height: auto;
 
-margin-left:0 !important;
+            margin-left: 0 !important;
 
-}
+        }
 
-/* VIDEO */
+        /* VIDEO */
 
-video{
+        video {
 
-width:95%;
+            width: 95%;
 
-height:auto;
+            height: auto;
 
-}
+        }
 
-/* PARAGRAPHS */
+        /* PARAGRAPHS */
 
-.para-1,
-.para-2,
-.para-3,
-.para-4,
-.para-5,
-.para-6,
-.para-7,
-.para-8,
-.para-9,
-.para-10,
-.para-11,
-.para-12,
-.para-13,
-.para-14,
-.para-15,
-.para-16{
+        .para-1,
+        .para-2,
+        .para-3,
+        .para-4,
+        .para-5,
+        .para-6,
+        .para-7,
+        .para-8,
+        .para-9,
+        .para-10,
+        .para-11,
+        .para-12,
+        .para-13,
+        .para-14,
+        .para-15,
+        .para-16 {
 
-padding:0 15px;
+            padding: 0 15px;
 
-line-height:1.8;
+            line-height: 1.8;
 
-font-size:15px;
+            font-size: 15px;
 
-}
+        }
 
-/* FORM */
+        /* FORM */
 
-#form{
+        #form {
 
-padding:20px;
+            padding: 20px;
 
-}
+        }
 
-.row{
+        .row {
 
-flex-direction:column;
+            flex-direction: column;
 
-gap:0;
+            gap: 0;
 
-}
+        }
 
-input,
-textarea{
+        input,
+        textarea {
 
-width:100%;
+            width: 100%;
 
-}
+        }
 
-button{
+        button {
 
-width:100%;
+            width: 100%;
 
-}
+        }
 
-/* FOOTER */
+        /* FOOTER */
 
-.footer-top,
-.footer-middle,
-.card{
+        .footer-top,
+        .footer-middle,
+        .card {
 
-flex-direction:column;
+            flex-direction: column;
 
-}
+        }
 
-.newsletter input{
+        .newsletter input {
 
-width:100%;
+            width: 100%;
 
-}
+        }
 
-.about-box{
+        .about-box {
 
-width:auto;
+            width: auto;
 
-}
+        }
 
-}
-
-
-
-
+    }
 </style>
 
 <body>
@@ -394,8 +433,8 @@ width:auto;
             <input type="text" placeholder="Search">
         </div>
 
-        <div class="help">
-            📞 HOW CAN WE HELP?
+        <div class="header-right">
+           <div><a href="/contact_us/" class="details"> 📞 HOW CAN WE HELP?</a></div>
         </div>
     </div>
 
@@ -432,19 +471,19 @@ width:auto;
     </div>
 
     <div class="para-3">
-        <p>Aaji believes that a healthy lifestyle begins with healthy & organic food. If you ask her the</p> 
+        <p>Aaji believes that a healthy lifestyle begins with healthy & organic food. If you ask her the</p>
         <p>secret to her long & healthy life, she’ll tell you, “It’s what I ate growing up. I cooked millets </p>
         <p>like ragi, jowar, and bajra in a mud pot with water, mixed it with curd, and had it with</p>
         <p>crunchy onions & green chillies”. Aaji also travels alone to meet other farmers and teach</p>
         <p>them the nuances of organic farming. She wishes to spread the organic slow food</p>
-        <p>revolution till the day she can stand on her own two feet. “Even today, I wake up before the</p> 
+        <p>revolution till the day she can stand on her own two feet. “Even today, I wake up before the</p>
         <p>sun, wash my face, and go around the village once. I cannot sit still. I don’t believe that age</p>
         <p>can be the barrier to anything and always remember that there can never be a substitute</p>
         <p>for hard work.”</p>
     </div>
 
     <div class="para-4">
-       <p>“माझी मलु ेखपू नाव कमावत” ~ She works at this age to set an example for her grandchildren.</p>
+        <p>“माझी मलु ेखपू नाव कमावत” ~ She works at this age to set an example for her grandchildren.</p>
         <p>She wants them to study really hard and be successful in life.</p>
     </div>
 
@@ -470,8 +509,8 @@ width:auto;
     </div>
 
     <div class="para-7">
-        <p>Always has the perfect solution to all our farming problems. Who needs technology when</p> 
-        <p>we’ve got him? Kaka’s truly a God-sent. His deep understanding of soil and climatic</p> 
+        <p>Always has the perfect solution to all our farming problems. Who needs technology when</p>
+        <p>we’ve got him? Kaka’s truly a God-sent. His deep understanding of soil and climatic</p>
         <p>conditions surprises us every time! Apart from his usual duties, he also takes care of the</p>
         <p>cows and makes sure they are well-fed, clean, and comfortable.</p>
     </div>
@@ -485,10 +524,10 @@ width:auto;
     <h2 class="text-2">Usha Tai, from Kolam Gaon.</h2>
 
     <div class="para-8">
-       <p>Meet Usha Tai, a highly accomplished farmer and a great mother to 3 daughters. Yet</p>
-       <p>another female farmer at KOAF who is an inspiration to all womenfolk. She’s an expert at</p> 
-       <p>organic cultivation of Turmeric, Sweet potato, Ginger, and Spring Onions. Tai has set the</p>
-       <p>standard pretty high for all our farmers by not missing a single day of work in ____ years!</p>
+        <p>Meet Usha Tai, a highly accomplished farmer and a great mother to 3 daughters. Yet</p>
+        <p>another female farmer at KOAF who is an inspiration to all womenfolk. She’s an expert at</p>
+        <p>organic cultivation of Turmeric, Sweet potato, Ginger, and Spring Onions. Tai has set the</p>
+        <p>standard pretty high for all our farmers by not missing a single day of work in ____ years!</p>
     </div>
 
     <div class="para-9">
@@ -496,7 +535,7 @@ width:auto;
         <p>family to live at the farm and also help my daughters with school supplies. We are quite</p>
         <p>happy and secure now, but it’s my dream to have a house of my own someday. I will</p>
         <p>continue to work hard every day to provide the best future for my family." With her tireless</p>
-        <p>dedication and devotion to farming, Usha Tai ensures that pure organic food reaches as</p> 
+        <p>dedication and devotion to farming, Usha Tai ensures that pure organic food reaches as</p>
         <p>many Indian households as possible.</p>
     </div>
 
@@ -508,58 +547,58 @@ width:auto;
         <img src="{% static 'hap_far/image5.webp' %}" alt="" height="250" width="350" class="farm-5">
     </div>
 
-     <h2 class="text-2">Jay, from Assam.</h2>
+    <h2 class="text-2">Jay, from Assam.</h2>
 
-     <div class="para-10"> 
+    <div class="para-10">
         <p>Meet Jay, the youngest farmer at KOAF who migrated to Mumbai looking for a fulfilling</p>
         <p>opportunity. With his exceptional skills and an appetite to learn, he has successfully</p>
         <p>become an integral part of our family. Growing up in Assam gave him an upper hand in the</p>
         <p>best organic farming practices.</p>
-     </div>
+    </div>
 
-     <div class="para-11">
-       <p>He specializes in cultivating Immunity boosters- Wheatgrass, Microgreens, and all kinds of</p> 
-       <p>Leafy Vegetables. Jay’s forte is cultivating top-notch produce in the toughest of</p> 
-       <p>conditions. With his modern skills and unique techniques, he solves even the most</p> 
-       <p>arduous challenges.</p>
-     </div>
+    <div class="para-11">
+        <p>He specializes in cultivating Immunity boosters- Wheatgrass, Microgreens, and all kinds of</p>
+        <p>Leafy Vegetables. Jay’s forte is cultivating top-notch produce in the toughest of</p>
+        <p>conditions. With his modern skills and unique techniques, he solves even the most</p>
+        <p>arduous challenges.</p>
+    </div>
 
-     <div class="para-12">
+    <div class="para-12">
         <p>“KOAF has embraced me as one of their own. I stay here with my mom and brother. We</p>
         <p>have access to organic food, shelter, and medical aid. I feel secure, my hard work is</p>
         <p>always appreciated, and we have a big family at the farm. What else can one ask for?” Jay</p>
         <p>is highly motivated and works very hard to support his brother’s higher studies.</p>
-     </div>
+    </div>
 
-     <h2 class="text-2">Rupesh, from Rayata Gaon.</h2>
+    <h2 class="text-2">Rupesh, from Rayata Gaon.</h2>
 
-     <div class="para-13">
+    <div class="para-13">
         <p>Meet Rupesh, a loyal member of the KOAF family. He’s been with us for more than 5 years.</p>
-        <p>His brother Pravin is the head Gau Sevak here. Rupesh manages the farm and runs a very</p> 
-        <p>tight ship. Nothing slips past him. “I love my job. I am a bit particular, but a farm this size</p> 
+        <p>His brother Pravin is the head Gau Sevak here. Rupesh manages the farm and runs a very</p>
+        <p>tight ship. Nothing slips past him. “I love my job. I am a bit particular, but a farm this size</p>
         <p>has to be managed well, and that requires me to be very careful." He keeps everyone in</p>
         <p>check and likes the farm to be perfect. But he is also equally supporting and helpful to all</p>
         <p>the staff members.</p>
-     </div>
+    </div>
 
-     <div class="para-14">
+    <div class="para-14">
         <p>"All KOAF members are my family. We live together, farm together, harvest together. This</p>
-        <p>has created a very special bond between us. I like to help them all as much as I can,</p> 
+        <p>has created a very special bond between us. I like to help them all as much as I can,</p>
         <p>especially the younger farmers."</p>
-     </div>
+    </div>
 
-     <div class="para-15">
-        <p>Rupesh has made sure that he masters every concept involving the farm. Apart from</p> 
+    <div class="para-15">
+        <p>Rupesh has made sure that he masters every concept involving the farm. Apart from</p>
         <p>farming, he is also an expert at managing cows. No wonder he is our go-to guy for</p>
         <p>everything. He personally oversees all visits and gets really excited to show visitors around</p>
         <p>on the farm.</p>
-     </div>
+    </div>
 
-     <div class="image-6">
+    <div class="image-6">
         <img src="{% static 'hap_far/image6.webp' %}" alt="" class="farm-6">
-     </div>
-     
-     <div class="details">
+    </div>
+
+    <div class="details">
         <h1 style="color:green">Contact US</h1>
         <h2 style="color:green">📞Phone & WhatsApp Support</h2>
         <h4>+91 9640546718</h4>
@@ -583,4 +622,5 @@ width:auto;
 
 
 </body>
+
 </html>

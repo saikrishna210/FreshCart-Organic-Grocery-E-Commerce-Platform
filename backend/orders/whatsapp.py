@@ -1,108 +1,98 @@
 import requests
-TOKEN="EAAOKZBCNUGLMBR7jKt8iPppwgz2ozX1ZCphv0ak8Ul3LuDwRlbwReOuadO6P6L94oZAjZADTPo566awREylhzKfa8zG10MWg36ZA9Vaonm4hiRaoazmSBrOmIVG6TH6bU1bCTa7n9zCwrMV9uwtZACig5cCr6dOPyZAdkJ4i8ZA8hE5qrMm6WZAF7T80h514h4wpb5f4wV2QBaE9K1cAQoU03vbp1UGLaZCVOZCkoB2VJklZCXIovvz1DKWvKBZA158EfUz7KjbvZBuxZAGBZCJIuaSSmW43WahWmgZDZD"
+
+TOKEN=""
+
 PHONE_ID="1188781930979463"
-print(
-    "TOKEN EXISTS:",
-    bool(TOKEN)
-)
 
-print(
-    "TOKEN LENGTH:",
-    len(TOKEN)
-)
-def send_whatsapp(phone, msg):
 
-    try:
+def send_whatsapp(phone,msg):
 
-        phone = str(phone).strip()
+    phone=str(phone).strip()
 
-        if not phone.startswith("91"):
-            phone = "91" + phone
+    if phone.startswith("+"):
+        phone=phone[1:]
 
-        url = f"https://graph.facebook.com/v23.0/{PHONE_ID}/messages"
+    if not phone.startswith("91"):
+        phone="91"+phone
 
-        headers = {
-            "Authorization": f"Bearer {TOKEN}",
-            "Content-Type": "application/json"
-        }
 
-        payload = {
+    url=(
+        f"https://graph.facebook.com/v23.0/"
+        f"{PHONE_ID}/messages"
+    )
 
-            "messaging_product": "whatsapp",
+    headers={
 
-            "to": phone,
+        "Authorization":
+        f"Bearer {TOKEN}",
 
-            "type": "template",
+        "Content-Type":
+        "application/json"
 
-            "template": {
+    }
 
-                "name": "orderconfirmation",
 
-                "language": {
-                    "code": "en_US"
-                },
+    text=f"""
+Order Confirmed ✅
 
-                "components": [
+Order ID:
+{msg["id"]}
 
-                    {
-                        "type": "body",
+Customer:
+{msg["customer"]}
 
-                        "parameters":[
+Products:
+{msg["products"]}
 
-{
-"type":"text",
-"text":str(msg["id"]).replace("\n"," ")
-},
+Amount:
+₹{msg["amount"]}
 
-{
-"type":"text",
-"text":msg["customer"].replace("\n"," ")
-},
+UTR:
+{msg["utr"]}
 
-{
-"type":"text",
-"text":msg["products"].replace("\n"," ")
-},
+Address:
+{msg["address"]}
 
-{
-"type":"text",
-"text":str(msg["amount"]).replace("\n"," ")
-},
+Thank you for shopping ❤️
+"""
 
-{
-"type":"text",
-"text":msg["utr"].replace("\n"," ")
-},
 
-{
-"type":"text",
-"text":msg["address"].replace("\n"," ")
-}
+    payload={
 
-]
+        "messaging_product":
+        "whatsapp",
 
-                           
-                    }
+        "to":
+        phone,
 
-                ]
+        "type":
+        "text",
 
-            }
+        "text":{
+
+            "preview_url":
+            False,
+
+            "body":
+            text
 
         }
 
-        response = requests.post(
-            url,
-            json=payload,
-            headers=headers,
-            timeout=30
-        )
+    }
+    r=requests.post(
 
-        print("PHONE:", phone)
-        print("STATUS:", response.status_code)
-        print("RESPONSE:", response.text)
+        url,
 
-        return response.json()
+        json=payload,
 
-    except Exception as e:
+        headers=headers
 
-        print("WHATSAPP ERROR:", str(e))
+    )
+
+    print(
+        r.status_code
+    )
+
+    print(
+        r.text
+    )
