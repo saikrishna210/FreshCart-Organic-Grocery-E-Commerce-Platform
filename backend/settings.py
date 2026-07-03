@@ -27,13 +27,13 @@ SECRET_KEY = 'django-insecure-u__^^+a6#luh@ze21^56f_cah%hk7@=pb25m$f!c$a0ynu+m!5
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://freshcart-organic-grocery-e-commerce.onrender.com",
-
+    "freshcart-organic-grocery-e-commerce.onrender.com",
+    "localhost",
     "127.0.0.1",
-
-    "localhost"
 ]
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://freshcart-organic-grocery-e-commerce.onrender.com",
+]
 
 # Application definition
 
@@ -76,8 +76,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wsgi.application'
-ASGI_APPLICATION='asgi.application'
+WSGI_APPLICATION='backend.wsgi.application'
+ASGI_APPLICATION='backend.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
