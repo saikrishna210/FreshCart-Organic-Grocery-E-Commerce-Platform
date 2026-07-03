@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent
 SECRET_KEY = 'django-insecure-u__^^+a6#luh@ze21^56f_cah%hk7@=pb25m$f!c$a0ynu+m!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "freshcart-organic-grocery-e-commerce.onrender.com",
@@ -76,8 +76,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION='backend.wsgi.application'
-ASGI_APPLICATION='backend.asgi.application'
+WSGI_APPLICATION='wsgi.application'
+ASGI_APPLICATION='asgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -131,3 +131,11 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("chundrukrishna16@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("zgfyeszwrhhckynv")
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

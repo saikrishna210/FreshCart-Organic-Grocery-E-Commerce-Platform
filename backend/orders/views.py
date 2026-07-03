@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from .models import Order
 import json
 from .whatsapp import send_whatsapp
+from .email_service import send_order_email
 
 def home(request):
     return render(request,"index.html")
@@ -148,20 +149,10 @@ def save_order(request):
             phone=str(order.mobile).strip()
             if phone.startswith("+"):
                 phone=phone[1:]
-
             if not phone.startswith("91"):
                 phone="91"+phone
-            try:
-                send_whatsapp(
-                phone,
-                msg
-            )
-            except Exception as e:
-                print(
-                    "WhatsApp Error:",
-                    e
-            )
-
+            send_whatsapp(phone,msg)
+            send_order_email(order)
             return JsonResponse({
 
                 "status":
