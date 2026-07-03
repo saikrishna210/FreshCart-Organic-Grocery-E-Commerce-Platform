@@ -24,5 +24,4 @@ path('kitchen_essentails/',views.kitchen_essentails),
 path('rice_millets/',views.rice_millets),
 path('save-order/',views.save_order),
 path("success/",views.success),
-path("payment/",views.start_payment)
 ]

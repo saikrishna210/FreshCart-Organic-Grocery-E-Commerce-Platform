@@ -4,9 +4,6 @@ from django.http import JsonResponse
 from .models import Order
 import json
 from .whatsapp import send_whatsapp
-from .payment import create_order
-
-
 
 def home(request):
     return render(request,"index.html")
@@ -196,24 +193,3 @@ def save_order(request):
 
 def success(request):
     return render(request,"success.html")
-
-@csrf_exempt
-def start_payment(request):
-
-    if request.method=="POST":
-
-        data=json.loads(
-            request.body
-        )
-
-        amount=float(
-            data["amount"]
-        )
-
-        order=create_order(
-            amount
-        )
-
-        return JsonResponse(
-            order
-        )
