@@ -1083,14 +1083,14 @@
             </div>
         </div>
 
-        <div class="product-card" data-price="2">
+        <div class="product-card" data-price="150">
             <div class="product">
                 <img src="{% static 'vegetables/veg31.webp' %}" alt="" class="img1">
                 <img src="{% static 'vegetables/veg31.webp' %}" alt="" class="img2">
             </div>
             <p class="price">
                 From Rs:
-                <span class="final-price">2.00</span>
+                <span class="final-price">150.00</span>
                 <span class="old-price">Rs:200.00</span>
             </p>
             <h3 class="price">Capsicum Yellow</h3>
@@ -1125,7 +1125,7 @@
             <br><br>
             <textarea id="address" placeholder="House / Flat No, Street / Area, City, Pincode"></textarea>
             <br><br>
-            <button onclick="payNow()">Continue</button>
+            <button onclick="checkoutNow()">Continue</button>
         </div>
     </div>
 
@@ -1378,93 +1378,8 @@
             }
 
         }
-        async function payNow() {
-
-            let total =
-
-                document
-                    .getElementById(
-                        "total"
-                    ).innerText;
-
-
-            let res =
-
-                await fetch(
-
-                    "/payment/",
-
-                    {
-
-                        method: "POST",
-
-                        headers: {
-
-                            "Content-Type":
-                                "application/json"
-
-                        },
-
-                        body:
-
-                            JSON.stringify({
-
-                                amount: total
-
-                            })
-
-                    }
-
-                );
-
-
-            let data =await res.json();
-            console.log(data);
-
-
-            var options = {
-                key:"rzp_test_T58KHb0pCVL81m",
-                amount:data.amount,
-                currency:"INR",
-                order_id:data.id,
-                handler: function (response) {
-                    
-alert(
-
-"Payment Success"
-
-);
-
-window.location=
-
-"/success/";
-
-},
-
-
-theme:{
-
-color:"#008000"
-
-}
-
-};
-
-
-new Razorpay(
-
-options
-
-).open();
-
-}
-                 
-
-    </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js">
-    </script>
-
-    </script>
+        </script>
+       
 
 
 </body>

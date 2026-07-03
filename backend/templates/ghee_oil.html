@@ -721,7 +721,7 @@
             <br><br>
             <textarea id="address" placeholder="House / Flat No, Street / Area, City, Pincode"></textarea>
             <br><br>
-            <button onclick="payNow()">Continue</button>
+            <button onclick="checkoutNow()">Continue</button>
         </div>
     </div>
 
@@ -964,91 +964,8 @@
                 );
 
             }
-
         }
-       async function payNow(){
-
-let total=
-
-document
-.getElementById(
-"total"
-).innerText;
-
-
-let res=
-
-await fetch(
-
-"/payment/",
-
-{
-
-method:"POST",
-
-headers:{
-
-"Content-Type":
-"application/json"
-
-},
-
-body:
-
-JSON.stringify({
-
-amount:total
-
-})
-
-}
-
-);
-
-
-let data=await res.json();
-console.log(data);
-
-
-var options={
-key:"rzp_test_T58KHb0pCVL81m",
-amount:data.amount,
-currency:"INR",
-order_id:data.id,
-handler:function(response){
-
-alert(
-
-"Payment Success"
-
-);
-
-window.location=
-
-"/success/";
-
-},
-
-
-theme:{
-
-color:"#008000"
-
-}
-
-};
-
-
-new Razorpay(
-
-options
-
-).open();
-
-}
-    </script>
-    <script src="https://checkout.razorpay.com/v1/checkout.js">
-    </script>
+</script>
 
 </body>
 
