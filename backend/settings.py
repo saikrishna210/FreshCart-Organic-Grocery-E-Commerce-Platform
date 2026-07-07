@@ -24,15 +24,17 @@ BASE_DIR = Path(__file__).resolve().parent
 SECRET_KEY = 'django-insecure-u__^^+a6#luh@ze21^56f_cah%hk7@=pb25m$f!c$a0ynu+m!5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "freshcart-organic-grocery-e-commerce.onrender.com",
-    "localhost",
-    "127.0.0.1",
+    "www.organicgroceries.online",
+    "organicgroceries.online",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://freshcart-organic-grocery-e-commerce.onrender.com",
+    "https://organicgroceries.online",
+    "https://www.organicgroceries.online",
 ]
 
 # Application definition
@@ -136,6 +138,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("chundrukrishna16@gmail.com")
-EMAIL_HOST_PASSWORD = os.getenv("zgfyeszwrhhckynv")
+EMAIL_HOST_USER ="chundrukrishna16@gmail.com"
+EMAIL_HOST_PASSWORD = "zgfyeszwrhhckynv"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
