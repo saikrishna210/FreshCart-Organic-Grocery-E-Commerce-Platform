@@ -30,7 +30,7 @@ ALLOWED_HOSTS = [
     "freshcart-organic-grocery-e-commerce.onrender.com",
     "www.organicgroceries.online",
     "organicgroceries.online",
-    # "127.0.0.1",s
+    # "127.0.0.1",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://freshcart-organic-grocery-e-commerce.onrender.com",

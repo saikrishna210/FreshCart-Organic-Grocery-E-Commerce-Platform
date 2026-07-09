@@ -1,6 +1,6 @@
 import requests
 
-TOKEN="EAAOKZBCNUGLMBR7WOauGU6tu7ppkEXq5JYs6tumTV9XOzAPZCnR8rI0H1aYfqOst6WHx5qXQBjbFiaiLa2keUKMBbLeGniYi0KD1SljmhZCjJI9GAlGnTpNf0F906Lnfl2No1ZCsmBh0ljC3mJnYzXV9By7eB3ExrzwREiWdSNy994qTJp1HQe0fZBUuld3MZC8QZDZD"
+TOKEN="EAAOKZBCNUGLMBR9kXCkMFiZBKCAePZAMH73zTTPWGCV9kamTB0IZAD7d93C0SBbAxy69xPpZCVil10HWfe9fN2p4EedFuf9qZAlbbQqZCrbZBZANGQ784pjUOTPlThMRMVvGvCVovnKRuG8isoYThr4BooDv3QloOQcMt2UQIqoVK2XZC2ixsZAhRLfpW4VoXNBg2ZBU5AZDZD"
 
 PHONE_ID="1223756687468118"
 
@@ -89,10 +89,7 @@ Thank you for shopping ❤️
 
     )
 
-    print(
-        r.status_code
-    )
 
-    print(
-        r.text
-    )
+    
+    print("Status Code:", r.status_code)
+    print("Response:", r.text)
