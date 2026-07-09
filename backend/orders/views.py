@@ -151,10 +151,17 @@ def save_order(request):
                 phone=phone[1:]
             if not phone.startswith("91"):
                 phone="91"+phone
-            send_whatsapp(phone,msg)
-            send_order_email(order)
+            try:
+                send_whatsapp(phone,msg)
+                print("Whatsapp sent successfully")
+            except Exception as e:
+                print("Whatsapp error:",str(e))
+            try:
+                send_order_email(order)
+                print("email sent successfully")
+            except Exception as e:
+                print("email error:",str(e))
             return JsonResponse({
-
                 "status":
                 "success",
 
