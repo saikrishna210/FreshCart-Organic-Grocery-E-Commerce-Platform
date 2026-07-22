@@ -467,7 +467,10 @@
                 <option>Fresh Fruits</option>
                 <option>Fresh Leafy Greens</option>
             </select>
-            <input type="text" placeholder="Search">
+            <input type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    onkeyup="searchProducts()">
         </div>
 
         <div class="header-right">
@@ -1011,6 +1014,27 @@
 
             }
         }
+
+function searchProducts() {
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(function(product){
+
+        let productName = product.querySelector("h3").innerText.toLowerCase();
+
+        if(productName.includes(input)){
+            product.style.display = "";
+        }else{
+            product.style.display = "none";
+        }
+
+    });
+
+}
+
+
     </script>
 </body>
 </html>

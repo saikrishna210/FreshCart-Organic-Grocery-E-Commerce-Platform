@@ -447,6 +447,84 @@
             }
 
         }
+
+        .cart-qty {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin: 10px 0;
+
+        }
+
+        .cart-qty button {
+
+            width: 30px;
+
+            height: 30px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background: green;
+
+            color: white;
+
+            cursor: pointer;
+
+        }
+
+        .cart-qty span {
+
+            font-weight: bold;
+
+            font-size: 18px;
+
+        }
+
+        #cartIcon {
+
+            position: relative;
+
+            cursor: pointer;
+
+            font-size: 30px;
+
+        }
+
+        #cartCount {
+
+            position: absolute;
+
+            top: -10px;
+
+            right: -12px;
+
+            background: red;
+
+            color: white;
+
+            width: 22px;
+
+            height: 22px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
     </style>
 </head>
 
@@ -468,12 +546,17 @@
                 <option>Fresh Fruits</option>
                 <option>Fresh Leafy Greens</option>
             </select>
-            <input type="text" placeholder="Search">
+            <input type="text" id="searchInput" placeholder="Search Products..." onkeyup="searchProducts()">
         </div>
 
         <div class="header-right">
             <div><a href="/contact_us/" class="details">📞 HOW CAN WE HELP?</a></div>
         </div>
+
+        <div id="cartIcon" onclick="openCart()">🛒
+            <span id="cartCount">0</span>
+        </div>
+
     </div>
 
     <div class="navbar">
@@ -738,9 +821,6 @@
         </div>
     </div>
 
-
-
-
     <script>
         function increase(btn) {
             let card = btn.closest(".product-card");
@@ -773,52 +853,139 @@
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
 
-        let cart = [];
-        // Add to cart
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
         document.querySelectorAll(".cart-btn").forEach(btn => {
+
             btn.onclick = function () {
+
                 let card = btn.closest(".product-card");
+
                 let name = card.querySelector("h3").innerText;
-                let price = parseFloat(card.querySelector(".final-price").innerText);
+
+                let price = parseFloat(card.dataset.price);
+
                 let image = card.querySelector(".img1").src;
-                cart.push({
-                    name: name,
-                    price: price,
-                    image: image
-                });
+
+                // Check if product already exists
+                let existing = cart.find(item => item.name === name);
+
+                if (existing) {
+
+                    existing.qty++;
+
+                } else {
+
+                    cart.push({
+
+                        name: name,
+
+                        price: price,
+
+                        image: image,
+
+                        qty: 1
+
+                    });
+
+                }
+
                 showCart();
+
                 openCart();
+
             }
+
         });
 
-        // Show cart
+
+
+
         function showCart() {
+
             let items = "";
+
             let total = 0;
+
             cart.forEach((item, index) => {
+
+                let subtotal = item.price * item.qty;
+
+                total += subtotal;
+
                 items += `
+
 <div class="cart-item">
 
-<img src="${item.image}" class="cart-img">
+    <img src="${item.image}" class="cart-img">
 
-<div>
-<h3>${item.name}</h3>
-<p>Rs ${item.price}</p>
+    <div style="flex:1;">
+
+        <h3>${item.name}</h3>
+
+        <p>₹${item.price}</p>
+
+        <div class="cart-qty">
+
+            <button onclick="decreaseCartQty(${index})">-</button>
+
+            <span>${item.qty}</span>
+
+            <button onclick="increaseCartQty(${index})">+</button>
+
+        </div>
+
+        <p><b>Subtotal : ₹${subtotal}</b></p>
+
+    </div>
+
+    <button class="remove-btn"
+        onclick="removeItem(${index})">
+
+        🗑
+
+    </button>
+
 </div>
 
-<button class="remove-btn" onclick="removeItem(${index})">X</button>
-
-</div>
 `;
-                total += item.price;
+
+
             });
+
             document.getElementById("cartItems").innerHTML = items;
+
             document.getElementById("total").innerText = total.toFixed(2);
+            updateCartCount();
+            saveCart();
+
         }
+
 
         function removeItem(index) {
             cart.splice(index, 1);
             showCart();
+        }
+
+        function increaseCartQty(index) {
+            cart[index].qty++;
+            showCart();
+        }
+
+        function decreaseCartQty(index) {
+
+            if (cart[index].qty > 1) {
+
+                cart[index].qty--;
+
+            } else {
+
+                cart.splice(index, 1);
+
+            }
+
+            showCart();
+
         }
 
         function openCart() {
@@ -965,7 +1132,49 @@
 
             }
         }
-</script>
+
+
+        function searchProducts() {
+
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let products = document.querySelectorAll(".product-card");
+
+            products.forEach(function (product) {
+
+                let productName = product.querySelector("h3").innerText.toLowerCase();
+
+                if (productName.includes(input)) {
+                    product.style.display = "";
+                } else {
+                    product.style.display = "none";
+                }
+
+            });
+
+        }
+
+        function updateCartCount() {
+
+            let count = 0;
+
+            cart.forEach(item => {
+
+                count += item.qty;
+
+            });
+
+            document.getElementById("cartCount").innerText = count;
+
+        }
+
+        function saveCart() {
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+        }
+        showCart();
+
+    </script>
 
 </body>
 
